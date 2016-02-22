@@ -42,6 +42,9 @@ module.exports = class Tab extends WebComponentAbstract {
 		defineAppEvent("tabToggle", "Toggle tab", "Tabs", "<Number> or <HTMLElement>")
 		self.on('tabToggle', e => this.toggle(e.d))
 		
+		defineAppEvent("tabFocus", "Tab is active", "Tabs")
+		defineAppEvent("tabBlur", "Tab is hidden", "Tabs")
+		
 		defineKeyShortcut('⌘1‑9', 'Go to tab 1‑9', "Tabs")
 		self.on('keydown', e => (e.metaKey || e.ctrlKey) && this.tabNumberShortcut(e))
 		
@@ -86,6 +89,8 @@ module.exports = class Tab extends WebComponentAbstract {
 			
 			show ? el.classList.add('active') : el.classList.remove('active')
 			el.instance.style.display = show ? null : 'none'
+			
+			el.instance.dispatchEvent(new Event(`tab${show ? 'Focus' : 'Blur'}`))
 		})
 	}
 }
