@@ -42,7 +42,7 @@ main, header, footer, aside, nav, section, article, page { display: block; }
 	@mobileBreak: 750px; 
 	
 	// max width for .column-width-grid, see .column-system
-	@columnMaxWidth: 10rem;
+	@gridMaxWidth: 10rem;
 	
 	// secondary background color
 	// table even rows and future purposes
@@ -211,11 +211,12 @@ table:not([class]) { .table; }
 .column-width-two { flex-grow: 2; }
 .column-width-gold { flex-grow: 1.618; }
 .column-width-full { flex-basis: 100%; }
-.column-width-grid { flex-basis: @columnMaxWidth; .mobile({ flex-basis: @columnMaxWidth; }); }
+.column-width-grid { flex-basis: @gridMaxWidth; .mobile({ flex-basis: @gridMaxWidth; }); }
 
 // see above
 flex_balancer {
-	height: 0 !important; margin-top: 0 !important; margin-bottom: 0 !important;
+	height: 0 !important; padding: 0 !important;
+	margin-top: 0 !important; margin-bottom: 0 !important;
 	visibility: hidden !important;
 }
 
