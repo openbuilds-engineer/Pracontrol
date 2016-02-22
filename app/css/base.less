@@ -1,0 +1,292 @@
+// Base.less
+// Core of the rem based design
+// more info at http://rembased.pravdomil.cz
+
+// Reset margin, padding, border, font
+// You can add more elements that you want to reset
+html, body,
+h1, h2, h3, h4, h5, h6,
+p, pre, kbd, blockquote,
+img, iframe, hr,
+ul, ol,
+table,
+form, input, button, keygen, textarea, select, label { padding: 0; margin: 0; border: 0; font: inherit; }
+
+// HTML5 new elements in older browsers
+main, header, footer, aside, nav, section, article, page { display: block; }
+
+// Configuration defaults
+.config-defaults() {
+	// <body> font-size
+	@fontSize: 8pt;
+	
+	// <body> line-height
+	@lineHeight: 1.3;
+	
+	// just for debugging baseline, see @offset
+	// fonts have different baselines
+	@fontBaseline: 1/3;
+	
+	// scaling factor
+	// good values - desktop 1.182 - mobile 1.218
+	// important to achieve correct PT to PX conversion
+	// for example MacBook has 113.5 DPI instead of browser default 96
+	@dpiScale: 113.5 / 96;
+	
+	// default margin size
+	// used for all block elements margin-bottom 
+	@blockMargin: 1rem;
+	
+	// see .mobile and .desktop mixins
+	// btw iPad has 768px screen width
+	@mobileBreak: 750px; 
+	
+	// max width for .column-width-grid, see .column-system
+	@columnMaxWidth: 10rem;
+	
+	// secondary background color
+	// table even rows and future purposes
+	@secondaryBackground: rgba(0, 0, 0, .04)
+};
+.config-defaults();
+
+
+// Font-size = @em
+@em: round( convert(@fontSize * @dpiScale, px) );
+
+// Line-height = @rem = 1rem
+@rem: round(@em * @lineHeight);
+
+// Font baseline = (1rem - @offset)
+@offset: @rem * .5 - @em * @fontBaseline;
+
+
+// Base layout
+html {
+	// define 1rem here
+	font-size: @rem;
+	
+	// disable zoom efect in landspace on iOS
+	-webkit-text-size-adjust: 100%;
+}
+body {
+	// define font-size here
+	font-size: @em;
+	
+	// line height is 1rem
+	line-height: 1rem;
+}
+
+
+// Dereset
+// set line-height 0 for not affecting line-height
+b, strong { font-weight: bold; }
+cite, em, i { font-style: italic; }
+pre { font-family: monospace; }
+a { cursor: pointer; color: inherit; text-decoration: inherit; }
+
+sub { font-size: 0.8em; line-height: 0; }
+sup { font-size: 0.8em; line-height: 0; }
+
+// these mixins you can use later on
+// for bigger and smaller inline elements set smaller line-height
+.big() { font-size: 1.2em; line-height: 0.8; }
+.small() { font-size: 0.8em; line-height: 1; }
+.kbd() { padding: 0 .2em; color: #fff; background-color: #333; border-radius: .25em; }
+
+big { .big; }
+small { .small; }
+kbd:not(:empty) { .kbd; }
+
+// Headings
+h1 { font-size: @em * 1.5; line-height: 2rem; }
+h2 { font-size: @em * 1.3; }
+h3 { font-size: @em * 1.1; }
+// http://aestheticallyloyal.com/public/optimize-legibility/
+h1, h2, h3 { text-rendering: optimizeLegibility; }
+
+
+// margin-bottom for block elements
+.blockElem(@rule) { p, h1, h2, h3, ul, ol, table, pre, iframe { @rule(); } }
+.blockElem({ margin-bottom: @blockMargin; });
+
+
+// <hr>
+.hr(@w: 1px; @c: #000) {
+	display: block; clear: both; height: 1rem;
+	
+	@img: escape('<svg width="1" height="@{w}" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" fill="@{c}" width="1" height="@{w}"/></svg>');
+	background: url("data:image/svg+xml;charset=utf-8,@{img}") center (@rem / 2 - @w) repeat-x;
+}
+hr { .hr; }
+
+
+// Bullet lists
+.list(@padding: 1rem) {
+	// indent
+	padding-left: @padding;
+	
+	// p followed by .list has no margin in between
+	p + & { margin-top: @blockMargin * -1; }
+}
+ul, ol {
+	// when list is not plain do not show bullets
+	&[class], &[id] { list-style-type: none; }
+	
+	// when .list is plain (with no id or class) apply .list
+	&:not([class]):not([id]) { .list; }
+}
+
+
+// <table>
+.table(@padding: 0.5rem; @even: @secondaryBackground) {
+	// aka border-collapse
+	border-spacing: 0;
+	
+	// can be redefined
+	width: 100%;
+	
+	// typography
+	font-size: @em * 0.9;
+	
+	// thead in bold
+	> thead { font-weight: bold; }
+	
+	// Different background for even rows
+	> tbody > tr:nth-child(odd) { td, th { background-color: @even; } }
+	
+	td, th {
+		// vertical align of cell is top
+		vertical-align: top;
+		
+		// reset align left for thead
+		text-align: left;
+		
+		// cell padding top and bottom
+		&:before { content: ""; display: block; margin-top: @padding; }
+		&:after { content: ""; display: block; margin-top: @padding; }
+		
+		// cell padding, equally divided to left and right side
+		padding: 0 @padding / 2;
+		
+		// first and last cells have more left and right padding
+		// empirically tested
+		&:first-child { padding-left: @padding * 1.25; }
+		&:last-child { padding-right: @padding * 1.25; }
+	}
+}
+table:not([class]) { .table; }
+
+
+// Column system
+// empirically tested
+.column-system(@margin: @blockMargin; @selector: ~'> *') {
+	// flex setup
+	.doflex(@margin; @selector);
+	flex-wrap: wrap;
+	justify-content: space-between;
+	
+	// column by default:
+	@{selector} {
+		// creates a new beginning of coordinates
+		position: relative;
+		
+		// columns have equal width
+		flex: 1 1 0;
+		
+		// collapse on mobile
+		.mobile({ flex-basis: 100%; });
+		
+		// have margin bottom
+		margin-bottom: @margin;
+	}
+	
+	// balance .column-width-grid with empty elements at the end
+	// http://stackoverflow.com/a/33212959/3748498
+	> flex_balancer { .column-width-grid; }
+}
+.column-system { .column-system; }
+
+// common column widths
+.column-width-two { flex-grow: 2; }
+.column-width-gold { flex-grow: 1.618; }
+.column-width-full { flex-basis: 100%; }
+.column-width-grid { flex-basis: @columnMaxWidth; .mobile({ flex-basis: @columnMaxWidth; }); }
+
+// see above
+flex_balancer {
+	height: 0 !important; margin-top: 0 !important; margin-bottom: 0 !important;
+	visibility: hidden !important;
+}
+
+
+// Forms
+// not sure about this, to be tested
+input, button, keygen, textarea, select, .button, label {
+	display: inline-block;
+	color: inherit;
+	box-sizing: border-box;
+	max-width: 100%;
+	min-width: 2rem; min-height: 2rem;
+	vertical-align: baseline;
+}
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+keygen, textarea, select, button, .button {
+	box-shadow: 0px 0.3px 1px 0px ButtonShadow inset;
+	border-radius: 0.25rem;
+	background-color: #FFF;
+	padding: 0.5rem;
+}
+input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"],
+button, .button, select, label { &:not(:disabled) { cursor: pointer; } }
+
+input[type="checkbox"], input[type="radio"] { width: 1rem; height: calc(~"1rem - 1px"); vertical-align: bottom; }
+select:not([size]) { height: 2rem; }
+textarea { width: 100%; resize: vertical; }
+.button { text-align: center; }
+
+
+// Base flex layout with equal left and right margins 
+.doflex(@margin: @blockMargin; @selector: ~'> *') {
+	display: flex;
+	
+	margin-left: -@margin / 2;
+	margin-right: -@margin / 2;
+	
+	@{selector} {
+		margin-left: @margin / 2;
+		margin-right: @margin / 2;
+	}
+}
+
+
+// Desktop and mobile media queries
+.mobile(@rule) { @media (max-width: @mobileBreak) { @rule(); } }
+.desktop(@rule) { @media (min-width: (@mobileBreak + 1px)) { @rule(); } }
+
+
+// Visual aid
+// append <baseline_grid> to HTML and make it visible
+.baseline_grid(@alpha: 0.1) {
+	display: none !important;
+	position: absolute; pointer-events: none;
+	
+	top: 0; bottom: 0; left: 0; right: 0; z-index: 999;
+	
+	min-height: 100vh; min-width: 100vh;
+	
+	@lh: unit(@rem); // line-height
+	@b: unit(@rem - @offset); // baseline offset
+	
+	@grid: escape('<svg width="@{lh}" height="@{lh}" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" fill="#FF0000" width="@{lh}" height="1" fill-opacity="@{alpha}"/><rect x="0" y="0" fill="#FF0000" width="1" height="@{lh}" fill-opacity="@{alpha}"/><rect x="0" y="@{b}" fill="#0000FF" width="@{lh}" height="1" fill-opacity="@{alpha}"/></svg>');
+	
+	background: url("data:image/svg+xml;charset=utf-8,@{grid}") left top repeat;
+}
+baseline_grid { .baseline_grid; }
+
+
+// Toggle .alt_key on <body> to show visual aids
+.alt_key {
+	// show baseline grid
+	baseline_grid { display: block !important; }
+}

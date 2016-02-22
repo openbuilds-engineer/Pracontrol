@@ -1,0 +1,121 @@
+<style>
+html, body { overflow: hidden; margin: 0; cursor: default; -webkit-overflow-scrolling: auto; -webkit-user-select: none; }
+msg, gcode {
+	display: block;
+	
+	left: 50%; top: 50%; position: absolute;
+	
+	-webkit-transform: translate(-50%, -100%);
+	transform: translate(-50%, -100%);
+	
+	font: 5vw/7.5vw sans-serif;
+	text-align: right;
+	color: LightGray;
+	white-space: pre;
+}
+gcode { bottom: 0; top: initial; }
+dot { height: 2px; width: 2px; background-color: black; position: absolute; }
+</style>
+<meta name="viewport" content="width=1600, initial-scale=1">
+<msg>draw!</msg>
+<gcode>Send a gCode!</gcode>
+<script>
+'use strict'
+
+addEventListener('error', function(e) { alert(e.message) } )
+
+Node.prototype.on = Window.prototype.on = function() { return this.addEventListener.apply(this, arguments) }
+Node.prototype.newElement = function(element) { return this.appendChild(document.createElement(element)) }
+
+document.body.addEventListener('touchmove',function(e){ if(e.targetTouches.length == 1) e.preventDefault(); });
+
+var msg = document.querySelector("msg")
+var gcode = document.querySelector("gcode")
+var writes = false
+var block = false
+
+var buffer = []
+var busy = false
+
+function send(data) {
+	buffer.push(data)
+	sendBuffer()
+}
+
+function sendBuffer() {
+	
+	if(busy) return;
+	
+	var data = buffer.shift()
+	if(!data) return;
+	
+	busy = true;
+	
+	var req = new XMLHttpRequest()
+	req.open('POST', '/', true)
+	req.onload = function() {
+		busy = false
+		sendBuffer()
+	}
+	req.setRequestHeader('Remote-Data', JSON.stringify(data))
+	req.send()
+}
+
+function sendGcode() {
+	send({ gcode: prompt('Enter gCode') })
+}
+
+function move(e) {
+	if(e.type == "mousemove" && !e.which) return;
+	if(e.type == "mousedown" || e.type == "touchstart") block = false;
+	if(e.targetTouches && e.targetTouches.length > 1) {
+		up()
+		block = true;
+	}
+	
+	if(block) return
+	
+	var min = Math.min(document.body.clientWidth, document.body.clientHeight)
+	var c = { x: e.pageX / min, y: e.pageY / min }
+	
+	msg.textContent = Math.round(c.x * 100) + "X\n" + Math.round(c.y * 100) + "Y"
+	var maxPos = 160
+	
+	var x = (c.x * maxPos).toFixed(3)
+	var y = (c.y * maxPos).toFixed(3)
+	
+	if(e.target != gcode) newDot(e.pageX, e.pageY)
+	
+	send({ gcode: 'G0 X' + x + ' Y' + y })
+	if(!writes) down()
+}
+
+function newDot(x, y) {
+	var d = document.body.newElement('dot')
+	d.style.top = y + "px"
+	d.style.left = x + "px"
+}
+
+function down() {
+	if(writes) return;
+	writes = true
+	send({ gcode: 'G91|G0 Z-0.5|G90' })
+}
+
+function up() {
+	if(!writes) return;
+	writes = false
+	send({ gcode: 'G91|G0 Z0.5|G90' })
+}
+
+gcode.on('click', sendGcode)
+gcode.on('touchstart', sendGcode)
+
+self.on('mousemove', move)
+self.on('touchmove', move)
+self.on('mousedown', move)
+self.on('touchstart', move)
+self.on('mouseup', function(e) { up() })
+self.on('touchend', function(e) { up() })
+
+</script>

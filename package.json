@@ -1,0 +1,32 @@
+{
+	"name": "pra-control",
+	"version": "1.0.0",
+	"description": "Send awesome gCodes to your machine.",
+	"productName": "PraControl",
+	"keywords": ["gCode", "control", "serial", "awesome", "rembased"],
+	
+	"author": { "name": "Pravdomil Toman", "email": "info@pravdomil.cz", "url": "http://pravdomil.cz" },
+	"contributors": [
+		{ "name": "Pravdomil Toman", "email": "info@pravdomil.cz", "url": "http://pravdomil.cz" }
+	],
+	
+	"homepage": "http://pracontrol.pravdomil.cz",
+	"repository": { "type": "git", "url": "https://github.com/pravdomil/pra-control" },
+	"bugs": "https://github.com/pravdomil/pra-control/issues",
+	"featureRequest": "https://github.com/pravdomil/pra-control/issues/new",
+	"pullRequest": "https://github.com/pravdomil/pra-control/pull/new",
+	"donate": "https://salt.bountysource.com/checkout/amount?team=pracontrol",
+	
+	"scripts": {
+		"start": "./index.js"
+	},
+	"dependencies": {
+		"less": "*",
+		"serialport": "*"
+	},
+	"devDependencies": {
+		"electron-packager": "*",
+		"electron-prebuilt": "*"
+	},
+	"license": "MIT"
+}
