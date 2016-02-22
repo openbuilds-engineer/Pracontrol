@@ -26,8 +26,11 @@ module.exports = class RemoteControl extends WebComponentAbstract {
 		defineAppEvent('remoteServerStop', 'Stop remote server', 'Remote')
 		self.on('remoteServerStop', e => this.serverStop())
 		
+		this.on('tabFocus', e => new AppEvent('remoteServerStart'))
+		
 		this.port = 2222
 		this.server = null
+		this.serverRun = false
 		
 		this.info = this.newElement('p')
 		this.iframe = this.newElement('iframe')
@@ -36,17 +39,19 @@ module.exports = class RemoteControl extends WebComponentAbstract {
 	readyCallback() {
 		new AppEvent('newTab', { instance: this, title: 'Remote' })
 		new AppEvent('remoteServerStop')
-		new AppEvent('remoteServerStart')
 	}
 	
 	serverStop() {
 		this.server && this.server.close()
+		this.serverRun = false
 		this.info.textContent = "Server not running."
 	}
 	
 	serverStart() {
+		if(this.serverRun) return
+		
 		this.server = http.createServer(this.request.bind(this))
-		this.server.listen(this.port);
+		this.server.listen(this.port, e => this.serverRun = true)
 		
 		var path = require('os').hostname() + ":" + this.port
 		this.iframe.src = `http://${path}`
