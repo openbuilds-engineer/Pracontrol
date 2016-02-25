@@ -68,6 +68,7 @@ module.exports = class SerialBuffer extends WebComponentAbstract {
 	}
 	
 	addToBuffer(data, prepend) {
+		if(!data) return;
 		prepend ? this.buffer.unshift(data + "\n") : this.buffer.push(data + "\n")
 	}
 	
