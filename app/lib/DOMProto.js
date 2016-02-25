@@ -7,6 +7,7 @@ NodeList.prototype.every = Array.prototype.every
 HTMLCollection.prototype.forEach = Array.prototype.forEach
 HTMLCollection.prototype.some = Array.prototype.some
 HTMLCollection.prototype.every = Array.prototype.every
+FileList.prototype.forEach = Array.prototype.forEach
 
 // shorthand
 EventTarget.prototype.on = function() { return this.addEventListener.apply(this, arguments) }

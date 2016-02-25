@@ -5,6 +5,9 @@ module.exports = class UI extends WebComponentAbstract {
 		// messaging system
 		this.newElement(require('./Msg'), false)
 		
+		// files dragging
+		this.newElement(require('./Files'), false)
+		
 		defineKeyShortcut('ESC', 'Blur focused element', "UI")
 		self.on('keyup', e => e.keyCode == 27 && document.activeElement.blur())
 		

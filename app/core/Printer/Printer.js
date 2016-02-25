@@ -18,7 +18,7 @@ var style = `
 		justify-content: center;
 		box-sizing: border-box;
 		border: 1px dashed LightGray;
-		&.drag { background-color: WhiteSmoke; }
+		:host-context(.drag) & { background-color: WhiteSmoke; }
 	}
 }
 `
@@ -28,31 +28,19 @@ module.exports = class Printer extends WebComponentAbstract {
 		this.renderLess(style)
 		
 		this.drop = this.newElement('drop')
-		this.drop.textContent = "Drop gCode file to print"
+		this.drop.textContent = "Drop *.gcode to print"
 		
-		this.drop.on("dragover", e => this.dragHover(e))
-		this.drop.on("dragleave", e => this.dragEnd(e))
-		this.drop.on("drop", e => this.fileDrop(e))
+		self.on("newFile", e => this.newFile(e))
 	}
 	
 	readyCallback() {
 		new AppEvent('newDashboard', { instance: this })
 	}
 	
-	dragHover(e) {
-		this.drop.classList.add('drag')
-		e.preventDefault()
-	}
-	
-	dragEnd(e) {
-		this.drop.classList.remove('drag')
-		e.preventDefault()
-	}
-	
-	fileDrop(e) {
-		this.dragEnd(e)
-		var file = e.dataTransfer.files && e.dataTransfer.files[0];
-		this.printFile(file.path)
+	newFile(e) {
+		e.d.forEach(file => {
+			if(file.path.substr(-5) == "gcode") this.printFile(file.path)
+		})
 	}
 	
 	printFile(path) {
