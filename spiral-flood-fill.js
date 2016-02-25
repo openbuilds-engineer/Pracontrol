@@ -191,15 +191,9 @@ class SpiralFloodFill {
 		this.forEachImage((x, y, p, i) => {
 			if(this.ch <= 3) {
 				
-				var pass = true
-				for(var c = 0; c <= 3; c++) {
-					if(this.ch == c) continue
-					if(!p[i + c]) continue
-					pass = false
-					break
-				}
+				var pass = p[i + this.ch] == 255
 				
-				this.print[x][y] = pass ? p[i + this.ch] : 0
+				this.print[x][y] = pass ? 255 - p[i] : 0
 			}
 			else if(this.ch == 4) {
 				
