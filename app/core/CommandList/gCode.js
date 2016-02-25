@@ -140,9 +140,11 @@ module.exports.commands = {
 	"M106": {
 		"title": "Fan speed set",
 		"arg": "S<0-255>",
+		"cat": "Fan",
 	},
 	"M107": {
-		"title": "Fan off"
+		"title": "Fan off",
+		"cat": "Fan",
 	},
 	
 	// Extruder
