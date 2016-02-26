@@ -65,6 +65,6 @@ module.exports = class Panel extends WebComponentAbstract {
 	}
 	
 	readyCallback() {
-		new AppEvent('newElement', { instance: this })
+		AppEvent('newElement', { instance: this })
 	}
 }

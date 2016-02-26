@@ -20,6 +20,6 @@ module.exports = class Files extends WebComponentAbstract {
 	
 	fileDrop(e) {
 		this.dragEnd(e)
-		new AppEvent('newFile', e.dataTransfer.files)
+		AppEvent('newFile', e.dataTransfer.files)
 	}
 }

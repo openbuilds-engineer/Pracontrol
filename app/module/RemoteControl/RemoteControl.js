@@ -26,7 +26,7 @@ module.exports = class RemoteControl extends WebComponentAbstract {
 		defineAppEvent('remoteServerStop', 'Stop remote server', 'Remote')
 		self.on('remoteServerStop', e => this.serverStop())
 		
-		this.on('tabFocus', e => new AppEvent('remoteServerStart'))
+		this.on('tabFocus', e => AppEvent('remoteServerStart'))
 		
 		this.port = 2222
 		this.server = null
@@ -37,8 +37,8 @@ module.exports = class RemoteControl extends WebComponentAbstract {
 	}
 	
 	readyCallback() {
-		new AppEvent('newTab', { instance: this, title: 'Remote' })
-		new AppEvent('remoteServerStop')
+		AppEvent('newTab', { instance: this, title: 'Remote' })
+		AppEvent('remoteServerStop')
 	}
 	
 	serverStop() {
@@ -68,7 +68,7 @@ module.exports = class RemoteControl extends WebComponentAbstract {
 	post(req, res) {
 		var data = JSON.parse(req.headers['remote-data'])
 		if('gcode' in data && data.gcode) {
-			new AppEvent('serialWrite', { data: data.gcode.split('|') })
+			AppEvent('serialWrite', { data: data.gcode.split('|') })
 		}
 	}
 	

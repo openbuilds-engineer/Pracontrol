@@ -16,7 +16,7 @@ module.exports = class ConnectForm extends WebComponentAbstract {
 		this.newElement('p').textContent = "Connect"
 		
 		this.port = this.newElement('select')
-		this.port.on('click', e => new AppEvent('refreshPorts'))
+		this.port.on('click', e => AppEvent('refreshPorts'))
 		
 		this.newElement('br')
 		
@@ -36,7 +36,7 @@ module.exports = class ConnectForm extends WebComponentAbstract {
 		this.homeOnConnect.type = 'checkbox'
 		this.homeOnConnect.checked = this.ser.homeOnConnect
 		this.homeOnConnect.on('change', e => this.ser.homeOnConnect = this.homeOnConnect.checked)
-		self.on('deviceReady', e => this.ser.homeOnConnect && new AppEvent('serialWrite', { data: 'G28 X Y', prepend: true }))
+		self.on('deviceReady', e => this.ser.homeOnConnect && AppEvent('serialWrite', { data: 'G28 X Y', prepend: true }))
 		
 		self.on('refreshPorts', e => this.cleanPorts(e))
 		self.on('newPort', e => this.newPort(e))
@@ -80,6 +80,6 @@ module.exports = class ConnectForm extends WebComponentAbstract {
 	}
 	
 	submitClick(e) {
-		new AppEvent(this.isConnected ? 'disconnect' : 'connect')
+		AppEvent(this.isConnected ? 'disconnect' : 'connect')
 	}
 }

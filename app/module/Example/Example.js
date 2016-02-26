@@ -22,7 +22,7 @@ module.exports = class NameOfYourModule extends WebComponentAbstract {
     
     this.but = this.newElement('button')
     this.but.textContent = "Emergency stop"
-    this.but.on('click', e => new AppEvent('serialWrite', { data: 'M999', prepend: true }))
+    this.but.on('click', e => AppEvent('serialWrite', { data: 'M999', prepend: true }))
   }
   
   readyCallback() {
@@ -30,7 +30,7 @@ module.exports = class NameOfYourModule extends WebComponentAbstract {
     // fire events here
     
     // in this case we are going for new tab
-    new AppEvent('newTab', { instance: this, 'title': 'Example' })
+    AppEvent('newTab', { instance: this, 'title': 'Example' })
   }
   
   attachedCallback() {

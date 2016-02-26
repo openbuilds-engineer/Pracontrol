@@ -25,9 +25,9 @@ module.exports = class ControlShortcuts extends WebComponentAbstract {
 		if(e.metaKey || e.ctrlKey) return
 		
 		switch(e.keyCode) {
-			case 72: new AppEvent('serialWrite', { data: [`G28 ${e.altKey ? '' : 'XY'}`], prepend: true }); break
-			case 80: new AppEvent('serialWrite', { data: [`G92 X0 Y0 Z0`], prepend: true }); break
-			case 81: new AppEvent('serialClean'); new AppEvent('serialWrite', { data: 'M81' }); break
+			case 72: AppEvent('serialWrite', { data: [`G28 ${e.altKey ? '' : 'XY'}`], prepend: true }); break
+			case 80: AppEvent('serialWrite', { data: [`G92 X0 Y0 Z0`], prepend: true }); break
+			case 81: AppEvent('serialClean'); AppEvent('serialWrite', { data: 'M81' }); break
 		}
 	}
 	
@@ -51,6 +51,6 @@ module.exports = class ControlShortcuts extends WebComponentAbstract {
 	}
 	
 	move(axis, vel) {
-		new AppEvent('serialWrite', { data: ['G91', `G0 ${axis} ${vel}`, 'G90', 'M400'], prepend: true })
+		AppEvent('serialWrite', { data: ['G91', `G0 ${axis} ${vel}`, 'G90', 'M400'], prepend: true })
 	}
 }

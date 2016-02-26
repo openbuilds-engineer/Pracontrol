@@ -39,7 +39,7 @@ class PraControl extends WebComponentAbstract {
 		defineAppEvent("appReady", "Fires after all modules loaded", "Core")
 		setImmediate(() => {
 			this.ready = true
-			new AppEvent('appReady')
+			AppEvent('appReady')
 		})
 	}
 }

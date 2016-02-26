@@ -28,7 +28,7 @@ module.exports = class Console extends WebComponentAbstract {
 		this.input.on('keypress', e => e.keyCode == 13 && this.submitInput())
 		
 		// toggle tab when focus to input
-		this.input.on('focus', e => { new AppEvent('tabToggle', this); if(!e.isTrusted) this.input.focus(); })
+		this.input.on('focus', e => { AppEvent('tabToggle', this); if(!e.isTrusted) this.input.focus(); })
 		
 		defineKeyShortcut('⌘Enter', 'Focus console input', 'Console')
 		self.on('keydown', e => (e.metaKey || e.ctrlKey) && this.keyShortcut(e))
@@ -48,7 +48,7 @@ module.exports = class Console extends WebComponentAbstract {
 	}
 	
 	readyCallback() {
-		new AppEvent('newTab', { instance: this, title: 'Console', priority: -80 })
+		AppEvent('newTab', { instance: this, title: 'Console', priority: -80 })
 	}
 	
 	historyCommand(e) {
@@ -80,7 +80,7 @@ module.exports = class Console extends WebComponentAbstract {
 		
 		this.commandHistoryIndex = this.ser.commandHistory.push(this.input.value)
 		
-		var e = new AppEvent('serialWrite', { data: this.input.value, prepend: true })
+		var e = AppEvent('serialWrite', { data: this.input.value, prepend: true })
 		this.input.value = ""
 		
 		this.consoleScrollDown()

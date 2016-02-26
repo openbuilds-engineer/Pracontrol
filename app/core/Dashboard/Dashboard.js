@@ -25,7 +25,7 @@ module.exports = class Dashboard extends WebComponentAbstract {
 	}
 	
 	readyCallback() {
-		new AppEvent('newTab', { instance: this, title: 'Dashboard', priority: -90 })
+		AppEvent('newTab', { instance: this, title: 'Dashboard', priority: -90 })
 	}
 	
 	newItem(instance) {

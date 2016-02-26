@@ -33,16 +33,16 @@ module.exports = class Serial extends WebComponentAbstract {
 	}
 	
 	readyCallback() {
-		new AppEvent('refreshPorts')
-		new AppEvent('disconnected')
+		AppEvent('refreshPorts')
+		AppEvent('disconnected')
 		
-		new AppEvent('newDashboard', { instance: this })
+		AppEvent('newDashboard', { instance: this })
 	}
 	
 	refreshPorts(e) {
 		serialPort.list( (e, ports) => {
 			if(e) throw e
-			ports.reverse().forEach(p => new AppEvent('newPort', { port: p }) )
+			ports.reverse().forEach(p => AppEvent('newPort', { port: p }) )
 		})
 	}
 	
@@ -52,12 +52,12 @@ module.exports = class Serial extends WebComponentAbstract {
 	
 	connect(e) {
 		if(!this.connectForm.port.selectedOptions) {
-			new AppEvent('disconnected')
+			AppEvent('disconnected')
 			throw new Error("No ports selected")
 		}
 		
 		if(!this.connectForm.speed.value) {
-			new AppEvent('disconnected')
+			AppEvent('disconnected')
 			throw new Error("No speed entered")
 		}
 		
@@ -69,11 +69,11 @@ module.exports = class Serial extends WebComponentAbstract {
 		}, false);
 		
 		this.serial.open(e => {
-			if (e) { new AppEvent('disconnected'); throw e; }
-			new AppEvent('connected')
+			if (e) { AppEvent('disconnected'); throw e; }
+			AppEvent('connected')
 		})
-		this.serial.on('close', e => { new AppEvent('disconnected'); if(e) throw e; })
-		this.serial.on('data', data => new AppEvent('serialData', { data }))
+		this.serial.on('close', e => { AppEvent('disconnected'); if(e) throw e; })
+		this.serial.on('data', data => AppEvent('serialData', { data }))
 	}
 	
 	send(data) {

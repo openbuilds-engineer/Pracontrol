@@ -34,7 +34,7 @@ module.exports = class Printer extends WebComponentAbstract {
 	}
 	
 	readyCallback() {
-		new AppEvent('newDashboard', { instance: this })
+		AppEvent('newDashboard', { instance: this })
 	}
 	
 	newFile(e) {
@@ -48,7 +48,7 @@ module.exports = class Printer extends WebComponentAbstract {
 				if(err) throw err;
 				
 				var file = data.toString().split("\n");
-				new AppEvent('serialWrite', { data: file })
+				AppEvent('serialWrite', { data: file })
 		})
 	}
 }

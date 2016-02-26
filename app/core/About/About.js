@@ -41,7 +41,7 @@ var html = `
 
 	<p><a href="${App.package.donate}" class="button">Buy me a beer 🍺</a></p>
 
-	<p><a onclick="new AppEvent('tabToggle', 1)" class="button">Continue →</a></p>
+	<p><a onclick="AppEvent('tabToggle', 1)" class="button">Continue →</a></p>
 </right>
 	
 </div>
@@ -54,6 +54,6 @@ module.exports = class About extends WebComponentAbstract {
 	}
 	
 	readyCallback() {
-		new AppEvent('newTab', { instance: this, title: 'PraControl', priority: -100 })
+		AppEvent('newTab', { instance: this, title: 'PraControl', priority: -100 })
 	}
 }

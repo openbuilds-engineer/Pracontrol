@@ -21,6 +21,6 @@ module.exports = class SearchBox extends WebComponentAbstract {
 	}
 	
 	readyCallback() {
-		new AppEvent('newPanel', { instance: this, position: 'top' })
+		AppEvent('newPanel', { instance: this, position: 'top' })
 	}
 }

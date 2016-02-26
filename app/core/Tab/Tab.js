@@ -52,7 +52,7 @@ module.exports = class Tab extends WebComponentAbstract {
 	}
 	
 	readyCallback() {
-		new AppEvent('newPanel', { instance: this, position: 'top' })
+		AppEvent('newPanel', { instance: this, position: 'top' })
 	}
 	
 	newTab(tab) {
@@ -70,7 +70,7 @@ module.exports = class Tab extends WebComponentAbstract {
 		})
 		if(!inserted) this.appendChild(t)
 		
-		new AppEvent('newPanel', { instance: tab.instance })
+		AppEvent('newPanel', { instance: tab.instance })
 		
 		this.toggle(this.currentTab)
 	}

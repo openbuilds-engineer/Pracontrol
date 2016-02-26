@@ -20,7 +20,7 @@ module.exports = class KeyShortcutsTable extends WebComponentAbstract {
 	}
 	
 	readyCallback() {
-		new AppEvent('newTab', { instance: this, title: 'Shortcuts', priority: 800 })
+		AppEvent('newTab', { instance: this, title: 'Shortcuts', priority: 800 })
 	}
 	
 	newShortcut(k) {

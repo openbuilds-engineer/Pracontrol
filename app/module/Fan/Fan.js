@@ -27,10 +27,10 @@ module.exports = class Fan extends WebComponentAbstract {
 	}
 	
 	readyCallback() {
-		new AppEvent('newDashboard', { instance: this })
+		AppEvent('newDashboard', { instance: this })
 	}
 	
 	setSpeed(val) {
-		new AppEvent('serialWrite', { data: `M106 S${val}`, prepend: true })
+		AppEvent('serialWrite', { data: `M106 S${val}`, prepend: true })
 	}
 }

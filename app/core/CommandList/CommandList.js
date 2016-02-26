@@ -29,7 +29,7 @@ module.exports = class CommandList extends WebComponentAbstract {
 	}
 	
 	readyCallback() {
-		new AppEvent('newTab', { instance: this, title: 'Commands', priority: -70 })
+		AppEvent('newTab', { instance: this, title: 'Commands', priority: -70 })
 	}
 	
 	attachedCallback() {
@@ -38,7 +38,7 @@ module.exports = class CommandList extends WebComponentAbstract {
 		
 		Object.keys(gCode).forEach(code => {
 			var val = gCode[code]
-			new AppEvent('newCommand', { name: code, desc: val.title, cat: val.cat, arg: val.arg })
+			AppEvent('newCommand', { name: code, desc: val.title, cat: val.cat, arg: val.arg })
 		})
 	}
 	

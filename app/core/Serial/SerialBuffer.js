@@ -17,10 +17,10 @@ module.exports = class SerialBuffer extends WebComponentAbstract {
 		this.deviceReady = false
 		self.on('deviceReady', e => this.deviceReady = true)
 		self.on('deviceNotReady', e => this.deviceReady = false)
-		self.on('disconnected', e => new AppEvent('deviceNotReady'))
+		self.on('disconnected', e => AppEvent('deviceNotReady'))
 		
-		self.on('connected', e => new AppEvent('serialDirectWrite', { data: "G4\n" }) )
-		self.on('serialData', e => !this.deviceReady && new AppEvent('deviceReady'))
+		self.on('connected', e => AppEvent('serialDirectWrite', { data: "G4\n" }) )
+		self.on('serialData', e => !this.deviceReady && AppEvent('deviceReady'))
 		
 		
 		defineAppEvent('deviceOk', 'Device ok', 'Serial buffer')
@@ -28,9 +28,9 @@ module.exports = class SerialBuffer extends WebComponentAbstract {
 		this.deviceOk = false
 		self.on('deviceOk', e => this.deviceOk = true)
 		self.on('deviceNotOk', e => this.deviceOk = false)
-		self.on('disconnected', e => new AppEvent('deviceNotOk'))
+		self.on('disconnected', e => AppEvent('deviceNotOk'))
 		
-		self.on('deviceReady', e => new AppEvent('deviceOk'))
+		self.on('deviceReady', e => AppEvent('deviceOk'))
 		self.on('serialData', e => this.checkOk(e))
 		self.on('deviceOk', e => setImmediate(e => this.sendBuffer()))
 		
@@ -40,23 +40,23 @@ module.exports = class SerialBuffer extends WebComponentAbstract {
 		self.on('disconnected', e => this.deviceStarted = false)
 		
 		self.on('serialData', e => this.checkReset(e))
-		self.on('deviceReset', e => new AppEvent('deviceReady'))
-		self.on('deviceReset', e => new AppEvent('info', { msg: "device was reseted" }))
+		self.on('deviceReset', e => AppEvent('deviceReady'))
+		self.on('deviceReset', e => AppEvent('info', { msg: "device was reseted" }))
 	}
 	
 	readyCallback() {
-		new AppEvent('bufferChange')
+		AppEvent('bufferChange')
 	}
 	
 	checkReset(e) {
 		if(e.d.data != "start\r") return
-		if(this.deviceStarted) new AppEvent('deviceReset')
+		if(this.deviceStarted) AppEvent('deviceReset')
 		this.deviceStarted = true
 	}
 	
 	checkOk(e) {
 		if(!this.deviceReady) return;
-		if(e.d.data == "ok\r") new AppEvent('deviceOk');
+		if(e.d.data == "ok\r") AppEvent('deviceOk');
 	}
 	
 	send(data, prepend) {
@@ -66,7 +66,7 @@ module.exports = class SerialBuffer extends WebComponentAbstract {
 		} else {
 			this.addToBuffer(data, prepend)
 		}
-		new AppEvent('bufferChange')
+		AppEvent('bufferChange')
 		this.sendBuffer()
 	}
 	
@@ -81,8 +81,8 @@ module.exports = class SerialBuffer extends WebComponentAbstract {
 		var data = this.buffer.shift()
 		if(!data) return
 		
-		new AppEvent('bufferChange')
-		new AppEvent('deviceNotOk')
-		new AppEvent('serialDirectWrite', { data: data })
+		AppEvent('bufferChange')
+		AppEvent('deviceNotOk')
+		AppEvent('serialDirectWrite', { data: data })
 	}
 }

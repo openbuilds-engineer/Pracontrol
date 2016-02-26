@@ -36,7 +36,7 @@ module.exports = class Module extends WebComponentAbstract {
 <ol>
 	<li><a onclick="require('electron').shell.showItemInFolder('${exampleFile}')" class="button">Take Example.js</a></li>
 	<li>Put some code in it</li>
-	<li><a onclick="new AppEvent('newModule', 'Example')" class="button">Add it to the module list</a></li>
+	<li><a onclick="AppEvent('newModule', 'Example')" class="button">Add it to the module list</a></li>
 	<li>Reload app</li>
 	<li><a onclick="require('remote').getCurrentWindow().toggleDevTools()" class="button">Toogle developer tools for debug</a></li>
 	<li><a href="${App.package.pullRequest}" class="button">Make a pull request</a></li>
@@ -62,11 +62,11 @@ module.exports = class Module extends WebComponentAbstract {
 		this.ser.conf.split("\n").forEach(s => {
 			if(!s) return
 			if(!s.includes('/')) s = `../../module/${s}/${s}`
-			try { App.newElement(require(s), false) } catch(e) { new AppEvent('error', e) }
+			try { App.newElement(require(s), false) } catch(e) { AppEvent('error', e) }
 		})
 	}
 	
 	readyCallback() {
-		new AppEvent('newTab', { instance: this, title: 'Modules', priority: 850 })
+		AppEvent('newTab', { instance: this, title: 'Modules', priority: 850 })
 	}
 }

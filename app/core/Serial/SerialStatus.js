@@ -70,7 +70,7 @@ module.exports = class SerialStatus extends WebComponentAbstract {
 	}
 	
 	readyCallback() {
-		new AppEvent('newPanel', { instance: this, position: 'bottom' })
-		new AppEvent('newPanel', { instance: this.bufferStatus, position: 'bottom' })
+		AppEvent('newPanel', { instance: this, position: 'bottom' })
+		AppEvent('newPanel', { instance: this.bufferStatus, position: 'bottom' })
 	}
 }
