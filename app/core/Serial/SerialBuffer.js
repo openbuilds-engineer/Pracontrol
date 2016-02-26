@@ -8,6 +8,9 @@ module.exports = class SerialBuffer extends WebComponentAbstract {
 		defineAppEvent('serialWrite', 'Send data to serial buffer', 'Serial buffer', "{ data: '' or [], prepend: false }")
 		self.on('serialWrite', e => this.send(e.d.data, e.d.prepend))
 		
+		defineAppEvent('serialClean', 'Clean serial buffer', 'Serial buffer')
+		self.on('serialClean', e => this.buffer = [])
+		
 		
 		defineAppEvent('deviceReady', 'Device is communicating', 'Serial buffer')
 		defineAppEvent('deviceNotReady', 'Device is not communicating', 'Serial buffer')
