@@ -8,8 +8,8 @@ module.exports = class Serial extends WebComponentAbstract {
 		this.connectForm = this.newElement(require('./ConnectForm'))
 		
 		this.serial = null
-		this.buffer = this.newElement(require('./SerialBuffer'), false)
-		this.status = this.newElement(require('./SerialStatus'), false)
+		this.buffer = this.newElement(require('./SerialBuffer'), false, { parent: this })
+		this.status = this.newElement(require('./SerialStatus'), false, { parent: this })
 		
 		defineAppEvent('refreshPorts', 'Reload port list', 'Serial')
 		defineAppEvent('newPort', 'New port found', 'Serial', "{ port: <port> }")

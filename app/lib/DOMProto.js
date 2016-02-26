@@ -27,7 +27,7 @@ Node.prototype.insertAfter = function(n, t) {
 Node.prototype.newText = function(t) { return this.appendChild(document.createTextNode(t)) }
 
 // creates new element and attach it by default
-Node.prototype.newElement = function(element, attach) {
+Node.prototype.newElement = function(element, attach, prop) {
 	if(attach == null) attach = true
 	
 	var el
@@ -47,11 +47,12 @@ Node.prototype.newElement = function(element, attach) {
 		var name = ('App' in self && App.elemPrefix || 'app-') + element.name
 		
 		el = document.createElement(name)
-		el.parent = this
 		if(el.constructor === HTMLElement) document.registerElement(name, element)
 	}
 	
 	if(!el) return
+	
+	Object.assign(el, prop)
 	
 	return attach ? this.appendChild(el) : el
 }
