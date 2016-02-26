@@ -17,6 +17,7 @@ module.exports = class ControlShortcuts extends WebComponentAbstract {
 	}
 	
 	moveShortcut(e) {
+		if(e.metaKey || e.ctrlKey) return
 		
 		if(e.repeat && !this.deviceOk) return
 		
