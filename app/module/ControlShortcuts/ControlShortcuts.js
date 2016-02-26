@@ -18,6 +18,7 @@ module.exports = class ControlShortcuts extends WebComponentAbstract {
 		defineKeyShortcut('H', 'Home XY', 'gCode')
 		defineKeyShortcut('⌥H', 'Home all', 'gCode')
 		defineKeyShortcut('P', 'Current position is 0', 'gCode')
+		defineKeyShortcut('Q', 'Clean buffer and power off', 'gCode')
 	}
 	
 	keyShortcut(e) {
@@ -26,6 +27,7 @@ module.exports = class ControlShortcuts extends WebComponentAbstract {
 		switch(e.keyCode) {
 			case 72: new AppEvent('serialWrite', { data: [`G28 ${e.altKey ? '' : 'XY'}`], prepend: true }); break
 			case 80: new AppEvent('serialWrite', { data: [`G92 X0 Y0 Z0`], prepend: true }); break
+			case 81: new AppEvent('serialClean'); new AppEvent('serialWrite', { data: 'M81' }); break
 		}
 	}
 	
