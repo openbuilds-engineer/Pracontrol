@@ -53,6 +53,11 @@ module.exports = class ConnectForm extends WebComponentAbstract {
 		var o = this.port.newElement('option')
 		o.port = e.d.port
 		o.textContent = e.d.port.comName.replace("/dev/cu.", "").replace(/-/g, " ")
+		
+		if(o.textContent == this.ser.last) {
+			o.selected = true
+			this.submitClick()
+		}
 	}
 	
 	connect(e) {
@@ -62,6 +67,7 @@ module.exports = class ConnectForm extends WebComponentAbstract {
 	}
 	
 	connected(e) {
+		this.ser.last = this.port.selectedOptions[0].textContent
 		this.isConnected = true;
 		this.submit.disabled = false;
 		this.submit.value = 'Disconnect';
