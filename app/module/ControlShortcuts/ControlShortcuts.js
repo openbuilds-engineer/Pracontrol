@@ -6,12 +6,12 @@ module.exports = class ControlShortcuts extends WebComponentAbstract {
 		self.on('deviceOk', e => this.deviceOk = true)
 		self.on('deviceNotOk', e => this.deviceOk = false)
 		
-		defineKeyShortcut('Left', 'X–10 or with ⇧ –1', 'Move control')
-		defineKeyShortcut('Right', 'X+10 or with ⇧ +1', 'Move control')
-		defineKeyShortcut('Down', 'Y–10 or with ⇧ –1', 'Move control')
-		defineKeyShortcut('Up', 'Y+10 or with ⇧ +1', 'Move control')
-		defineKeyShortcut('–', 'Z–1 or with ⇧ –0.1', 'Move control')
-		defineKeyShortcut('=', 'Z+1 or with ⇧ +0.1', 'Move control')
+		defineKeyShortcut('Left', 'X–10 or with ⌥ –1', 'Move control')
+		defineKeyShortcut('Right', 'X+10 or with ⌥ +1', 'Move control')
+		defineKeyShortcut('Down', 'Y–10 or with ⌥ –1', 'Move control')
+		defineKeyShortcut('Up', 'Y+10 or with ⌥ +1', 'Move control')
+		defineKeyShortcut('–', 'Z–1 or with ⌥ –0.1', 'Move control')
+		defineKeyShortcut('=', 'Z+1 or with ⌥ +0.1', 'Move control')
 		
 		self.on('keydown', e => e.target == document.body && this.moveShortcut(e))
 	}
