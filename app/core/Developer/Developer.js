@@ -30,7 +30,6 @@ var info = `
 <ol>
 	<li>lib/WebComponentAbstract</li>
 	<li>lib/FlexBalanced</li>
-	<li>lib/AppEvent</li>
 </ol>
 `
 
