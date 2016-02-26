@@ -21,7 +21,8 @@
 //        linear search for next path
 // 
 
-module.exports = (imgData, channel, fast) => new SpiralFloodFill(imgData, channel, fast).path
+var module = module || {}
+module.exports = (imgData, channel, fast) => new SpiralFloodFill(imgData, channel, fast).generate()
 
 class SpiralFloodFill {
 	constructor(imgData, channel, fast) {
@@ -35,10 +36,9 @@ class SpiralFloodFill {
 		this.h = imgData.height
 		
 		this.getPrintPoints()
-		this.path = this.generate()
 	}
 	
-	generate() {
+	generate(newPathFunc) {
 		var path = []
 		var first
 		while(first = this.findFirst(path)) {
@@ -55,6 +55,7 @@ class SpiralFloodFill {
 			}
 			
 			path.push(p)
+			newPathFunc && newPathFunc.apply(this, [p])
 		}
 		return path
 	}
