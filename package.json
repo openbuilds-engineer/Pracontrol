@@ -1,5 +1,5 @@
 {
-  "name": "pra-control-2.5d",
+  "name": "pra-control-2.5d-slicer",
   "version": "1.0.0",
   "description": "2.5D slicer for PraControl",
   "main": "index.js",
@@ -8,7 +8,7 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pravdomil/pra-control-2.5d.git"
+    "url": "git+https://github.com/pravdomil/pra-control-2.5d-slicer.git"
   },
   "keywords": [
     "2.5D",
@@ -20,7 +20,7 @@
   "author": "Pravdomil <info@pravdomil.cz> (http://pravdomil.cz)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pravdomil/pra-control-2.5d/issues"
+    "url": "https://github.com/pravdomil/pra-control-2.5d-slicer/issues"
   },
-  "homepage": "https://github.com/pravdomil/pra-control-2.5d#readme"
+  "homepage": "https://github.com/pravdomil/pra-control-2.5d-slicer#readme"
 }
