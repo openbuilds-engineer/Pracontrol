@@ -76,7 +76,7 @@ module.exports = class SerialBuffer extends WebComponentAbstract {
 		if(!this.deviceOk) return
 		
 		var data = this.buffer.shift()
-		if(!data) return;
+		if(!data) return
 		
 		new AppEvent('bufferChange')
 		new AppEvent('deviceNotOk')
