@@ -23,7 +23,7 @@ var info = `
 <p>More functions are defined in:</p>
 <ol>
 	<li>lib/DOMProto</li>
-	<li>lib/Define</li>
+	<li>lib/Globals</li>
 </ol>
 
 <p>And global classes are defined in:</p>

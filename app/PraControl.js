@@ -4,7 +4,7 @@ require('./lib/DOMProto')
 global.WebComponentAbstract = require('./lib/WebComponentAbstract')
 global.FlexBalanced = require('./lib/FlexBalanced')
 global.AppEvent = require('./lib/AppEvent')
-Object.assign(global, require('./lib/Define'))
+Object.assign(global, require('./lib/Globals'))
 
 class PraControl extends WebComponentAbstract {
 	initCallback() {
