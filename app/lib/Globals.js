@@ -17,8 +17,7 @@ exports.defineKeyShortcut = function(key, desc, cat) {
 exports.AppEvent = function(name, detail) {
 	var e = new Event(name)
 	
-	this.detail = detail
-	this.d = this.detail // shorthand
+	e.detail = e.d = detail
 	
 	self.dispatchEvent(e)
 }
