@@ -107,7 +107,7 @@ module.exports = class Slicer25D_Slicer extends WebComponentAbstract {
 	}
 	
 	print(e) {
-		new AppEvent('serialWrite', { data: this.gCode })
+		AppEvent('serialWrite', { data: this.gCode })
 	}
 	
 	replay() {
