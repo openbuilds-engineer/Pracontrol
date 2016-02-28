@@ -56,7 +56,7 @@ module.exports = class SerialBuffer extends WebComponentAbstract {
 	
 	checkOk(e) {
 		if(!this.deviceReady) return;
-		if(e.d.data == "ok\r") AppEvent('deviceOk');
+		if(e.d.data.substr(0, 2) == "ok") AppEvent('deviceOk');
 	}
 	
 	send(data, prepend) {
