@@ -30,7 +30,7 @@ module.exports = class Module extends WebComponentAbstract {
 		this.textarea.on('input', e => this.ser.conf = this.textarea.value)
 		this.left.newElement('p').innerHTML = `<p><a onclick="location.reload()" class="button">Reload to take effect</a></p>`
 		
-		var exampleFile = path.join(__dirname, '/../../module/Example/Example.js')
+		var exampleFile = require.resolve('Example')
 		this.right.newElement('h1').textContent = 'Modules development'
 		this.right.newElement('div').innerHTML = `
 <ol>
