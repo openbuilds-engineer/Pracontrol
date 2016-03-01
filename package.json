@@ -25,7 +25,6 @@
 		"serialport": "*"
 	},
 	"devDependencies": {
-		"electron-packager": "*",
 		"electron-prebuilt": "*"
 	},
 	"license": "MIT"
