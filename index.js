@@ -28,10 +28,10 @@ app.on('ready', () => {
 	
 	this.win.webContents.on('did-finish-load', e => {
 		if(this.win.webContents.isDevToolsOpened()) this.win.webContents.executeJavaScript(
-			`self.on('appReady', e => new AppEvent('developerMode'))`)
+			`self.on('appReady', e => AppEvent('developerMode'))`)
 	})
 	this.win.webContents.on('devtools-opened', e => {
-		this.win.webContents.executeJavaScript(`new AppEvent('developerMode')`)
+		this.win.webContents.executeJavaScript(`AppEvent('developerMode')`)
 	})
 	
 	this.win.loadURL(index)
