@@ -61,7 +61,6 @@ module.exports = class Module extends WebComponentAbstract {
 	loadModules() {
 		this.ser.conf.split("\n").forEach(s => {
 			if(!s) return
-			if(!s.includes('/')) s = `../../module/${s}/${s}`
 			try { App.newElement(require(s), false) } catch(e) { AppEvent('error', e) }
 		})
 	}
