@@ -8,9 +8,9 @@ var BrowserWindow = require('browser-window')
 app.on('window-all-closed', () => app.quit())
 
 app.on('ready', () => {
-	require('./app/menu')
+	require('./menu')
 	
-	var index = 'file:///' + path.join(__dirname, 'app/index.html')
+	var index = 'file:///' + path.join(__dirname, '../_renderer/index.html')
 	
 	var rem = 17
 	this.win = new BrowserWindow({
