@@ -17,8 +17,9 @@
 	"pullRequest": "https://github.com/pravdomil/pra-control/pull/new",
 	"donate": "https://salt.bountysource.com/checkout/amount?team=pracontrol",
 	
+	"main": "_main/index.js",
 	"scripts": {
-		"start": "./index.js"
+		"start": "electron .",
 	},
 	"dependencies": {
 		"less": "*",

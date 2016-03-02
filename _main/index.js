@@ -1,5 +1,3 @@
-#!/usr/bin/env electron .
-
 var app = require('app')
 var path = require('path')
 var shell = require('electron').shell
