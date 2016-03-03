@@ -1,6 +1,6 @@
-// Base.less
+// rembased.less
 // Core of the rem based design
-// more info at http://rembased.pravdomil.cz
+// http://rembased.pravdomil.cz
 
 // Reset margin, padding, border, font
 // You can add more elements that you want to reset
@@ -10,6 +10,7 @@ p, pre, kbd, blockquote,
 img, iframe, hr,
 ul, ol,
 table,
+figure,
 form, input, button, keygen, textarea, select, label { padding: 0; margin: 0; border: 0; font: inherit; }
 
 // HTML5 new elements in older browsers
@@ -126,6 +127,9 @@ hr { .hr; }
 	// indent
 	padding-left: @padding;
 	
+	// no block margin in nested lists
+	ul, ol { margin-bottom: 0; }
+	
 	// p followed by .list has no margin in between
 	p + & { margin-top: @blockMargin * -1; }
 }
@@ -215,7 +219,8 @@ table:not([class]) { .table; }
 
 // see above
 flex_balancer {
-	height: 0 !important; padding: 0 !important;
+	height: 0 !important;
+	padding-top: 0 !important; padding-bottom: 0 !important;
 	margin-top: 0 !important; margin-bottom: 0 !important;
 	visibility: hidden !important;
 }
@@ -267,14 +272,14 @@ textarea { width: 100%; resize: vertical; }
 
 
 // Visual aid
-// append <baseline_grid> to HTML and make it visible
-.baseline_grid(@alpha: 0.1) {
+// append <rembased_grid> to HTML and make it visible
+.rembased_grid(@alpha: 0.1) {
 	display: none !important;
 	position: absolute; pointer-events: none;
 	
 	top: 0; bottom: 0; left: 0; right: 0; z-index: 999;
 	
-	min-height: 100vh; min-width: 100vh;
+	min-height: 100vh;
 	
 	@lh: unit(@rem); // line-height
 	@b: unit(@rem - @offset); // baseline offset
@@ -283,11 +288,11 @@ textarea { width: 100%; resize: vertical; }
 	
 	background: url("data:image/svg+xml;charset=utf-8,@{grid}") left top repeat;
 }
-baseline_grid { .baseline_grid; }
+rembased_grid { .rembased_grid; }
 
 
 // Toggle .alt_key on <body> to show visual aids
 .alt_key {
 	// show baseline grid
-	baseline_grid { display: block !important; }
+	rembased_grid { display: block !important; }
 }

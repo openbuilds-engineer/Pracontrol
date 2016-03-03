@@ -55,6 +55,6 @@ module.exports = class Developer extends WebComponentAbstract {
 		defineKeyShortcut('⌥', 'Toogle baseline grid', "Developer")
 		document.on("keydown", e => e.keyCode == 18 && document.body.classList.toggle('alt_key'))
 		document.on("keyup", e => e.keyCode == 18 && document.body.classList.toggle('alt_key'))
-		document.body.newElement('baseline_grid')
+		document.body.newElement('rembased_grid')
 	}
 }
