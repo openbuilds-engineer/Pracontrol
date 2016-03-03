@@ -11,26 +11,26 @@ app.on('ready', () => {
 	var index = 'file:///' + path.join(__dirname, '../_renderer/index.html')
 	
 	var rem = 17
-	this.win = new BrowserWindow({
+	var win = new BrowserWindow({
 		title: app.getName(),
 		width: 41 * rem, height: 30 * rem,
 		minWidth: 30 * rem, minHeight: 30 * rem,
 		useContentSize: true,
 	})
 	
-	this.win.webContents.on('will-navigate', (e, url) => {
-		if(url == this.win.webContents.getURL()) return
+	win.webContents.on('will-navigate', (e, url) => {
+		if(url == win.webContents.getURL()) return
 		e.preventDefault()
 		shell.openExternal(url)
 	})
 	
-	this.win.webContents.on('did-finish-load', e => {
-		if(this.win.webContents.isDevToolsOpened()) this.win.webContents.executeJavaScript(
+	win.webContents.on('did-finish-load', e => {
+		if(win.webContents.isDevToolsOpened()) win.webContents.executeJavaScript(
 			`self.on('appReady', e => AppEvent('developerMode'))`)
 	})
-	this.win.webContents.on('devtools-opened', e => {
-		this.win.webContents.executeJavaScript(`AppEvent('developerMode')`)
+	win.webContents.on('devtools-opened', e => {
+		win.webContents.executeJavaScript(`AppEvent('developerMode')`)
 	})
 	
-	this.win.loadURL(index)
+	win.loadURL(index)
 })
