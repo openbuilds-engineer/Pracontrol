@@ -11,7 +11,8 @@ img, iframe, hr,
 ul, ol,
 table,
 figure,
-form, input, button, keygen, textarea, select, label { padding: 0; margin: 0; border: 0; font: inherit; }
+form, input, button, keygen, textarea, select, label, fieldset
+{ padding: 0; margin: 0; border: 0; font: inherit; }
 
 // HTML5 new elements in older browsers
 main, header, footer, aside, nav, section, article, page { display: block; }
@@ -227,29 +228,32 @@ flex_balancer {
 
 
 // Forms
-// not sure about this, to be tested
-input, button, keygen, textarea, select, .button, label {
+// form elements with border
+.boxFormElem(@padding: 0.5rem) {
 	display: inline-block;
-	color: inherit;
-	box-sizing: border-box;
-	max-width: 100%;
-	min-width: 2rem; min-height: 2rem;
-	vertical-align: baseline;
+	box-shadow: 0px 0.3px 1px 0px ButtonShadow inset;
+	background-color: #FFF;
+	padding: @padding;
+	border-radius: @padding / 2;
 }
 input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
-keygen, textarea, select, button, .button {
-	box-shadow: 0px 0.3px 1px 0px ButtonShadow inset;
-	border-radius: 0.25rem;
-	background-color: #FFF;
-	padding: 0.5rem;
-}
+keygen, textarea, select, button, .button { .boxFormElem }
+
+// .button is aligned to center
+.button { text-align: center; }
+
+// have a cursor pointer
 input[type="submit"], input[type="button"], input[type="checkbox"], input[type="radio"],
 button, .button, select, label { &:not(:disabled) { cursor: pointer; } }
 
+// resize checkbox and radio buttons
 input[type="checkbox"], input[type="radio"] { width: 1rem; height: calc(~"1rem - 1px"); vertical-align: bottom; }
+
+// force select height for webkit
 select:not([size]) { height: 2rem; }
-textarea { width: 100%; resize: vertical; }
-.button { text-align: center; }
+
+// textarea can resize only vertical
+textarea { resize: vertical; }
 
 
 // Base flex layout with equal left and right margins 
