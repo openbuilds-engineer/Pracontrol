@@ -1,6 +1,6 @@
 'use strict'
 
-var serialPort = require("serialport")
+var serialPort = require('serialport')
 
 module.exports = class Serial extends WebComponentAbstract {
 	initCallback() {
