@@ -1,6 +1,6 @@
 'use strict'
 
-var gCode = require('./gcode').commands
+var gCode = require('./gCode').commands
 
 var style = `
 :host {
