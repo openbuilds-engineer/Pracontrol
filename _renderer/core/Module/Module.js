@@ -79,7 +79,7 @@ module.exports = class Module extends WebComponentAbstract {
 	}
 	
 	loadModules() {
-		this.ser.conf.split("\n").forEach(s => s && setImmediate(() => App.newElement(require(s), false)) )
+		this.ser.conf.split("\n").forEach(s => s && setImmediate(() => App.newElement(require(s), false) ))
 	}
 	
 	readyCallback() {
