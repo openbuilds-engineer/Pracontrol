@@ -25,7 +25,8 @@
 	},
 	"dependencies": {
 		"less": "*",
-		"serialport": "*"
+		"serialport": "*",
+		"ncp": "*"
 	},
 	"devDependencies": {
 		"electron-prebuilt": "*",
