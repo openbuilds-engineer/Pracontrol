@@ -31,16 +31,11 @@ class PraControl extends WebComponentAbstract {
 	main() {
 		// core
 		this.core = ['About', 'CommandList', 'Console', 'Dashboard', 'Developer', 'KeyShortcutsTable', 'Module', 'Panel', 'Printer', 'Serial', 'Tab']
-		this.core.forEach(i => setImmediate(() => {
-			this.newElement(require(`./core/${i}/${i}`), false)
-		}))
+		this.core.forEach(i => setImmediate(() => this.newElement(require(`./core/${i}/${i}`), false) ))
 		
 		// app ready event
 		defineAppEvent("appReady", "Fires after all modules loaded", "Core")
-		setImmediate(() => {
-			this.ready = true
-			AppEvent('appReady')
-		})
+		setImmediate(() => { this.ready = true; AppEvent('appReady') })
 	}
 }
 
