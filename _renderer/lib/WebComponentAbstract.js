@@ -10,7 +10,8 @@ module.exports = class WebComponentAbstract extends HTMLElement {
 		this.createShadowRoot().newElement('content')
 		
 		// readyCallback
-		self.on('appReady', e => this.readyCallback && this.readyCallback())
+		var readyFunc = () => this.readyCallback && this.readyCallback()
+		'App' in self && App.ready ? setImmediate(readyFunc) : self.on('appReady', readyFunc)
 		
 		// deserialize
 		this.deserialize()
