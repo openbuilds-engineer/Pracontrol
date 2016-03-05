@@ -1,6 +1,6 @@
 'use strict'
 
-var serialPort = require('serialport')
+var serialPort = null // lazy load
 
 module.exports = class Serial extends WebComponentAbstract {
 	initCallback() {
@@ -40,6 +40,7 @@ module.exports = class Serial extends WebComponentAbstract {
 	}
 	
 	refreshPorts(e) {
+		serialPort = serialPort || require('serialport')
 		serialPort.list( (e, ports) => {
 			if(e) throw e
 			ports.reverse().forEach(p => AppEvent('newPort', { port: p }) )
