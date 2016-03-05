@@ -251,6 +251,9 @@ button, .button, select, label { &:not(:disabled) { cursor: pointer; } }
 // resize checkbox and radio buttons
 input[type="checkbox"], input[type="radio"] { width: 1rem; height: calc(~"1rem - 1px"); vertical-align: bottom; }
 
+// proper baseline for range
+input[type="range"] { min-height: 1rem; vertical-align: bottom; }
+
 // force select height for webkit
 select:not([size]) { height: 2rem; }
 
