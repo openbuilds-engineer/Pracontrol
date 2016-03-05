@@ -62,21 +62,21 @@ module.exports = class ConnectForm extends WebComponentAbstract {
 	
 	connect(e) {
 		this.ser.speed = this.speed.value
-		this.submit.disabled = true;
-		this.submit.value = 'Connecting';
+		this.submit.disabled = true
+		this.submit.value = 'Connecting'
 	}
 	
 	connected(e) {
 		this.ser.last = this.port.selectedOptions[0].textContent
-		this.isConnected = true;
-		this.submit.disabled = false;
-		this.submit.value = 'Disconnect';
+		this.isConnected = true
+		this.submit.disabled = false
+		this.submit.value = 'Disconnect'
 	}
 	
 	disconnected(e) {
-		this.isConnected = false;
-		this.submit.disabled = false;
-		this.submit.value = 'Connect';
+		this.isConnected = false
+		this.submit.disabled = false
+		this.submit.value = 'Connect'
 	}
 	
 	submitClick(e) {
