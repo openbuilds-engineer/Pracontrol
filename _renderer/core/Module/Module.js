@@ -52,7 +52,7 @@ module.exports = class Module extends WebComponentAbstract {
 	}
 	
 	loadUserModulesDir() {
-		var userModulesDir = require('remote').app.getPath('userData') + '/node_modules'
+		var userModulesDir = path.join(require('remote').app.getPath('userData'), 'node_modules')
 		module.paths.unshift(userModulesDir)
 		
 		return new Promise(resolve => {
