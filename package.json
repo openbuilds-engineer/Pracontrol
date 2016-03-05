@@ -1,66 +1,66 @@
 {
-  "name": "pra-control",
-  "version": "1.0.0",
-  "description": "Send awesome gCodes to your machine.",
-  "productName": "PraControl",
+	"name": "pra-control",
+	"version": "1.0.0",
+	"description": "Send awesome gCodes to your machine.",
+	"productName": "PraControl",
 	"keywords": ["gCode", "control", "serial", "awesome", "rembased"],
 	
 	"author": { "name": "Pravdomil Toman", "email": "info@pravdomil.cz", "url": "http://pravdomil.cz" },
-  "contributors": [
+	"contributors": [
 		{ "name": "Pravdomil Toman", "email": "info@pravdomil.cz", "url": "http://pravdomil.cz" }
-  ],
+	],
 	
-  "homepage": "http://pracontrol.pravdomil.cz",
+	"homepage": "http://pracontrol.pravdomil.cz",
 	"repository": { "type": "git", "url": "https://github.com/pravdomil/pra-control" },
-  "bugs": "https://github.com/pravdomil/pra-control/issues",
-  "featureRequest": "https://github.com/pravdomil/pra-control/issues/new",
-  "pullRequest": "https://github.com/pravdomil/pra-control/pull/new",
-  "donate": "https://salt.bountysource.com/checkout/amount?team=pracontrol",
+	"bugs": "https://github.com/pravdomil/pra-control/issues",
+	"featureRequest": "https://github.com/pravdomil/pra-control/issues/new",
+	"pullRequest": "https://github.com/pravdomil/pra-control/pull/new",
+	"donate": "https://salt.bountysource.com/checkout/amount?team=pracontrol",
 	
-  "main": "_main/index.js",
-  "scripts": {
-    "start": "electron .",
-    "predist": "node distribution/prebuild",
-    "dist": "node distribution/build"
-  },
-  "dependencies": {
-    "less": "*",
-    "serialport": "*"
-  },
-  "devDependencies": {
-    "electron-prebuilt": "*",
-    "electron-packager": "*"
-  },
-  "license": "MIT",
+	"main": "_main/index.js",
+	"scripts": {
+		"start": "electron .",
+		"predist": "node distribution/prebuild",
+		"dist": "node distribution/build"
+	},
+	"dependencies": {
+		"less": "*",
+		"serialport": "*"
+	},
+	"devDependencies": {
+		"electron-prebuilt": "*",
+		"electron-packager": "*"
+	},
+	"license": "MIT",
 	
-  "electronPackagerOpts": {
-    "dir": ".",
-    "out": "distribution",
-    "ignore": [
-      "^(?!$|/_main|/_renderer|/node_modules|/package.json$)",
-      "/\\.[^/]*"
-    ],
-    "overwrite": true,
+	"electronPackagerOpts": {
+		"dir": ".",
+		"out": "distribution",
+		"ignore": [
+			"^(?!$|/_main|/_renderer|/node_modules|/package.json$)",
+			"/\\.[^/]*"
+		],
+		"overwrite": true,
 		
-    "arch": "x64",
-    "platform": "win32,darwin",
+		"arch": "x64",
+		"platform": "win32,darwin",
 		
-    "asar": true,
-    "prune": true,
+		"asar": true,
+		"prune": true,
 		
-    "app-bundle-id": "pravdomil.pra-control",
-    "app-version": "1.0.0",
-    "app-category-type": "public.app-category.utilities",
-    "icon": "resources/icon",
-    "app-copyright": "",
+		"app-bundle-id": "pravdomil.pra-control",
+		"app-version": "1.0.0",
+		"app-category-type": "public.app-category.utilities",
+		"icon": "resources/icon",
+		"app-copyright": "",
 		
-    "version-string": {
-      "CompanyName": "Pravdomil.cz",
-      "ProductName": "PraControl",
-      "FileDescription": "Send awesome gCodes!",
-      "InternalName": "",
-      "OriginalFilename": "",
-      "LegalCopyright": ""
-    }
-  }
+		"version-string": {
+			"CompanyName": "Pravdomil.cz",
+			"ProductName": "PraControl",
+			"FileDescription": "Send awesome gCodes!",
+			"InternalName": "",
+			"OriginalFilename": "",
+			"LegalCopyright": ""
+		}
+	}
 }
