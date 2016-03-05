@@ -19,6 +19,8 @@ var style = `
 		height: 10rem;
 		margin-bottom: 1rem;
 	}
+	
+	p[update] { font-weight: 400 }
 }
 `
 
@@ -30,6 +32,7 @@ var html = `
 	<h1>${App.package.productName} <small>${App.package.version}</small></h1>
 	<p>${App.package.description}</p>
 	<p><a href="${App.package.homepage}">website</a> | <a href="${App.package.repository.url}">GitHub</a></p>
+	<p update> </p>
 </left>
 
 <right>
@@ -51,6 +54,21 @@ module.exports = class About extends WebComponentAbstract {
 	initCallback() {
 		this.innerHTML = html
 		this.renderLess(style)
+		
+		this.checkForUpdate()
+	}
+	
+	checkForUpdate() {
+		var url = 'https://raw.githubusercontent.com/Pravdomil/pra-control/master/package.json'
+		
+		require('request')(url, (e, res, body) => {
+			if(e) return
+			
+			var ver = JSON.parse(body).version
+			if(ver == App.package.version) return
+			
+			this.querySelector('p[update]').innerHTML = `<a href="${App.package.homepage}">New version ${ver} available!</a>`
+		})
 	}
 	
 	readyCallback() {
