@@ -1,8 +1,8 @@
 'use strict'
 
 var fs = require('fs')
-var ncp = null // lazy load
 var path = require('path')
+var ncp = null // lazy load
 
 var style = `
 :host {
