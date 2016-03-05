@@ -39,7 +39,7 @@ module.exports = class Module extends WebComponentAbstract {
 			this.right.newElement('h1').textContent = 'Modules development'
 			this.right.newElement('div').innerHTML = `
 <ol>
-	<li><a onclick="require('electron').shell.showItemInFolder('${exampleFile}')" class="button">Take Example.js</a></li>
+	<li><a onclick="require('electron').shell.showItemInFolder('${exampleFile}')" title="${exampleFile}" class="button">Take Example.js</a></li>
 	<li>Put some code in it</li>
 	<li><a onclick="AppEvent('newModule', 'Example')" class="button">Add it to the module list</a></li>
 	<li>Reload app</li>
