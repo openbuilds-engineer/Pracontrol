@@ -17,7 +17,7 @@ process.chdir(path.join(__dirname, '..'))
 if(process.platform == "win32") {
 	
 	// update packages
-	child_process.execSync('npm update -g electron-prebuild', { stdio: [0, 1, 2] })
+	child_process.execSync('npm update -g electron-prebuilt', { stdio: [0, 1, 2] })
 	child_process.execSync('npm update -g electron-rebuild', { stdio: [0, 1, 2] })
 	
 	// rebuild
