@@ -5,7 +5,7 @@ var style = `
 	
 }
 ::content {
-	textarea { height: calc(~"100% - 3rem"); resize: none; margin-bottom: 1rem; font-size: 0.9em; }
+	textarea { height: calc(~"100% - 3rem"); resize: none; margin-bottom: 1rem; font-size: 0.9em; color: #000; }
 	input { width: 100%; }
 }
 `
