@@ -31,12 +31,11 @@ module.exports = class ConnectForm extends WebComponentAbstract {
 		this.submit.on('click', e=> this.submitClick(e))
 		
 		var l = this.newElement('label')
-		this.homeOnConnect = l.newElement('input')
-		l.newText('Home X & Y after connect')
-		this.homeOnConnect.type = 'checkbox'
-		this.homeOnConnect.checked = this.ser.homeOnConnect
-		this.homeOnConnect.on('change', e => this.ser.homeOnConnect = this.homeOnConnect.checked)
-		self.on('deviceReady', e => this.ser.homeOnConnect && AppEvent('serialWrite', { data: 'G28 X Y', prepend: true }))
+		this.reconnect = l.newElement('input', true, { type: 'checkbox', checked: this.ser.reconnect })
+		l.newText('Reconnect at startup')
+		this.reconnect.on('change', e => this.ser.reconnect = this.reconnect.checked)
+		this.firstTime = true
+		self.on('refreshPortsDone', e => this.firstTime = false)
 		
 		self.on('refreshPorts', e => this.cleanPorts(e))
 		self.on('newPort', e => this.newPort(e))
@@ -54,7 +53,7 @@ module.exports = class ConnectForm extends WebComponentAbstract {
 		o.port = e.d.port
 		o.textContent = e.d.port.comName.replace("/dev/cu.", "").replace(/-/g, " ")
 		
-		if(o.textContent == this.ser.last) {
+		if(this.firstTime && this.ser.reconnect && o.textContent == this.ser.last) {
 			o.selected = true
 			this.submitClick()
 		}
