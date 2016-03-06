@@ -12,6 +12,7 @@ module.exports = class Serial extends WebComponentAbstract {
 		this.status = this.newElement(require('./SerialStatus'), false, { parent: this })
 		
 		defineAppEvent('refreshPorts', 'Reload port list', 'Serial')
+		defineAppEvent('refreshPortsDone', 'Port are realoaded', 'Serial')
 		defineAppEvent('newPort', 'New port found', 'Serial', "{ port: <port> }")
 		self.on('refreshPorts', e => this.refreshPorts(e))
 		
@@ -44,6 +45,7 @@ module.exports = class Serial extends WebComponentAbstract {
 		serialPort.list( (e, ports) => {
 			if(e) throw e
 			ports.reverse().forEach(p => AppEvent('newPort', { port: p }) )
+			AppEvent('refreshPortsDone')
 		})
 	}
 	
