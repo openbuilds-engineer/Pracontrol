@@ -63,6 +63,7 @@ module.exports = class ConnectForm extends WebComponentAbstract {
 	connect(e) {
 		this.ser.speed = this.speed.value
 		this.submit.disabled = true
+		this.speed.disabled = this.port.disabled = true
 		this.submit.value = 'Connecting'
 	}
 	
@@ -76,6 +77,7 @@ module.exports = class ConnectForm extends WebComponentAbstract {
 	disconnected(e) {
 		this.isConnected = false
 		this.submit.disabled = false
+		this.speed.disabled = this.port.disabled = false
 		this.submit.value = 'Connect'
 	}
 	
