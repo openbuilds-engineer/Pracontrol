@@ -41,9 +41,9 @@ module.exports = class Serial extends WebComponentAbstract {
 	}
 	
 	refreshPorts(e) {
-		serialPort = serialPort || require('serialport')
+		serialPort = serialPort || require('serial-worker')
 		serialPort.list( (e, ports) => {
-			if(e) throw e
+			if(e) throw new Error(e.message)
 			ports.reverse().forEach(p => AppEvent('newPort', { port: p }) )
 			AppEvent('refreshPortsDone')
 		})
@@ -72,10 +72,10 @@ module.exports = class Serial extends WebComponentAbstract {
 		}, false)
 		
 		this.serial.open(e => {
-			if (e) { AppEvent('disconnected'); throw e; }
+			if (e) { AppEvent('disconnected'); throw new Error(e.message); }
 			AppEvent('connected')
 		})
-		this.serial.on('close', e => { AppEvent('disconnected'); if(e) throw e; })
+		this.serial.on('close', e => { AppEvent('disconnected'); if(e) throw new Error(e.message); })
 		this.serial.on('data', data => AppEvent('serialData', { data }))
 	}
 	
