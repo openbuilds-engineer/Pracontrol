@@ -48,7 +48,7 @@ main, header, footer, aside, nav, section, article, page { display: block; }
 	
 	// secondary background color
 	// table even rows and future purposes
-	@secondaryBackground: rgba(0, 0, 0, .04)
+	@secondaryBackground: rgba(0, 0, 0, .05)
 };
 .config-defaults();
 
@@ -109,14 +109,15 @@ h1, h2, h3 { text-rendering: optimizeLegibility; }
 
 
 // margin-bottom for block elements
-.blockElem(@rule) { p, h1, h2, h3, ul, ol, table, pre, iframe { @rule(); } }
-.blockElem({ margin-bottom: @blockMargin; });
+.block-elem(@rule) { p, h1, h2, h3, ul, ol, table, pre, iframe { @rule(); } }
+.block-elem({ margin-bottom: @blockMargin; });
 
 
 // <hr>
 .hr(@w: 1px; @c: #000) {
 	display: block; clear: both; height: 1rem;
 	
+	// we need line at specific y so use image
 	@img: escape('<svg width="1" height="@{w}" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" fill="@{c}" width="1" height="@{w}"/></svg>');
 	background: url("data:image/svg+xml;charset=utf-8,@{img}") center (@rem / 2 - @w) repeat-x;
 }
@@ -228,18 +229,32 @@ flex_balancer {
 
 
 // Forms
-// form elements with border
-.boxFormElem(@padding: 0.5rem) {
+.form-input(@padding: 0.5rem) {
+	// for sure
 	display: inline-block;
-	box-shadow: 0px 0.3px 1px 0px #999 inset;
-	background-color: #FFF;
-	padding: @padding;
-	border-radius: @padding / 2;
+	
+	// box shadow, for retina do a hairline
+	box-shadow: 0 -0.3px 2px 0 #999 inset;
+	@media (min-resolution: 120dpi) { box-shadow: 0 -0.3px 1px 0 #999 inset; }
+	
+	// round corners
+	border-radius: @padding * .5;
+	
+	// inherit color and set background color
 	color: inherit;
+	background-color: #FFF;
+	
+	// more spacing
+	padding: @padding * 0.8 @padding; margin-top: @padding * 0.2; margin-bottom: @padding * 0.2;
+	
+	// when disabled make it gray
 	&:disabled { color: #CCC; }
 }
 input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
-keygen, textarea, select, button, .button { .boxFormElem }
+keygen, textarea, select, button, .button { .form-input }
+
+// iOS fix to render input coherently
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]) { -webkit-appearance: button; }
 
 // .button is aligned to center
 .button { text-align: center; }
