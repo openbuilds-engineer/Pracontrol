@@ -1,6 +1,6 @@
 'use strict'
 
-var serialPort = null // lazy load
+var SerialPort = null // lazy load
 
 module.exports = class Serial extends WebComponentAbstract {
 	initCallback() {
@@ -41,8 +41,8 @@ module.exports = class Serial extends WebComponentAbstract {
 	}
 	
 	refreshPorts(e) {
-		serialPort = serialPort || require('serial-worker')
-		serialPort.list( (e, ports) => {
+		SerialPort = SerialPort || require('serial-worker')
+		SerialPort.list( (e, ports) => {
 			if(e) throw new Error(e.message)
 			ports.reverse().forEach(p => AppEvent('newPort', { port: p }) )
 			AppEvent('refreshPortsDone')
@@ -66,8 +66,8 @@ module.exports = class Serial extends WebComponentAbstract {
 		
 		var port = this.connectForm.port.selectedOptions[0].port.comName
 		
-		this.serial = new serialPort.SerialPort(port, {
-			parser: serialPort.parsers.readline("\n"),
+		this.serial = new SerialPort.SerialPort(port, {
+			parser: SerialPort.parsers.readline("\n"),
 			baudrate: this.connectForm.speed.value,
 		}, false)
 		
