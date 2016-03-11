@@ -69,7 +69,7 @@ module.exports = class Serial extends WebComponentAbstract {
 		this.serial = new serialPort.SerialPort(port, {
 			parser: serialPort.parsers.readline("\n"),
 			baudrate: this.connectForm.speed.value,
-		}, false);
+		}, false)
 		
 		this.serial.open(e => {
 			if (e) { AppEvent('disconnected'); throw e; }
