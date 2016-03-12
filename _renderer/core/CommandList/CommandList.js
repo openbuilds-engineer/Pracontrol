@@ -40,7 +40,7 @@ module.exports = class CommandList extends TabComponent {
 	initCallback() {
 		this.renderLess(style)
 		
-		defineAppEvent('newCommand', 'Add new item to commands table', 'Commands', "{ name: '', desc: '', cat: '', arg: '' }")
+		defineAppEvent('newCommand', 'Add new item to commands table', 'Commands', "{ cat: '', gcode: '', name: '', arg: '' }")
 		self.on('newCommand', e => this.newCommand(e.d))
 		
 		var div = this.newElement('div', true, { className: 'column-system' })
@@ -56,12 +56,12 @@ module.exports = class CommandList extends TabComponent {
 	}
 	
 	attachedCallback() {
-		var gCode = require('./gCode').commands
+		var gCode = require('./gCode')
 		
 		Object.keys(gCode).forEach(code => {
 			var val = gCode[code]
 			if(val.duplicate) return
-			AppEvent('newCommand', { name: code, desc: val.title, cat: val.cat, arg: val.arg })
+			AppEvent('newCommand', val)
 		})
 	}
 	
@@ -71,14 +71,14 @@ module.exports = class CommandList extends TabComponent {
 		
 		if(!cat) AppEvent('newCommandTab', { instance: instance, title: c.cat })
 		
-		var module = moduleAvailable(`./UI/${c.cat}-${c.name}`)
+		var module = moduleAvailable(`./UI/${c.gcode}`)
 		if(module) {
 			instance.newElement(require(module), true, { command: c })
 		}
 		else {
-			var ui = instance.newElement('p', true, { innerHTML: `<b>${c.name}</b> ${c.desc}`, title: c.arg || '' })
+			var ui = instance.newElement('p', true, { innerHTML: `<b>${c.gcode}</b> ${c.name}`, title: c.arg || '' })
 			ui.style.cursor = 'pointer'
-			ui.on('click', e => AppEvent('consoleInputValue', c.name + ' '))
+			ui.on('click', e => AppEvent('consoleInputValue', c.gcode + ' '))
 		}
 	}
 }
