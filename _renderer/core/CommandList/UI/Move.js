@@ -2,6 +2,7 @@
 
 var style = `
 ::content label { white-space: nowrap; }
+::content input { width: 40%; }
 `
 
 module.exports = class Move extends WebComponentAbstract {
