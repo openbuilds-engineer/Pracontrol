@@ -16,11 +16,6 @@ module.exports = [
 	{ tab: "Control", cat: "Fan", gcode: "M106", name: "Fan speed set", arg: "S<0-255>" },
 	{ tab: "Control", cat: "Fan", gcode: "M107", name: "Fan off", duplicate: true },
 	
-	{ tab: "Control", cat: "Queue", gcode: "G4", name: "Do nothing", arg: "S<seconds> or P<milliseconds>" },
-	{ tab: "Control", cat: "Queue", gcode: "M400", name: "Finish all moves" },
-	{ tab: "Control", cat: "Queue", gcode: "M226", name: "Wait for pin state", arg: "P<pin> S<state>" },
-	{ tab: "Control", cat: "Queue", gcode: "M410", name: "Abort all planned moves" },
-	
 	{ tab: "Control", cat: "Laser", gcode: "M3", name: "Laser power set", arg: "S<0-255>" },
 	{ tab: "Control", cat: "Laser", gcode: "M4", name: "Turn on laser" },
 	{ tab: "Control", cat: "Laser", gcode: "M5", name: "Turn off laser" },
@@ -72,6 +67,11 @@ module.exports = [
 	
 	{ tab: "Extruder", cat: "Extruder", gcode: "M221", name: "Set extrusion percentage", arg: "T<#> S<0-100>" },
 	{ tab: "Extruder", cat: "Extruder", gcode: "M218", name: "Extruder offset", arg: "T<extruder_number> X<offset> Y<offset> (in mm)" },
+	
+	{ tab: "Queue", cat: "Queue", gcode: "G4", name: "Do nothing", arg: "S<seconds> or P<milliseconds>" },
+	{ tab: "Queue", cat: "Queue", gcode: "M400", name: "Finish all moves" },
+	{ tab: "Queue", cat: "Queue", gcode: "M226", name: "Wait for pin state", arg: "P<pin> S<state>" },
+	{ tab: "Queue", cat: "Queue", gcode: "M410", name: "Abort all planned moves" },
 	
 	{ tab: "PID", cat: "PID", gcode: "M301", name: "PID parameters set" },
 	{ tab: "PID", cat: "PID", gcode: "M304", name: "Bed PID parameters set" },
