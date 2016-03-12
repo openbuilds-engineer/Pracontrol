@@ -24,8 +24,7 @@ module.exports = class Module extends WebComponentAbstract {
 			
 			this.renderCss(style)
 			
-			this.el = this.newElement('div')
-			this.el.classList.add('column-system')
+			this.el = this.newElement('div', true, { className: 'column-system' })
 			this.left = this.el.newElement('div')
 			this.right = this.el.newElement('div')
 			
