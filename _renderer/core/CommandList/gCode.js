@@ -20,7 +20,7 @@ module.exports = [
 	{ tab: "Control", cat: "Laser", gcode: "M4", name: "Turn on laser", duplicate: true },
 	{ tab: "Control", cat: "Laser", gcode: "M5", name: "Turn off laser", duplicate: true },
 	
-	{ tab: "Control", cat: "Emergency", gcode: "M112", name: "Emergency stop", arg: 'none' },
+	{ tab: "Control", cat: "Emergency", gcode: "M112", name: "Emergency stop", arg: null },
 	
 	{ tab: "Control", cat: "Misc", gcode: "M111", name: "Debug mode" },
 	{ tab: "Control", cat: "Misc", gcode: "M115", name: "Capabilities" },
