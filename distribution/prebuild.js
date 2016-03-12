@@ -21,7 +21,7 @@ if(process.platform == "win32") {
 	child_process.execSync('npm update -g electron-rebuild', { stdio: [0, 1, 2] })
 	
 	// rebuild
-	child_process.execSync('electron-rebuild -w serialport -m .', { stdio: [0, 1, 2] })
+	child_process.execSync('electron-rebuild -w serialport -m . -f', { stdio: [0, 1, 2] })
 	
 	// correct naming
 	var bin = path.join(path.dirname(require.resolve('serialport')), 'build', 'Release')
