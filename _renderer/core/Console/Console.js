@@ -67,7 +67,7 @@ module.exports = class Console extends WebComponentAbstract {
 		this.input.value = this.ser.commandHistory[this.commandHistoryIndex]
 	}
 	
-	focus(e) {
+	focus() {
 		 this.input.dispatchEvent(new Event('focus'))
 	}
 	
