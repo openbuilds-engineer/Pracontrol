@@ -27,11 +27,6 @@ module.exports = [
 	{ tab: "Control", cat: "EEPROM", gcode: "M503", name: "Read settings from memory" },
 	{ tab: "Control", cat: "EEPROM", gcode: "M502", name: "Revert to default" },
 	
-	{ tab: "Control", cat: "Endstops", gcode: "M119", name: "Endstop states" },
-	{ tab: "Control", cat: "Endstops", gcode: "M120", name: "Enable endstops" },
-	{ tab: "Control", cat: "Endstops", gcode: "M121", name: "Disable endstops" },
-	{ tab: "Control", cat: "Endstops", gcode: "M666", name: "Delta endstop and geometry adjustment set" },
-	
 	{ tab: "Position", cat: "Position", gcode: "M114", name: "Get current position" },
 	{ tab: "Position", cat: "Position", gcode: "G92", name: "Set current position", arg: "X<#> Y<#> Z<#> E<#>" },
 	{ tab: "Position", cat: "Position", gcode: "G60", name: "Store actual coordinates in memory" },
@@ -75,6 +70,11 @@ module.exports = [
 	{ tab: "PID", cat: "PID", gcode: "M301", name: "PID parameters set" },
 	{ tab: "PID", cat: "PID", gcode: "M304", name: "Bed PID parameters set" },
 	{ tab: "PID", cat: "PID", gcode: "M303", name: "PID relay autotune" },
+	
+	{ tab: "Endstops", cat: "Endstops", gcode: "M119", name: "Endstop states" },
+	{ tab: "Endstops", cat: "Endstops", gcode: "M120", name: "Enable endstops" },
+	{ tab: "Endstops", cat: "Endstops", gcode: "M121", name: "Disable endstops" },
+	{ tab: "Endstops", cat: "Endstops", gcode: "M666", name: "Delta endstop and geometry adjustment set" },
 	
 	{ tab: "Retract", cat: "Retract", gcode: "M200", name: "E axis cubic millimeters set", arg: "T<extruder> D<millimeters> (S0=back to millimeters)" },
 	{ tab: "Retract", cat: "Retract", gcode: "G10", name: "Retract filament" },
