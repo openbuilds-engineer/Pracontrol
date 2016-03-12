@@ -42,7 +42,7 @@ module.exports = class CommandList extends TabComponent {
 	initCallback() {
 		this.renderLess(style)
 		
-		defineAppEvent('newCommand', 'Add new item to commands table', 'Commands', "{ cat: '', gcode: '', name: '', arg: '' }")
+		defineAppEvent('newCommand', 'Add new item to commands table', 'Commands', 'see ./gCode.js')
 		self.on('newCommand', e => this.newCommand(e.d))
 		
 		var div = this.newElement('div', true, { className: 'column-system' })
