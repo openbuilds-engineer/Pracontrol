@@ -16,13 +16,14 @@ var style = `
 		overflow-x: hidden;
 		overflow-y: auto;
 		
+		background-color: #333;
+		
 		tab {
-			padding: 0.2rem 0.3rem;
-			color: #fff;
-			cursor: pointer;
-			font-size: 0.85em;
-			background-color: #333;
 			display: block;
+			cursor: pointer;
+			color: #fff;
+			font-size: 0.85em;
+			padding: 0.2rem 0.3rem;
 		
 			&.active, &:hover { background-color: #666; }
 		}
