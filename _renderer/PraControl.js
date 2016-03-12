@@ -1,8 +1,8 @@
 'use strict'
 
 require('./lib/DOMProto')
-global.WebComponentAbstract = require('./lib/WebComponentAbstract')
-global.FlexBalanced = require('./lib/FlexBalanced')
+global.WebComponentAbstract = require('./lib/WebComponent/WebComponentAbstract')
+global.FlexBalanced = require('./lib/WebComponent/FlexBalanced')
 Object.assign(global, require('./lib/Globals'))
 
 class PraControl extends WebComponentAbstract {
