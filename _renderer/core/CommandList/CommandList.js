@@ -56,7 +56,7 @@ module.exports = class CommandList extends TabComponent {
 	}
 	
 	readyCallback() {
-		AppEvent('newTab', { instance: this, title: 'Commands', priority: -70 })
+		AppEvent('newTab', { instance: this, name: 'Commands', priority: -70 })
 		AppEvent('toggleTab', this)
 	}
 	
@@ -75,7 +75,7 @@ module.exports = class CommandList extends TabComponent {
 			
 		var tab = this.left.querySelector(`tab[name='${c.tab}']`)
 		if(!tab) {
-			tab = { title: c.tab, instance: this.newElement('div', false, { className: 'column-system' }) }
+			tab = { name: c.tab, instance: this.newElement('div', false, { className: 'column-system' }) }
 			AppEvent('newCommandTab', tab)
 		}
 		

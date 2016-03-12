@@ -39,7 +39,7 @@ module.exports = class Developer extends WebComponentAbstract {
 		
 		this.renderCss(style)
 		
-		AppEvent('newTab', { instance: this, title: 'Developer', priority: 900 })
+		AppEvent('newTab', { instance: this, name: 'Developer', priority: 900 })
 		
 		defineKeyShortcut('⌥', 'Toogle baseline grid', "Developer")
 		document.on("keydown", e => e.keyCode == 18 && document.body.classList.toggle('alt_key'))

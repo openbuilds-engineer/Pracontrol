@@ -6,7 +6,7 @@ module.exports = class TabComponent extends WebComponentAbstract {
 		cont = cont || this
 		this.tab = { name, cont, current: 0 }
 		
-		defineAppEvent(`new${name}`, `Create new ${name}`, name, "{ instance: <HTMLElement>, title: '', priority: <Number> }")
+		defineAppEvent(`new${name}`, `Create new ${name}`, name, "{ instance: <HTMLElement>, name: '', priority: <Number> }")
 		self.on(`new${name}`, e => this.newTab(e.d))
 		
 		defineAppEvent(`toggle${name}`, `Toggle ${name}`, name, "<Number> or <HTMLElement>")
@@ -19,8 +19,8 @@ module.exports = class TabComponent extends WebComponentAbstract {
 	newTab(tab) {
 		if(!('priority' in tab)) tab.priority = 0
 		
-		var t = this.newElement('tab', false, { textContent: tab.title, instance: tab.instance, priority: tab.priority })
-		t.setAttribute('name', tab.title)
+		var t = this.newElement('tab', false, { textContent: tab.name, instance: tab.instance, priority: tab.priority })
+		t.setAttribute('name', tab.name)
 		t.on('click', e => this.toggle(tab.instance))
 		
 		this.tab.cont.children.some(el => {

@@ -48,7 +48,7 @@ module.exports = class Console extends WebComponentAbstract {
 	}
 	
 	readyCallback() {
-		AppEvent('newTab', { instance: this, title: 'Console', priority: -80 })
+		AppEvent('newTab', { instance: this, name: 'Console', priority: -80 })
 	}
 	
 	historyCommand(e) {

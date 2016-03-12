@@ -72,6 +72,6 @@ module.exports = class About extends WebComponentAbstract {
 	}
 	
 	readyCallback() {
-		AppEvent('newTab', { instance: this, title: 'PraControl', priority: -100 })
+		AppEvent('newTab', { instance: this, name: 'PraControl', priority: -100 })
 	}
 }
