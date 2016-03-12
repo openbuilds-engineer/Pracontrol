@@ -142,8 +142,8 @@ module.exports = [
 	{ tab: "Multiple filaments", cat: "Multiple filaments", gcode: "M600", name: "Pause for filament change", arg: "X[pos] Y[pos] Z[relative lift] E[initial retract] L[later retract distance for removal]" },
 	{ tab: "Multiple filaments", cat: "Multiple filaments", gcode: "M997", name: "Move carter", arg: "C<#>" },
 	
-	{ tab: "Digital trimpot", cat: "Digital trimpot", gcode: "M907", name: "Digital trimpot motor current set", arg: "X, Y, Z, E, B, S" },
-	{ tab: "Digital trimpot", cat: "Digital trimpot", gcode: "M908", name: "Control digital trimpot", arg: "P<pin> S<current>" },
+	{ tab: "Other", cat: "Digital trimpot", gcode: "M907", name: "Digital trimpot motor current set", arg: "X, Y, Z, E, B, S" },
+	{ tab: "Other", cat: "Digital trimpot", gcode: "M908", name: "Control digital trimpot", arg: "P<pin> S<current>" },
 	
 	{ tab: "Other", cat: "Dual X carriage", gcode: "M605", name: "Dual x-carriage movement mode set" },
 	
