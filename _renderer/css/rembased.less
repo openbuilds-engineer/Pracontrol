@@ -233,19 +233,20 @@ flex_balancer {
 	// for sure
 	display: inline-block;
 	
-	// box shadow, for retina do a hairline
-	box-shadow: 0 -0.3px 2px 0 #999 inset;
-	@media (min-resolution: 120dpi) { box-shadow: 0 -0.3px 1px 0 #999 inset; }
+	// box shadow
+	box-shadow: 0 0 1px #AAA inset, 0 -1px 1px 0px #CCC inset;
 	
 	// round corners
-	border-radius: @padding * .5;
+	border-radius: 0.4em;
 	
 	// inherit color and set background color
 	color: inherit;
 	background-color: #FFF;
 	
-	// more spacing
-	padding: @padding * 0.8 @padding; margin-top: @padding * 0.2; margin-bottom: @padding * 0.2;
+	// apply padding and border to create non-collapsing margin
+	padding: calc(~"@{padding} - 2px") @padding;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
 	
 	// when disabled make it gray
 	&:disabled { color: #CCC; }
