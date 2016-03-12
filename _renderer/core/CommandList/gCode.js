@@ -113,14 +113,6 @@ module.exports = [
 	{ tab: "LCD", cat: "LCD", gcode: "M145", name: "Heatup state for material", arg: "S<0=PLA|1=ABS|2=GUM> H<hotend temp> B<bed temp> F<fan speed> Material " },
 	{ tab: "LCD", cat: "LCD", gcode: "M250", name: "Contrast read/set" },
 	
-	{ tab: "Paste Extruder", cat: "Paste Extruder", gcode: "M126", name: "Heater 1 valve open" },
-	{ tab: "Paste Extruder", cat: "Paste Extruder", gcode: "M127", name: "Heater 1 valve close" },
-	{ tab: "Paste Extruder", cat: "Paste Extruder", gcode: "M128", name: "Heater 2 valve open" },
-	{ tab: "Paste Extruder", cat: "Paste Extruder", gcode: "M129", name: "Heater 2 valve close" },
-	
-	{ tab: "Microsteps", cat: "Microsteps", gcode: "M350", name: "Microstepping mode set", arg: "S<#> sets stepping mode for all drivers, steps per unit unchanged" },
-	{ tab: "Microsteps", cat: "Microsteps", gcode: "M351", name: "Toggle MS1 MS2 directly", arg: "X Y Z E B" },
-	
 	{ tab: "Scara", cat: "Scara", gcode: "M360", name: "Move to cal-position ThetaA", arg: "(0 deg calibration)" },
 	{ tab: "Scara", cat: "Scara", gcode: "M361", name: "Move to cal-position ThetaB", arg: "(90 deg calibration - steps per degree)" },
 	{ tab: "Scara", cat: "Scara", gcode: "M362", name: "Move to cal-position PsiA", arg: "(0 deg calibration)" },
@@ -128,19 +120,27 @@ module.exports = [
 	{ tab: "Scara", cat: "Scara", gcode: "M364", name: "Move to cal-position PSIC", arg: "(90 deg to Theta calibration position)" },
 	{ tab: "Scara", cat: "Scara", gcode: "M365", name: "Scaling factor set" },
 	
-	{ tab: "Solenoid", cat: "Solenoid", gcode: "M380", name: "Enable solenoid" },
-	{ tab: "Solenoid", cat: "Solenoid", gcode: "M381", name: "Disable solenoids" },
-	
-	{ tab: "Servo leveling", cat: "Servo leveling", gcode: "M401", name: "Engage Z servo endstop" },
-	{ tab: "Servo leveling", cat: "Servo leveling", gcode: "M402", name: "Retract Z servo endstop" },
+	{ tab: "Paste Extruder", cat: "Paste Extruder", gcode: "M126", name: "Heater 1 valve open" },
+	{ tab: "Paste Extruder", cat: "Paste Extruder", gcode: "M127", name: "Heater 1 valve close" },
+	{ tab: "Paste Extruder", cat: "Paste Extruder", gcode: "M128", name: "Heater 2 valve open" },
+	{ tab: "Paste Extruder", cat: "Paste Extruder", gcode: "M129", name: "Heater 2 valve close" },
 	
 	{ tab: "Filament sensor", cat: "Filament sensor", gcode: "M404", name: "Nominal filament width read/set" },
 	{ tab: "Filament sensor", cat: "Filament sensor", gcode: "M405", name: "Turn on filament sensor" },
 	{ tab: "Filament sensor", cat: "Filament sensor", gcode: "M406", name: "Turn off filament sensor" },
 	{ tab: "Filament sensor", cat: "Filament sensor", gcode: "M407", name: "Measured filament diameter get" },
 	
+	{ tab: "Servo leveling", cat: "Servo leveling", gcode: "M401", name: "Engage Z servo endstop" },
+	{ tab: "Servo leveling", cat: "Servo leveling", gcode: "M402", name: "Retract Z servo endstop" },
+	
 	{ tab: "Multiple filaments", cat: "Multiple filaments", gcode: "M600", name: "Pause for filament change", arg: "X[pos] Y[pos] Z[relative lift] E[initial retract] L[later retract distance for removal]" },
 	{ tab: "Multiple filaments", cat: "Multiple filaments", gcode: "M997", name: "Move carter", arg: "C<#>" },
+	
+	{ tab: "Microsteps", cat: "Microsteps", gcode: "M350", name: "Microstepping mode set", arg: "S<#> sets stepping mode for all drivers, steps per unit unchanged" },
+	{ tab: "Microsteps", cat: "Microsteps", gcode: "M351", name: "Toggle MS1 MS2 directly", arg: "X Y Z E B" },
+	
+	{ tab: "Solenoid", cat: "Solenoid", gcode: "M380", name: "Enable solenoid" },
+	{ tab: "Solenoid", cat: "Solenoid", gcode: "M381", name: "Disable solenoids" },
 	
 	{ tab: "Other", cat: "Digital trimpot", gcode: "M907", name: "Digital trimpot motor current set", arg: "X, Y, Z, E, B, S" },
 	{ tab: "Other", cat: "Digital trimpot", gcode: "M908", name: "Control digital trimpot", arg: "P<pin> S<current>" },
