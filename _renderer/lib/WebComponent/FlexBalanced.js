@@ -1,7 +1,7 @@
 'use strict'
 
 var style = `
-@import (reference) '../css/style.less';
+@import (reference) '../../css/style.less';
 
 :host {
 	.column-system(@selector: ~"::content > *")
