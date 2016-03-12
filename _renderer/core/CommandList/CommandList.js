@@ -32,8 +32,6 @@ var style = `
 		overflow-x: hidden;
 		overflow-y: auto;
 		padding: 1rem 0;
-		
-		> div > * { flex-basis: 15rem; }
 	}
 }
 `
@@ -75,7 +73,7 @@ module.exports = class CommandList extends TabComponent {
 			
 		var tab = this.left.querySelector(`tab[name='${c.tab}']`)
 		if(!tab) {
-			tab = { name: c.tab, instance: this.newElement('div', false, { className: 'column-system' }) }
+			tab = { name: c.tab, instance: this.newElement(FlexBalanced, false) }
 			AppEvent('newCommandTab', tab)
 		}
 		
@@ -89,6 +87,8 @@ module.exports = class CommandList extends TabComponent {
 			ui.style.cursor = 'pointer'
 			ui.on('click', e => AppEvent('consoleInputValue', c.gcode + ' '))
 		}
+		
+		tab.instance.balance()
 	}
 }
 
