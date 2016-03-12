@@ -6,11 +6,6 @@ module.exports = [
 	
 	{ tab: "Control", cat: "Home", gcode: "G28", name: "Home axes", arg: "<X> <Y> <Z> or blank for all" },
 	
-	{ tab: "Control", cat: "Relative & absolute", gcode: "G90", name: "Absolute coordinates (default)" },
-	{ tab: "Control", cat: "Relative & absolute", gcode: "G91", name: "Relative coordinates" },
-	{ tab: "Control", cat: "Relative & absolute", gcode: "M82", name: "E axis absolute (default)" },
-	{ tab: "Control", cat: "Relative & absolute", gcode: "M83", name: "E axis relative" },
-	
 	{ tab: "Control", cat: "Speed", gcode: "M92", name: "Axis steps per unit", arg: "X<#> Y<#> Z<#> E<#>" },
 	{ tab: "Control", cat: "Speed", gcode: "M201", name: "Max acceleration for print moves", arg: "X<#> Y<#> Z<#> E<#> (s^2)" },
 	{ tab: "Control", cat: "Speed", gcode: "M203", name: "Maximum feedrate", arg: "X<#> Y<#> Z<#> E<#> (mm/sec)" },
@@ -72,6 +67,11 @@ module.exports = [
 	{ tab: "Position", cat: "Position", gcode: "G92", name: "Set current position", arg: "X<#> Y<#> Z<#> E<#>" },
 	{ tab: "Position", cat: "Position", gcode: "G60", name: "Store actual coordinates in memory" },
 	{ tab: "Position", cat: "Position", gcode: "G61", name: "Move to coordinates in memory" },
+	
+	{ tab: "Relative & absolute", cat: "Relative & absolute", gcode: "G90", name: "Absolute coordinates (default)" },
+	{ tab: "Relative & absolute", cat: "Relative & absolute", gcode: "G91", name: "Relative coordinates" },
+	{ tab: "Relative & absolute", cat: "Relative & absolute", gcode: "M82", name: "Absolute E axis (default)" },
+	{ tab: "Relative & absolute", cat: "Relative & absolute", gcode: "M83", name: "Relative E axis" },
 	
 	{ tab: "PID", cat: "PID", gcode: "M301", name: "PID parameters set" },
 	{ tab: "PID", cat: "PID", gcode: "M304", name: "Bed PID parameters set" },
