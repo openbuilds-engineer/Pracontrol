@@ -12,7 +12,7 @@ var style = `
 		width: 100%;
 		font-size: 2em;
 		color: #999;
-		background: repeating-linear-gradient(
+		background-image: repeating-linear-gradient(
 			-45deg,
 			lighten(#000, 100%),
 			lighten(#000, 100%) 9px,
