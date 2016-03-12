@@ -13,13 +13,6 @@ module.exports = [
 	{ tab: "Control", cat: "Speed", gcode: "M205", name: "Advanced settings set", arg: "S = Min feed rate (mm/s) T = Min travel feed rate (mm/s) B = Min segment time (µs) X = Max XY jerk (mm/s/s) Z = Max Z jerk (mm/s/s) E = Max E jerk (mm/s/s)" },
 	{ tab: "Control", cat: "Speed", gcode: "M220", name: "Speed factor set", arg: "S<0-100>" },
 	
-	{ tab: "Control", cat: "Temperature", gcode: "M105", name: "Read temperature" },
-	{ tab: "Control", cat: "Temperature", gcode: "M104", name: "Extruder temperature set", arg: "S<temp>" },
-	{ tab: "Control", cat: "Temperature", gcode: "M109", name: "Wait for extruder to reach temperature", arg: "S<temp>" },
-	{ tab: "Control", cat: "Temperature", gcode: "M140", name: "Bed temperature set", arg: "S<temp>" },
-	{ tab: "Control", cat: "Temperature", gcode: "M190", name: "Wait for bed to reach temperature", arg: "S<temp>" },
-	{ tab: "Control", cat: "Temperature", gcode: "M302", name: "Minimum extrude temperature", arg: "S<temp> (0 to disable)" },
-	
 	{ tab: "Control", cat: "Fan", gcode: "M106", name: "Fan speed set", arg: "S<0-255>" },
 	{ tab: "Control", cat: "Fan", gcode: "M107", name: "Fan off", duplicate: true },
 	
@@ -72,6 +65,13 @@ module.exports = [
 	{ tab: "Relative & absolute", cat: "Relative & absolute", gcode: "G91", name: "Relative coordinates" },
 	{ tab: "Relative & absolute", cat: "Relative & absolute", gcode: "M82", name: "Absolute E axis (default)" },
 	{ tab: "Relative & absolute", cat: "Relative & absolute", gcode: "M83", name: "Relative E axis" },
+	
+	{ tab: "Temperature", cat: "Temperature", gcode: "M105", name: "Read temperature" },
+	{ tab: "Temperature", cat: "Temperature", gcode: "M104", name: "Extruder temperature set", arg: "S<temp>" },
+	{ tab: "Temperature", cat: "Temperature", gcode: "M109", name: "Wait for extruder to reach temperature", arg: "S<temp>" },
+	{ tab: "Temperature", cat: "Temperature", gcode: "M140", name: "Bed temperature set", arg: "S<temp>" },
+	{ tab: "Temperature", cat: "Temperature", gcode: "M190", name: "Wait for bed to reach temperature", arg: "S<temp>" },
+	{ tab: "Temperature", cat: "Temperature", gcode: "M302", name: "Minimum extrude temperature", arg: "S<temp> (0 to disable)" },
 	
 	{ tab: "PID", cat: "PID", gcode: "M301", name: "PID parameters set" },
 	{ tab: "PID", cat: "PID", gcode: "M304", name: "Bed PID parameters set" },
