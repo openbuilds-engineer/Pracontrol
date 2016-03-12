@@ -5,7 +5,7 @@ var style = `
 	order: 100;
 }
 ::content {
-	input:not([type='checkbox']), select { width: 100%; margin-bottom: 1rem; }
+	input:not([type='checkbox']), select { width: 100%; margin-bottom: 1rem !important; }
 }
 `
 
