@@ -304,15 +304,15 @@ module.exports.commands = {
 	// PID
 	"M301": {
 		"title": "PID parameters set",
-		"category": "PID",
+		"cat": "PID",
 	},
 	"M304": {
 		"title": "Bed PID parameters set",
-		"category": "PID",
+		"cat": "PID",
 	},
 	"M303": {
 		"title": "PID relay autotune",
-		"category": "PID",
+		"cat": "PID",
 	},
 	
 	// Rectract
