@@ -6,11 +6,6 @@ module.exports = [
 	
 	{ tab: "Control", cat: "Home", gcode: "G28", name: "Home axes", arg: "<X> <Y> <Z> or blank for all" },
 	
-	{ tab: "Control", cat: "Position", gcode: "M114", name: "Get current position" },
-	{ tab: "Control", cat: "Position", gcode: "G92", name: "Set current position", arg: "X<#> Y<#> Z<#> E<#>" },
-	{ tab: "Control", cat: "Position", gcode: "G60", name: "Store in memory actual position (X, Y, Z)" },
-	{ tab: "Control", cat: "Position", gcode: "G61", name: "Move to position in memory (X, Y, Z)" },
-	
 	{ tab: "Control", cat: "Relative & absolute", gcode: "G90", name: "Absolute coordinates (default)" },
 	{ tab: "Control", cat: "Relative & absolute", gcode: "G91", name: "Relative coordinates" },
 	{ tab: "Control", cat: "Relative & absolute", gcode: "M82", name: "E axis absolute (default)" },
@@ -72,6 +67,11 @@ module.exports = [
 	{ tab: "Control", cat: "Endstops", gcode: "M120", name: "Enable endstops" },
 	{ tab: "Control", cat: "Endstops", gcode: "M121", name: "Disable endstops" },
 	{ tab: "Control", cat: "Endstops", gcode: "M666", name: "Delta endstop and geometry adjustment set" },
+	
+	{ tab: "Position", cat: "Position", gcode: "M114", name: "Get current position" },
+	{ tab: "Position", cat: "Position", gcode: "G92", name: "Set current position", arg: "X<#> Y<#> Z<#> E<#>" },
+	{ tab: "Position", cat: "Position", gcode: "G60", name: "Store actual position in memory" },
+	{ tab: "Position", cat: "Position", gcode: "G61", name: "Move to position in memory" },
 	
 	{ tab: "PID", cat: "PID", gcode: "M301", name: "PID parameters set" },
 	{ tab: "PID", cat: "PID", gcode: "M304", name: "Bed PID parameters set" },
