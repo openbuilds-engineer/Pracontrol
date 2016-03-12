@@ -10,6 +10,16 @@ var style = `
     display: block;
     height: 100%;
     width: 100%;
+		font-size: 2em;
+		color: #999;
+		background: repeating-linear-gradient(
+			-45deg,
+			lighten(#000, 100%),
+			lighten(#000, 100%) 9px,
+			lighten(#000, 94%) 10px,
+			lighten(#000, 97%) 11px,
+			lighten(#000, 97%) 20px
+		);
   }
 }
 `
