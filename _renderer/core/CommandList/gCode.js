@@ -6,13 +6,6 @@ module.exports = [
 	
 	{ tab: "Control", cat: "Home", gcode: "G28", name: "Home axes", arg: "<X> <Y> <Z> or blank for all" },
 	
-	{ tab: "Control", cat: "Speed", gcode: "M92", name: "Axis steps per unit", arg: "X<#> Y<#> Z<#> E<#>" },
-	{ tab: "Control", cat: "Speed", gcode: "M201", name: "Max acceleration for print moves", arg: "X<#> Y<#> Z<#> E<#> (s^2)" },
-	{ tab: "Control", cat: "Speed", gcode: "M203", name: "Maximum feedrate", arg: "X<#> Y<#> Z<#> E<#> (mm/sec)" },
-	{ tab: "Control", cat: "Speed", gcode: "M204", name: "Acceleration set", arg: "P<#> R<#> T<#> (Printing Retract Travel) (mm/sec^2)" },
-	{ tab: "Control", cat: "Speed", gcode: "M205", name: "Advanced settings set", arg: "S = Min feed rate (mm/s) T = Min travel feed rate (mm/s) B = Min segment time (µs) X = Max XY jerk (mm/s/s) Z = Max Z jerk (mm/s/s) E = Max E jerk (mm/s/s)" },
-	{ tab: "Control", cat: "Speed", gcode: "M220", name: "Speed factor set", arg: "S<0-100>" },
-	
 	{ tab: "Control", cat: "Fan", gcode: "M106", name: "Fan speed set", arg: "S<0-255>" },
 	{ tab: "Control", cat: "Fan", gcode: "M107", name: "Fan off", duplicate: true },
 	
@@ -22,10 +15,17 @@ module.exports = [
 	
 	{ tab: "Control", cat: "Emergency", gcode: "M112", name: "Emergency stop", arg: null },
 	
-	{ tab: "Control", cat: "EEPROM", gcode: "M500", name: "Save settings" },
-	{ tab: "Control", cat: "EEPROM", gcode: "M501", name: "Read settings" },
-	{ tab: "Control", cat: "EEPROM", gcode: "M503", name: "Read settings from memory" },
-	{ tab: "Control", cat: "EEPROM", gcode: "M502", name: "Revert to default" },
+	{ tab: "Settings", cat: "Speed", gcode: "M92", name: "Axis steps per unit", arg: "X<#> Y<#> Z<#> E<#>" },
+	{ tab: "Settings", cat: "Speed", gcode: "M201", name: "Max acceleration for print moves", arg: "X<#> Y<#> Z<#> E<#> (s^2)" },
+	{ tab: "Settings", cat: "Speed", gcode: "M203", name: "Maximum feedrate", arg: "X<#> Y<#> Z<#> E<#> (mm/sec)" },
+	{ tab: "Settings", cat: "Speed", gcode: "M204", name: "Acceleration set", arg: "P<#> R<#> T<#> (Printing Retract Travel) (mm/sec^2)" },
+	{ tab: "Settings", cat: "Speed", gcode: "M205", name: "Advanced settings set", arg: "S = Min feed rate (mm/s) T = Min travel feed rate (mm/s) B = Min segment time (µs) X = Max XY jerk (mm/s/s) Z = Max Z jerk (mm/s/s) E = Max E jerk (mm/s/s)" },
+	{ tab: "Settings", cat: "Speed", gcode: "M220", name: "Speed factor set", arg: "S<0-100>" },
+	
+	{ tab: "Settings", cat: "EEPROM", gcode: "M500", name: "Save settings" },
+	{ tab: "Settings", cat: "EEPROM", gcode: "M501", name: "Read settings" },
+	{ tab: "Settings", cat: "EEPROM", gcode: "M503", name: "Read settings from memory" },
+	{ tab: "Settings", cat: "EEPROM", gcode: "M502", name: "Revert to default" },
 	
 	{ tab: "Position", cat: "Position", gcode: "M114", name: "Get current position" },
 	{ tab: "Position", cat: "Position", gcode: "G92", name: "Set current position", arg: "X<#> Y<#> Z<#> E<#>" },
