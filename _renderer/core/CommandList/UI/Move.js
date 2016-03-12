@@ -11,7 +11,7 @@ module.exports = class Move extends WebComponentAbstract {
 		
 		var p = this.newElement('p')
 		
-		var opt = { type: 'range', min: 0, max: 200, step: 1, value: 0 }
+		var opt = { type: 'number', step: 1, value: 0 }
 		
 		var X = p.newElement('label', true, { textContent: 'X '}).newElement('input', true, opt)
 		X.on('input', e => this.move({ X: X.value }))
@@ -23,7 +23,6 @@ module.exports = class Move extends WebComponentAbstract {
 		
 		p.newElement('br')
 		
-		opt.max *= .5
 		opt.step *= .1
 		
 		var Z = p.newElement('label', true, { textContent: 'Z '}).newElement('input', true, opt)
