@@ -70,8 +70,8 @@ module.exports = [
 	
 	{ tab: "Position", cat: "Position", gcode: "M114", name: "Get current position" },
 	{ tab: "Position", cat: "Position", gcode: "G92", name: "Set current position", arg: "X<#> Y<#> Z<#> E<#>" },
-	{ tab: "Position", cat: "Position", gcode: "G60", name: "Store actual position in memory" },
-	{ tab: "Position", cat: "Position", gcode: "G61", name: "Move to position in memory" },
+	{ tab: "Position", cat: "Position", gcode: "G60", name: "Store actual coordinates in memory" },
+	{ tab: "Position", cat: "Position", gcode: "G61", name: "Move to coordinates in memory" },
 	
 	{ tab: "PID", cat: "PID", gcode: "M301", name: "PID parameters set" },
 	{ tab: "PID", cat: "PID", gcode: "M304", name: "Bed PID parameters set" },
