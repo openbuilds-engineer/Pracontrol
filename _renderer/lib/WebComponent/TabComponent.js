@@ -2,8 +2,9 @@
 
 
 module.exports = class TabComponent extends WebComponentAbstract {
-	tabInit(name) {
-		this.tabName = name
+	tabInit(name, cont) {
+		cont = cont || this
+		this.tab = { name, cont, current: 0 }
 		
 		defineAppEvent(`new${name}`, `Create new ${name}`, name, "{ instance: <HTMLElement>, title: '', priority: <Number> }")
 		self.on(`new${name}`, e => this.newTab(e.d))
@@ -13,8 +14,6 @@ module.exports = class TabComponent extends WebComponentAbstract {
 		
 		defineAppEvent(`toggle${name}`, `${name} is active`, name)
 		defineAppEvent(`blur${name}`, `${name} is hidden`, name)
-		
-		this.currentTab = 0
 	}
 	
 	newTab(tab) {
@@ -24,24 +23,24 @@ module.exports = class TabComponent extends WebComponentAbstract {
 		t.setAttribute('name', tab.title)
 		t.on('click', e => this.toggle(tab.instance))
 		
-		this.children.some(el => {
-			if(t.priority < el.priority) { this.insertBefore(t, el); return true; }
-		}) || this.appendChild(t)
+		this.tab.cont.children.some(el => {
+			if(t.priority < el.priority) { this.tab.cont.insertBefore(t, el); return true; }
+		}) || this.tab.cont.appendChild(t)
 		
-		this.toggle(this.currentTab)
+		this.toggle(this.tab.current)
 	}
 	
 	toggle(arg) {
-		if(!isNaN(arg) && arg >= this.children.length) return
+		if(!isNaN(arg) && arg >= this.tab.cont.children.length) return
 		
-		this.currentTab = arg
-		this.children.forEach((el, i) => {
+		this.tab.current = arg
+		this.tab.cont.children.forEach((el, i) => {
 			var show = !isNaN(arg) ? arg == i : arg == el.instance
 			
 			show ? el.classList.add('active') : el.classList.remove('active')
 			el.instance.style.display = show ? null : 'none'
 			
-			el.instance.dispatchEvent(new Event(`${show ? 'focus' : 'blur'}${this.tabName}`))
+			el.instance.dispatchEvent(new Event(`${show ? 'focus' : 'blur'}${this.tab.name}`))
 		})
 	}
 }
