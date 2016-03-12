@@ -87,9 +87,12 @@ module.exports = class CommandList extends TabComponent {
 			tab.instance.newElement(require(module), true, { command: c, parent: this })
 		}
 		else {
-			var ui = tab.instance.newElement('p', true, { innerHTML: `<b>${c.gcode}</b> ${c.name}`, title: c.arg || '' })
-			ui.style.cursor = 'pointer'
-			ui.on('click', e => AppEvent('consoleInputValue', c.gcode + ' '))
+			var p = tab.instance.newElement('p')
+			var a = p.newElement('a', true, { innerHTML: `<b>${c.gcode}</b> ${c.name}`, title: c.arg || '' })
+			a.style.cursor = 'pointer'
+			if(c.arg === null) a.classList.add('button')
+			
+			a.on('click', e => AppEvent('consoleInputValue', c.gcode + ' '))
 		}
 		
 		tab.instance.balance()
