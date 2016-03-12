@@ -41,7 +41,7 @@ module.exports = class WebComponentAbstract extends HTMLElement {
 	renderLess(style, opt, global) {
 		if(!style) return
 		
-		var cacheName = `renderLessCache-${md5(style)}`
+		var cacheName = `renderLessCache-${App.package.version}-${md5(style)}`
 		var cache = self.localStorage.getItem(cacheName)
 		
 		if(cache) return this.renderCss(cache, global)
