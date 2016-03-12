@@ -71,7 +71,7 @@ module.exports = class CommandList extends TabComponent {
 	
 	newCommand(c) {
 		if(this.skipCat.includes(c.cat)) return
-			
+		
 		var tab = this.left.querySelector(`tab[name='${c.tab}']`)
 		if(!tab) {
 			tab = { name: c.tab, instance: this.newElement(FlexBalanced, false) }
