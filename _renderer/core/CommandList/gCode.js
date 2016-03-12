@@ -145,6 +145,7 @@ module.exports.commands = {
 	"M107": {
 		"title": "Fan off",
 		"cat": "Fan",
+		"duplicate": true,
 	},
 	
 	// Extruder
