@@ -17,8 +17,8 @@ module.exports = [
 	{ tab: "Control", cat: "Fan", gcode: "M107", name: "Fan off", duplicate: true },
 	
 	{ tab: "Control", cat: "Laser", gcode: "M3", name: "Laser power set", arg: "S<0-255>" },
-	{ tab: "Control", cat: "Laser", gcode: "M4", name: "Turn on laser" },
-	{ tab: "Control", cat: "Laser", gcode: "M5", name: "Turn off laser" },
+	{ tab: "Control", cat: "Laser", gcode: "M4", name: "Turn on laser", duplicate: true },
+	{ tab: "Control", cat: "Laser", gcode: "M5", name: "Turn off laser", duplicate: true },
 	
 	{ tab: "Control", cat: "Power & pins", gcode: "M80", name: "Turn on power" },
 	{ tab: "Control", cat: "Power & pins", gcode: "M81", name: "Turn off power" },
