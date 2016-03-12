@@ -20,14 +20,6 @@ module.exports = [
 	{ tab: "Control", cat: "Laser", gcode: "M4", name: "Turn on laser", duplicate: true },
 	{ tab: "Control", cat: "Laser", gcode: "M5", name: "Turn off laser", duplicate: true },
 	
-	{ tab: "Control", cat: "Power & pins", gcode: "M80", name: "Turn on power" },
-	{ tab: "Control", cat: "Power & pins", gcode: "M81", name: "Turn off power" },
-	{ tab: "Control", cat: "Power & pins", gcode: "M17", name: "Turn on stepper motors" },
-	{ tab: "Control", cat: "Power & pins", gcode: "M18", name: "Turn off stepper motors" },
-	{ tab: "Control", cat: "Power & pins", gcode: "M84", name: "Turn off stepper motors", duplicate: true },
-	{ tab: "Control", cat: "Power & pins", gcode: "M85", name: "Inactivity shutdown timer set", arg: "S<seconds> (0 to disable)" },
-	{ tab: "Control", cat: "Power & pins", gcode: "M42", name: "Set pin value", arg: "P<x> S<y> (no pin then LED is used)" },
-	
 	{ tab: "Control", cat: "Emergency", gcode: "M112", name: "Emergency stop" },
 	{ tab: "Control", cat: "Emergency", gcode: "M999", name: "Restart" },
 	
@@ -72,6 +64,14 @@ module.exports = [
 	{ tab: "Queue", cat: "Queue", gcode: "M400", name: "Finish all moves" },
 	{ tab: "Queue", cat: "Queue", gcode: "M226", name: "Wait for pin state", arg: "P<pin> S<state>" },
 	{ tab: "Queue", cat: "Queue", gcode: "M410", name: "Abort all planned moves" },
+	
+	{ tab: "Power & pins", cat: "Power & pins", gcode: "M80", name: "Turn on power" },
+	{ tab: "Power & pins", cat: "Power & pins", gcode: "M81", name: "Turn off power" },
+	{ tab: "Power & pins", cat: "Power & pins", gcode: "M17", name: "Turn on stepper motors" },
+	{ tab: "Power & pins", cat: "Power & pins", gcode: "M18", name: "Turn off stepper motors" },
+	{ tab: "Power & pins", cat: "Power & pins", gcode: "M84", name: "Turn off stepper motors", duplicate: true },
+	{ tab: "Power & pins", cat: "Power & pins", gcode: "M85", name: "Inactivity shutdown timer set", arg: "S<seconds> (0 to disable)" },
+	{ tab: "Power & pins", cat: "Power & pins", gcode: "M42", name: "Set pin value", arg: "P<x> S<y> (no pin then LED is used)" },
 	
 	{ tab: "PID", cat: "PID", gcode: "M301", name: "PID parameters set" },
 	{ tab: "PID", cat: "PID", gcode: "M304", name: "Bed PID parameters set" },
