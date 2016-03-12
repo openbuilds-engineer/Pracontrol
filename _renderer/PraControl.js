@@ -3,6 +3,7 @@
 require('./lib/DOMProto')
 global.WebComponentAbstract = require('./lib/WebComponent/WebComponentAbstract')
 global.FlexBalanced = require('./lib/WebComponent/FlexBalanced')
+global.TabComponent = require('./lib/WebComponent/TabComponent')
 Object.assign(global, require('./lib/Globals'))
 
 class PraControl extends WebComponentAbstract {

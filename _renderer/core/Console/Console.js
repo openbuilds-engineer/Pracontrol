@@ -28,7 +28,7 @@ module.exports = class Console extends WebComponentAbstract {
 		this.input.on('keypress', e => e.keyCode == 13 && this.submitInput())
 		
 		// toggle tab when focus to input
-		this.input.on('focus', e => { AppEvent('tabToggle', this); if(!e.isTrusted) this.input.focus(); })
+		this.input.on('focus', e => { AppEvent('toggleTab', this); if(!e.isTrusted) this.input.focus(); })
 		
 		defineKeyShortcut('⌘Enter', 'Focus console input', 'Console')
 		self.on('keydown', e => (e.metaKey || e.ctrlKey) && this.keyShortcut(e))
