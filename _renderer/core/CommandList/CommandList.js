@@ -33,6 +33,8 @@ var style = `
 		overflow-y: auto;
 		padding: 1rem;
 		padding-left: 0;
+		
+		> * > * { flex-basis: 15rem; }
 	}
 }
 `
