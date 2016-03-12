@@ -31,7 +31,8 @@ var style = `
 		height: calc(~"100% - 2rem");
 		overflow-x: hidden;
 		overflow-y: auto;
-		padding: 1rem 0;
+		padding: 1rem;
+		padding-left: 0;
 	}
 }
 `
