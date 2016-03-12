@@ -22,13 +22,6 @@ module.exports = [
 	
 	{ tab: "Control", cat: "Emergency", gcode: "M112", name: "Emergency stop", arg: null },
 	
-	{ tab: "Control", cat: "Misc", gcode: "M111", name: "Debug mode" },
-	{ tab: "Control", cat: "Misc", gcode: "M115", name: "Capabilities" },
-	{ tab: "Control", cat: "Misc", gcode: "M280", name: "Servo position get/set", arg: "P<index> S<angle>" },
-	{ tab: "Control", cat: "Misc", gcode: "M300", name: "Play beep sound", arg: "S<frequency Hz> P<duration ms>" },
-	{ tab: "Control", cat: "Misc", gcode: "M11", name: "Start printing" },
-	{ tab: "Control", cat: "Misc", gcode: "M31", name: "Time since card print or last wait temperature" },
-	
 	{ tab: "Control", cat: "EEPROM", gcode: "M500", name: "Save settings" },
 	{ tab: "Control", cat: "EEPROM", gcode: "M501", name: "Read settings" },
 	{ tab: "Control", cat: "EEPROM", gcode: "M503", name: "Read settings from memory" },
@@ -71,6 +64,13 @@ module.exports = [
 	{ tab: "Power & pins", cat: "Power & pins", gcode: "M84", name: "Turn off stepper motors", duplicate: true },
 	{ tab: "Power & pins", cat: "Power & pins", gcode: "M85", name: "Inactivity shutdown timer set", arg: "S<seconds> (0 to disable)" },
 	{ tab: "Power & pins", cat: "Power & pins", gcode: "M42", name: "Set pin value", arg: "P<x> S<y> (no pin then LED is used)" },
+	
+	{ tab: "Misc", cat: "Misc", gcode: "M111", name: "Debug mode" },
+	{ tab: "Misc", cat: "Misc", gcode: "M115", name: "Capabilities" },
+	{ tab: "Misc", cat: "Misc", gcode: "M280", name: "Servo position get/set", arg: "P<index> S<angle>" },
+	{ tab: "Misc", cat: "Misc", gcode: "M300", name: "Play beep sound", arg: "S<frequency Hz> P<duration ms>" },
+	{ tab: "Misc", cat: "Misc", gcode: "M11", name: "Start printing" },
+	{ tab: "Misc", cat: "Misc", gcode: "M31", name: "Time since card print or last wait temperature" },
 	
 	{ tab: "PID", cat: "PID", gcode: "M301", name: "PID parameters set" },
 	{ tab: "PID", cat: "PID", gcode: "M304", name: "Bed PID parameters set" },
