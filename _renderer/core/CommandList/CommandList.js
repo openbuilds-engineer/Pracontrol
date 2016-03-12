@@ -28,10 +28,12 @@ var style = `
 		}
 	}
 	right {
-		height: 100%;
+		height: calc(~"100% - 2rem");
 		overflow-x: hidden;
 		overflow-y: auto;
-		top: 1rem;
+		padding: 1rem 0;
+		
+		> div > * { flex-basis: 15rem; }
 	}
 }
 `
@@ -48,6 +50,9 @@ module.exports = class CommandList extends TabComponent {
 		this.right = div.newElement('right')
 		
 		this.tabInit('CommandTab', this.left)
+		self.on('newCommandTab', e => this.right.appendChild(e.d.instance))
+		
+		this.skipCat = []
 	}
 	
 	readyCallback() {
@@ -66,17 +71,21 @@ module.exports = class CommandList extends TabComponent {
 	}
 	
 	newCommand(c) {
-		var cat = this.left.querySelector(`tab[name='${c.cat}']`)
-		var instance = cat ? cat.instance : this.right.newElement('div')
+		if(this.skipCat.includes(c.cat)) return
+			
+		var tab = this.left.querySelector(`tab[name='${c.tab}']`)
+		if(!tab) {
+			tab = { title: c.tab, instance: this.newElement('div', false, { className: 'column-system' }) }
+			AppEvent('newCommandTab', tab)
+		}
 		
-		if(!cat) AppEvent('newCommandTab', { instance: instance, title: c.cat })
-		
-		var module = moduleAvailable(`./UI/${c.gcode}`)
+		var module = moduleAvailable(`./UI/${c.cat}`)
 		if(module) {
-			instance.newElement(require(module), true, { command: c })
+			this.skipCat.push(c.cat)
+			tab.instance.newElement(require(module), true, { command: c, parent: this })
 		}
 		else {
-			var ui = instance.newElement('p', true, { innerHTML: `<b>${c.gcode}</b> ${c.name}`, title: c.arg || '' })
+			var ui = tab.instance.newElement('p', true, { innerHTML: `<b>${c.gcode}</b> ${c.name}`, title: c.arg || '' })
 			ui.style.cursor = 'pointer'
 			ui.on('click', e => AppEvent('consoleInputValue', c.gcode + ' '))
 		}
