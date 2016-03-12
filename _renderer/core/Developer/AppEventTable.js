@@ -17,9 +17,7 @@ module.exports = class AppEventTable extends WebComponentAbstract {
 			var thead = this.table.newElement('thead')
 			
 			var tr = thead.newElement('tr')
-			var th = tr.newElement('th')
-			th.colSpan = 2
-			th.textContent = e.cat
+			var th = tr.newElement('th', true, { colSpan: 2, textContent: e.cat })
 			
 			tbody = this.table.insertAfter(this.newElement('tbody', false), thead)
 			tbody.setAttribute('cat', e.cat)

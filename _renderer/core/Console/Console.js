@@ -14,15 +14,12 @@ module.exports = class Console extends WebComponentAbstract {
 	initCallback() {
 		this.renderLess(style)
 		
-		this.console = this.newElement('textarea')
-		this.console.placeholder = 'Console'
-		this.console.disabled = true
+		this.console = this.newElement('textarea', true, { placeholder: 'Console', disabled: true })
 		
 		if(!('commandHistory' in this.ser)) this.ser.commandHistory = []
 		this.commandHistoryIndex = this.ser.commandHistory.length
 		
-		this.input = this.newElement("input")
-		this.input.placeholder = "Send command"
+		this.input = this.newElement("input", true, { placeholder: "Send command" })
 		
 		// enter sends command
 		this.input.on('keypress', e => e.keyCode == 13 && this.submitInput())

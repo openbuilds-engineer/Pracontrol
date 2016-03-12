@@ -18,12 +18,9 @@ module.exports = class ConnectForm extends WebComponentAbstract {
 		this.port = this.newElement('select')
 		this.port.on('click', e => AppEvent('refreshPorts'))
 		
-		this.speed = this.newElement('input')
-		this.speed.type = 'number'
-		this.speed.value = this.ser.speed || 115200
+		this.speed = this.newElement('input', true, { type: 'number', value: this.ser.speed || 115200 })
 		
-		this.submit = this.newElement('input')
-		this.submit.type = 'button'
+		this.submit = this.newElement('input', true, { type: 'button' })
 		this.submit.on('click', e=> this.submitClick(e))
 		
 		var l = this.newElement('label')

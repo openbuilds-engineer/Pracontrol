@@ -32,9 +32,7 @@ module.exports = class KeyShortcutsTable extends WebComponentAbstract {
 			var table = div.newElement('table')
 			var thead = table.newElement('thead')
 			
-			var th = thead.newElement('tr').newElement('th')
-			th.colSpan = 2
-			th.textContent = k.cat
+			var th = thead.newElement('tr').newElement('th', true, { colSpan: 2, textContent: k.cat })
 			
 			table.newElement('tbody')
 		}

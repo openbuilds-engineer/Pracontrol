@@ -27,8 +27,7 @@ module.exports = class Printer extends WebComponentAbstract {
 	initCallback() {
 		this.renderLess(style)
 		
-		this.drop = this.newElement('drop')
-		this.drop.textContent = "Drop .gcode for print"
+		this.drop = this.newElement('drop', true, { textContent: "Drop .gcode for print" })
 		
 		self.on("newFile", e => this.newFile(e))
 	}

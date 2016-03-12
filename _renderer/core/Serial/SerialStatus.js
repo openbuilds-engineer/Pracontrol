@@ -53,18 +53,15 @@ module.exports = class SerialStatus extends WebComponentAbstract {
 		self.on('disconnected', e => { s = -1; clearInterval(interval); count(); })
 		this.newText(' ')
 		
-		this.conStatus = this.newElement('status')
-		this.conStatus.textContent = '●'
+		this.conStatus = this.newElement('status', true, { textContent: '●' })
 		self.on('connected', e => this.conStatus.classList.add('enabled'))
 		self.on('disconnected', e => this.conStatus.classList.remove('enabled'))
 		
-		this.deviceStatus = this.newElement('status')
-		this.deviceStatus.textContent = '●'
+		this.deviceStatus = this.newElement('status', true, { textContent: '●' })
 		self.on('deviceReady', e => this.deviceStatus.classList.add('enabled'))
 		self.on('deviceNotReady', e => this.deviceStatus.classList.remove('enabled'))
 		
-		this.busyStatus = this.newElement('status')
-		this.busyStatus.textContent = '●'
+		this.busyStatus = this.newElement('status', true, { textContent: '●' })
 		self.on('deviceOk', e => this.busyStatus.classList.add('enabled'))
 		self.on('deviceNotOk', e => this.busyStatus.classList.remove('enabled'))
 	}
