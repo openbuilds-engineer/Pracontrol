@@ -14,23 +14,12 @@ var style = `
 `
 var info = `
 <h1>Globals</h1>
-<p>'App' variable is pointer to &lt;app-pracontrol&gt; with extra props:</p>
-<ol>
+<p>Var App is pointer to &lt;app-pracontrol&gt; with extra props:</p>
+<ul>
 	<li>.ready</li>
 	<li>.package</li>
-</ol>
-
-<p>More functions are defined in:</p>
-<ol>
-	<li>lib/DOMProto</li>
-	<li>lib/Globals</li>
-</ol>
-
-<p>And global classes are defined in:</p>
-<ol>
-	<li>lib/WebComponentAbstract</li>
-	<li>lib/FlexBalanced</li>
-</ol>
+</ul>
+<p>Functions are defined in lib/DOMProto and lib/Globals and classes in lib/WebComponent.</p>
 `
 
 module.exports = class Developer extends WebComponentAbstract {
