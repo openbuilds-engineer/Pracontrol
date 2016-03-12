@@ -20,8 +20,7 @@ module.exports = [
 	{ tab: "Control", cat: "Laser", gcode: "M4", name: "Turn on laser", duplicate: true },
 	{ tab: "Control", cat: "Laser", gcode: "M5", name: "Turn off laser", duplicate: true },
 	
-	{ tab: "Control", cat: "Emergency", gcode: "M112", name: "Emergency stop" },
-	{ tab: "Control", cat: "Emergency", gcode: "M999", name: "Restart" },
+	{ tab: "Control", cat: "Emergency", gcode: "M112", name: "Emergency stop", arg: 'none' },
 	
 	{ tab: "Control", cat: "Misc", gcode: "M111", name: "Debug mode" },
 	{ tab: "Control", cat: "Misc", gcode: "M115", name: "Capabilities" },
@@ -153,4 +152,6 @@ module.exports = [
 	
 	{ tab: "Other", cat: "Home", gcode: "M206", name: "Additional homing offset", arg: "SCARA aliases T=X, P=Y" },
 	{ tab: "Other", cat: "Home", gcode: "M428", name: "Apply current_position to home_offset" },
+	
+	{ tab: "Other", cat: "Emergency", gcode: "M999", name: "Restart" },
 ]
