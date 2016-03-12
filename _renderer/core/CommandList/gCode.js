@@ -136,11 +136,11 @@ module.exports = [
 	{ tab: "Multiple filaments", cat: "Multiple filaments", gcode: "M600", name: "Pause for filament change", arg: "X[pos] Y[pos] Z[relative lift] E[initial retract] L[later retract distance for removal]" },
 	{ tab: "Multiple filaments", cat: "Multiple filaments", gcode: "M997", name: "Move carter", arg: "C<#>" },
 	
-	{ tab: "Microsteps", cat: "Microsteps", gcode: "M350", name: "Microstepping mode set", arg: "S<#> sets stepping mode for all drivers, steps per unit unchanged" },
-	{ tab: "Microsteps", cat: "Microsteps", gcode: "M351", name: "Toggle MS1 MS2 directly", arg: "X Y Z E B" },
+	{ tab: "Other", cat: "Microsteps", gcode: "M350", name: "Microstepping mode set", arg: "S<#> sets stepping mode for all drivers, steps per unit unchanged" },
+	{ tab: "Other", cat: "Microsteps", gcode: "M351", name: "Toggle MS1 MS2 directly", arg: "X Y Z E B" },
 	
-	{ tab: "Solenoid", cat: "Solenoid", gcode: "M380", name: "Enable solenoid" },
-	{ tab: "Solenoid", cat: "Solenoid", gcode: "M381", name: "Disable solenoids" },
+	{ tab: "Other", cat: "Solenoid", gcode: "M380", name: "Enable solenoid" },
+	{ tab: "Other", cat: "Solenoid", gcode: "M381", name: "Disable solenoids" },
 	
 	{ tab: "Other", cat: "Digital trimpot", gcode: "M907", name: "Digital trimpot motor current set", arg: "X, Y, Z, E, B, S" },
 	{ tab: "Other", cat: "Digital trimpot", gcode: "M908", name: "Control digital trimpot", arg: "P<pin> S<current>" },
