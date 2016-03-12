@@ -5,8 +5,6 @@ module.exports = [
 	{ tab: "Control", cat: "Move", gcode: "G3", name: "Counter-clockwise arc" },
 	
 	{ tab: "Control", cat: "Home", gcode: "G28", name: "Home axes", arg: "<X> <Y> <Z> or blank for all" },
-	{ tab: "Control", cat: "Home", gcode: "M206", name: "Additional homing offset", arg: "SCARA aliases T=X, P=Y" },
-	{ tab: "Control", cat: "Home", gcode: "M428", name: "Apply current_position to home_offset" },
 	
 	{ tab: "Control", cat: "Position", gcode: "M114", name: "Get current position" },
 	{ tab: "Control", cat: "Position", gcode: "G92", name: "Set current position", arg: "X<#> Y<#> Z<#> E<#>" },
@@ -152,4 +150,7 @@ module.exports = [
 	{ tab: "Other", cat: "BlinkM", gcode: "M150", name: "BlinkM status LED Color" },
 	
 	{ tab: "Other", cat: "Camera", gcode: "M240", name: "Trigger camera" },
+	
+	{ tab: "Other", cat: "Home", gcode: "M206", name: "Additional homing offset", arg: "SCARA aliases T=X, P=Y" },
+	{ tab: "Other", cat: "Home", gcode: "M428", name: "Apply current_position to home_offset" },
 ]
