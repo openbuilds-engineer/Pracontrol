@@ -71,7 +71,7 @@ module.exports = class Module extends WebComponentAbstract {
 		if(!('conf' in this.ser)) {
 			this.ser.conf = [
 				'ControlShortcuts',
-				'RemoteControl'
+				'RemoteControl',
 			].join("\n")
 		}
 	}
