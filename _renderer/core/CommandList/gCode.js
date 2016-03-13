@@ -128,8 +128,8 @@ module.exports = [
 	
 	{ tab: "Filament sensor", cat: "Filament sensor", gcode: "M404", name: "Nominal filament width read/set" },
 	{ tab: "Filament sensor", cat: "Filament sensor", gcode: "M405", name: "Turn on filament sensor" },
-	{ tab: "Filament sensor", cat: "Filament sensor", gcode: "M406", name: "Turn off filament sensor" },
-	{ tab: "Filament sensor", cat: "Filament sensor", gcode: "M407", name: "Measured filament diameter get" },
+	{ tab: "Filament sensor", cat: "Filament sensor", gcode: "M406", name: "Turn off filament sensor", arg: null },
+	{ tab: "Filament sensor", cat: "Filament sensor", gcode: "M407", name: "Measured filament diameter get", arg: null },
 	
 	{ tab: "Multiple filaments", cat: "Multiple filaments", gcode: "M600", name: "Pause for filament change", arg: "X[pos] Y[pos] Z[relative lift] E[initial retract] L[later retract distance for removal]" },
 	{ tab: "Multiple filaments", cat: "Multiple filaments", gcode: "M997", name: "Move carter", arg: "C<#>" },
