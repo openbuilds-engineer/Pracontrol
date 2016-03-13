@@ -43,13 +43,20 @@ module.exports = class Console extends WebComponentAbstract {
 		this.firstPart = ''
 		
 		// clean console when connected
-		self.on('connected', e => this.console.textContent = "")
+		self.on('connected', e => this.consoleClear())
 		
 		defineAppEvent('consoleClear', 'Clear console', 'Console')
-		self.on('consoleClear', e => this.console.textContent = "")
+		self.on('consoleClear', e => this.consoleClear())
+			
+		defineKeyShortcut('⌘K', 'Clear console', 'Console')
+		self.on('keydown', e => (e.metaKey || e.ctrlKey) && e.keyCode == 75 && this.consoleClear())
 			
 		defineAppEvent('consoleInputValue', 'Set console input value and focus it', 'Console', "''")
 		self.on('consoleInputValue', e => { this.input.value = e.d; this.focus() })
+	}
+	
+	consoleClear() {
+		this.console.textContent = ""
 	}
 	
 	serialData(data) {
