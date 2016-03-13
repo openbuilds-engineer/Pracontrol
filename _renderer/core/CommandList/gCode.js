@@ -29,16 +29,16 @@ module.exports = [
 	{ tab: "Settings", cat: "EEPROM", gcode: "M503", name: "Read settings from memory" },
 	{ tab: "Settings", cat: "EEPROM", gcode: "M502", name: "Revert to default" },
 	
-	{ tab: "Coordinates", cat: "Position", gcode: "M114", name: "Get current position" },
+	{ tab: "Coordinates", cat: "Position", gcode: "M114", name: "Get current position", arg: null },
 	{ tab: "Coordinates", cat: "Position", gcode: "G92", name: "Set current position", arg: "X<#> Y<#> Z<#> E<#>" },
 	
-	{ tab: "Coordinates", cat: "Relative absolute", gcode: "G90", name: "Absolute coordinates (default)" },
-	{ tab: "Coordinates", cat: "Relative absolute", gcode: "G91", name: "Relative coordinates" },
-	{ tab: "Coordinates", cat: "Relative absolute", gcode: "M82", name: "Absolute E axis (default)" },
-	{ tab: "Coordinates", cat: "Relative absolute", gcode: "M83", name: "Relative E axis" },
+	{ tab: "Coordinates", cat: "Relative absolute", gcode: "G90", name: "Absolute coordinates (default)", arg: null },
+	{ tab: "Coordinates", cat: "Relative absolute", gcode: "G91", name: "Relative coordinates", arg: null },
+	{ tab: "Coordinates", cat: "Relative absolute", gcode: "M82", name: "Absolute E axis (default)", arg: null },
+	{ tab: "Coordinates", cat: "Relative absolute", gcode: "M83", name: "Relative E axis", arg: null },
 	
-	{ tab: "Coordinates", cat: "Position memory", gcode: "G60", name: "Store actual coordinates in memory" },
-	{ tab: "Coordinates", cat: "Position memory", gcode: "G61", name: "Move to coordinates in memory" },
+	{ tab: "Coordinates", cat: "Position memory", gcode: "G60", name: "Store actual coordinates in memory", arg: null },
+	{ tab: "Coordinates", cat: "Position memory", gcode: "G61", name: "Move to coordinates in memory", arg: "<X> <Y> <Z>" },
 	
 	{ tab: "Temperature", cat: "Temperature", gcode: "M105", name: "Read temperature" },
 	{ tab: "Temperature", cat: "Temperature", gcode: "M104", name: "Extruder temperature set", arg: "S<temp>" },
