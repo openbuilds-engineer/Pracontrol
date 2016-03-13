@@ -53,6 +53,9 @@ module.exports = class Console extends WebComponentAbstract {
 			
 		defineAppEvent('consoleInputValue', 'Set console input value and focus it', 'Console', "''")
 		self.on('consoleInputValue', e => { this.input.value = e.d; this.focus() })
+		
+		// scroll down on tab focus
+		this.on('focusTab', e => this.consoleScrollDown())
 	}
 	
 	consoleClear() {
