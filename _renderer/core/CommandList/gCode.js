@@ -145,9 +145,9 @@ module.exports = [
 	{ tab: "Other", cat: "Emergency", gcode: "M999", name: "Restart", arg: null },
 	
 	{ tab: "Other", cat: "Microsteps", gcode: "M350", name: "Microstepping mode set", arg: "S<#> sets stepping mode for all drivers, steps per unit unchanged" },
-	{ tab: "Other", cat: "Microsteps", gcode: "M351", name: "Toggle microsteps MS1 MS2", arg: "X Y Z E B" },
+	{ tab: "Other", cat: "Microsteps", gcode: "M351", name: "Toggle microsteps MS1 MS2" },
 	
-	{ tab: "Other", cat: "Digital trimpot", gcode: "M907", name: "Digital trimpot motor current set", arg: "X Y Z E B S" },
+	{ tab: "Other", cat: "Digital trimpot", gcode: "M907", name: "Digital trimpot motor current set" },
 	{ tab: "Other", cat: "Digital trimpot", gcode: "M908", name: "Control digital trimpot", arg: "P<pin> S<current>" },
 	
 	{ tab: "Other", cat: "Dual X carriage", gcode: "M605", name: "Dual x-carriage movement mode set" },
