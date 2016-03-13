@@ -47,7 +47,7 @@ module.exports = class Console extends WebComponentAbstract {
 		defineAppEvent('consoleClear', 'Clear console', 'Console')
 		self.on('consoleClear', e => this.console.textContent = "")
 			
-		defineAppEvent('consoleInputValue', 'Set console input value and focus it', 'Console')
+		defineAppEvent('consoleInputValue', 'Set console input value and focus it', 'Console', "''")
 		self.on('consoleInputValue', e => { this.input.value = e.d; this.focus() })
 	}
 	
