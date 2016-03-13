@@ -114,12 +114,12 @@ module.exports = [
 	{ tab: "LCD", cat: "LCD", gcode: "M145", name: "Heatup state for material", arg: "S<0=PLA|1=ABS|2=GUM> H<hotend temp> B<bed temp> F<fan speed> Material " },
 	{ tab: "LCD", cat: "LCD", gcode: "M250", name: "Contrast read/set" },
 	
-	{ tab: "Scara", cat: "Scara", gcode: "M360", name: "Move to cal-position ThetaA", arg: "(0 deg calibration)" },
-	{ tab: "Scara", cat: "Scara", gcode: "M361", name: "Move to cal-position ThetaB", arg: "(90 deg calibration - steps per degree)" },
-	{ tab: "Scara", cat: "Scara", gcode: "M362", name: "Move to cal-position PsiA", arg: "(0 deg calibration)" },
-	{ tab: "Scara", cat: "Scara", gcode: "M363", name: "Move to cal-position PsiB", arg: "(90 deg calibration - steps per degree)" },
-	{ tab: "Scara", cat: "Scara", gcode: "M364", name: "Move to cal-position PSIC", arg: "(90 deg to Theta calibration position)" },
-	{ tab: "Scara", cat: "Scara", gcode: "M365", name: "Scaling factor set" },
+	{ tab: "Scara", cat: "Scara", gcode: "M360", name: "Move to cal-position ThetaA", arg: "0˚ calibration" },
+	{ tab: "Scara", cat: "Scara", gcode: "M361", name: "Move to cal-position ThetaB", arg: "90˚ calibration - steps per degree" },
+	{ tab: "Scara", cat: "Scara", gcode: "M362", name: "Move to cal-position PsiA", arg: "0˚ calibration" },
+	{ tab: "Scara", cat: "Scara", gcode: "M363", name: "Move to cal-position PsiB", arg: "90˚ calibration - steps per degree" },
+	{ tab: "Scara", cat: "Scara", gcode: "M364", name: "Move to cal-position PSIC", arg: "90˚ to Theta calibration position" },
+	{ tab: "Scara", cat: "Scara", gcode: "M365", name: "Scaling factor set", arg: "X<#> Y<#> Z<#>" },
 	
 	{ tab: "Paste Extruder", cat: "Paste Extruder", gcode: "M126", name: "Heater 1 valve open" },
 	{ tab: "Paste Extruder", cat: "Paste Extruder", gcode: "M127", name: "Heater 1 valve close" },
