@@ -13,8 +13,6 @@ module.exports = class ConnectForm extends WebComponentAbstract {
 	initCallback() {
 		this.renderLess(style)
 		
-		this.newElement('p').textContent = "Connect"
-		
 		this.port = this.newElement('select')
 		this.port.on('click', e => AppEvent('refreshPorts'))
 		
