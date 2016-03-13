@@ -79,11 +79,11 @@ module.exports = [
 	{ tab: "Endstops", cat: "Endstops", gcode: "M666", name: "Delta endstop and geometry adjustment set" },
 	
 	{ tab: "Retract", cat: "Retract", gcode: "M200", name: "E axis cubic millimeters set", arg: "T<extruder> D<millimeters> (S0=back to millimeters)" },
-	{ tab: "Retract", cat: "Retract", gcode: "G10", name: "Retract filament" },
+	{ tab: "Retract", cat: "Retract", gcode: "G10", name: "Retract filament", arg: "S<#>" },
 	{ tab: "Retract", cat: "Retract", gcode: "G11", name: "Retract filament", duplicate: true },
 	{ tab: "Retract", cat: "Retract", gcode: "M207", name: "Retract length set", arg: "S[positive mm] F[feedrate mm/min] Z[additional zlift/hop]" },
 	{ tab: "Retract", cat: "Retract", gcode: "M208", name: "Retract recover length set", arg: "S[positive mm surplus to the M207 S*] F[feedrate mm/min]" },
-	{ tab: "Retract", cat: "Retract", gcode: "M209", name: "Enable automatic retract", arg: "S1" },
+	{ tab: "Retract", cat: "Retract", gcode: "M209", name: "Automatic retract set", arg: "S<1|0>" },
  	
 	{ tab: "Bed leveling", cat: "Bed leveling", gcode: "G29", name: "Probe bed at 3 or more points" },
 	{ tab: "Bed leveling", cat: "Bed leveling", gcode: "G30", name: "Probe bed at current XY location" },
