@@ -73,10 +73,9 @@ module.exports = [
 	{ tab: "PID", cat: "PID", gcode: "M304", name: "Bed PID parameters set" },
 	{ tab: "PID", cat: "PID", gcode: "M303", name: "PID relay autotune" },
 	
-	{ tab: "Endstops", cat: "Endstops", gcode: "M119", name: "Endstop states" },
-	{ tab: "Endstops", cat: "Endstops", gcode: "M120", name: "Enable endstops" },
-	{ tab: "Endstops", cat: "Endstops", gcode: "M121", name: "Disable endstops" },
-	{ tab: "Endstops", cat: "Endstops", gcode: "M666", name: "Delta endstop and geometry adjustment set" },
+	{ tab: "Endstops", cat: "Endstops", gcode: "M120", name: "Enable endstops", arg: null },
+	{ tab: "Endstops", cat: "Endstops", gcode: "M121", name: "Disable endstops", arg: null },
+	{ tab: "Endstops", cat: "Endstops", gcode: "M119", name: "Read endstop states ", arg: null },
 	
 	{ tab: "Retract", cat: "Retract", gcode: "M200", name: "E axis cubic millimeters set", arg: "T<extruder> D<millimeters> (S0=back to millimeters)" },
 	{ tab: "Retract", cat: "Retract", gcode: "G10", name: "Retract filament", arg: "S<#>" },
