@@ -82,5 +82,6 @@ module.exports = class Serial extends WebComponentAbstract {
 	send(data) {
 		if(!this.serial) return
 		this.serial.write(data)
+		if(data == 'M410\n') AppEvent('info', { msg: 'Moves aborted. Motors can be out of sync.' })
 	}
 }
