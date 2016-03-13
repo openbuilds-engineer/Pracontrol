@@ -5,8 +5,8 @@ module.exports = class Fan extends WebComponentAbstract {
 		
 		var p = this.newElement('p', true, { textContent: "Fan " })
 		
-		this.slider = p.newElement('input', true, { type: 'range', min: 0, max: 255, step: 1, value: 0 })
-		this.slider.on('input', e => this.setSpeed(this.slider.value))
+		var slider = p.newElement('input', true, { type: 'range', min: 0, max: 255, step: 1, value: 0 })
+		slider.on('input', e => this.setSpeed(slider.value))
 	}
 	
 	setSpeed(val) {
