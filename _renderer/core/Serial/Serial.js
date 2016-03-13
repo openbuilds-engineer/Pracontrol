@@ -80,6 +80,7 @@ module.exports = class Serial extends WebComponentAbstract {
 	}
 	
 	send(data) {
+		if(!this.serial) return
 		this.serial.write(data)
 	}
 }
