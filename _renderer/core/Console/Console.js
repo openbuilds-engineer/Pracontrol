@@ -5,7 +5,11 @@ var style = `
 	
 }
 ::content {
-	textarea { height: calc(~"100% - 3rem"); resize: none; margin-bottom: 1rem; font-size: 0.9em; color: #000; }
+	console {
+		display: block; overflow: scroll;
+		height: calc(~"100% - 3rem"); margin-bottom: 1rem;
+		white-space: pre-wrap; font-size: 0.9em; 
+	}
 	input { width: 100%; }
 }
 `
@@ -14,7 +18,7 @@ module.exports = class Console extends WebComponentAbstract {
 	initCallback() {
 		this.renderLess(style)
 		
-		this.console = this.newElement('textarea', true, { placeholder: 'Console', disabled: true })
+		this.console = this.newElement('console')
 		
 		if(!('commandHistory' in this.ser)) this.ser.commandHistory = []
 		this.commandHistoryIndex = this.ser.commandHistory.length
@@ -38,10 +42,10 @@ module.exports = class Console extends WebComponentAbstract {
 		//self.on('serialWrite', e => { this.console.value += e.d.data; this.consoleScrollDown(); })
 		
 		// clean console when connected
-		self.on('connected', e => this.console.value = "")
+		self.on('connected', e => this.console.textContent = "")
 		
 		defineAppEvent('consoleClear', 'Clear console', 'Console')
-		self.on('consoleClear', e => this.console.value = "")
+		self.on('consoleClear', e => this.console.textContent = "")
 			
 		defineAppEvent('consoleInputValue', 'Set console input value and focus it', 'Console')
 		self.on('consoleInputValue', e => { this.input.value = e.d; this.focus() })
