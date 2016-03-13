@@ -31,8 +31,8 @@ module.exports = [
 	
 	{ tab: "Position", cat: "Position", gcode: "M114", name: "Get current position" },
 	{ tab: "Position", cat: "Position", gcode: "G92", name: "Set current position", arg: "X<#> Y<#> Z<#> E<#>" },
-	{ tab: "Position", cat: "Position", gcode: "G60", name: "Store actual coordinates in memory" },
-	{ tab: "Position", cat: "Position", gcode: "G61", name: "Move to coordinates in memory" },
+	{ tab: "Position", cat: "Position memory", gcode: "G60", name: "Store actual coordinates in memory" },
+	{ tab: "Position", cat: "Position memory", gcode: "G61", name: "Move to coordinates in memory" },
 	
 	{ tab: "Relative & absolute", cat: "Relative & absolute", gcode: "G90", name: "Absolute coordinates (default)" },
 	{ tab: "Relative & absolute", cat: "Relative & absolute", gcode: "G91", name: "Relative coordinates" },
