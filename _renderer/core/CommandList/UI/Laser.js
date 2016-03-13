@@ -5,8 +5,8 @@ module.exports = class Laser extends WebComponentAbstract {
 		
 		var p = this.newElement('p', true, { textContent: "Laser " })
 		
-		this.slider = p.newElement('input', true, { type: 'range', min: 0, max: 255, step: 1, value: 0 })
-		this.slider.on('input', e => this.setPower(this.slider.value))
+		var slider = p.newElement('input', true, { type: 'range', min: 0, max: 255, step: 1, value: 0 })
+		slider.on('input', e => this.setPower(slider.value))
 	}
 	
 	setPower(val) {
