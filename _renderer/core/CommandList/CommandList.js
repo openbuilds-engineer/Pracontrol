@@ -94,7 +94,7 @@ module.exports = class CommandList extends TabComponent {
 				a.textContent = c.name
 				a.classList.add('button')
 			} else {
-				a.innerHTML = `<b>${c.gcode}</b> ${c.name}<br><small>${c.arg}</small>`
+				a.innerHTML = `<b>${c.gcode}</b> ${c.name}<br><small>${c.arg || ''}</small>`
 			}
 			
 			a.on('click', e => AppEvent('consoleInputValue', c.gcode + ' '))
