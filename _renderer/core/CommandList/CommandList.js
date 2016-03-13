@@ -97,7 +97,7 @@ module.exports = class CommandList extends TabComponent {
 				a.newElement('b', true, { textContent: c.gcode })
 				a.newText(' ' + c.name)
 				a.newElement('br')
-				a.newElement('small', true, { textContent: c.arg || '' })
+				a.newElement('small', true, { textContent: c.arg || ' ' })
 			}
 			
 			a.on('click', e => AppEvent('consoleInputValue', c.gcode + ' '))
