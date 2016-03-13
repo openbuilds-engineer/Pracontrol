@@ -8,7 +8,7 @@ var style = `
 	console {
 		display: block; overflow: scroll;
 		height: calc(~"100% - 3rem"); margin-bottom: 1rem;
-		white-space: pre-wrap; font-size: 0.9em; 
+		white-space: pre-wrap; font-size: 0.9em;
 	}
 	input { width: 100%; }
 }
