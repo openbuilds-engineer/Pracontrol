@@ -89,9 +89,9 @@ module.exports = [
 	{ tab: "Bed leveling", cat: "Bed leveling", gcode: "G30", name: "Probe bed at current XY location" },
 	{ tab: "Bed leveling", cat: "Bed leveling", gcode: "M666", name: "Z probe offset set" },
 	
-	{ tab: "Z-Probe", cat: "Z-Probe", gcode: "G29", name: "Probes the bed at more points" },
-	{ tab: "Z-Probe", cat: "Z-Probe", gcode: "G30", name: "Delta auto calibration" },
-	{ tab: "Z-Probe", cat: "Z-Probe", gcode: "M49", name: "Z-Probe repeatability measurement", arg: "<P#> <X#> <Y#> <V#> <E> <L#>" },
+	{ tab: "Bed leveling", cat: "Z-Probe", gcode: "G29", name: "Probes the bed at more points" },
+	{ tab: "Bed leveling", cat: "Z-Probe", gcode: "G30", name: "Delta auto calibration" },
+	{ tab: "Bed leveling", cat: "Z-Probe", gcode: "M49", name: "Z-Probe repeatability measurement", arg: "<P#> <X#> <Y#> <V#> <E> <L#>" },
 	
 	{ tab: "Memory card", cat: "Memory card", gcode: "M21", name: "Init card" },
 	{ tab: "Memory card", cat: "Memory card", gcode: "M20", name: "List card" },
