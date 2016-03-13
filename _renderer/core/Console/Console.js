@@ -6,7 +6,7 @@ var style = `
 }
 ::content {
 	console {
-		display: block; overflow: scroll;
+		display: block; overflow-x: hidden; overflow-y: auto;
 		height: calc(~"100% - 3rem"); margin-bottom: 1rem;
 		white-space: pre-wrap; font-size: 0.9em;
 	}
