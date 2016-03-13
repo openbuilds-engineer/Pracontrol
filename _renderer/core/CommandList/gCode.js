@@ -6,13 +6,6 @@ module.exports = [
 	
 	{ tab: "Control", cat: "Home", gcode: "G28", name: "Home axes", arg: "<X> <Y> <Z> or blank for all" },
 	
-	{ tab: "Control", cat: "Fan", gcode: "M106", name: "Fan speed set", arg: "S<0-255>" },
-	{ tab: "Control", cat: "Fan", gcode: "M107", name: "Fan off" },
-	
-	{ tab: "Control", cat: "Laser", gcode: "M3", name: "Laser power set", arg: "S<0-255>" },
-	{ tab: "Control", cat: "Laser", gcode: "M4", name: "Turn on laser" },
-	{ tab: "Control", cat: "Laser", gcode: "M5", name: "Turn off laser" },
-	
 	{ tab: "Control", cat: "Abort", gcode: "M112", name: "Emergency stop", arg: null },
 	{ tab: "Control", cat: "Abort", gcode: "M410", name: "Abort planned moves", arg: null },
 	
@@ -21,6 +14,13 @@ module.exports = [
 	{ tab: "Control", cat: "Power", gcode: "M17", name: "Turn on stepper motors", arg: '<X> <Y> <Z> <E>' },
 	{ tab: "Control", cat: "Power", gcode: "M18", name: "Turn off stepper motors", arg: '<X> <Y> <Z> <E>' },
 	{ tab: "Control", cat: "Power", gcode: "M84", name: "Turn off stepper motors", duplicate: true },
+	
+	{ tab: "Control", cat: "Fan", gcode: "M106", name: "Fan speed set", arg: "S<0-255>" },
+	{ tab: "Control", cat: "Fan", gcode: "M107", name: "Fan off" },
+	
+	{ tab: "Control", cat: "Laser", gcode: "M3", name: "Laser power set", arg: "S<0-255>" },
+	{ tab: "Control", cat: "Laser", gcode: "M4", name: "Turn on laser" },
+	{ tab: "Control", cat: "Laser", gcode: "M5", name: "Turn off laser" },
 	
 	{ tab: "Settings", cat: "Speed", gcode: "M92", name: "Axis steps per unit", arg: "X<#> Y<#> Z<#> E<#>" },
 	{ tab: "Settings", cat: "Speed", gcode: "M201", name: "Max acceleration for print moves", arg: "X<#> Y<#> Z<#> E<#> (s^2)" },
