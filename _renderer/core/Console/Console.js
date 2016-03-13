@@ -55,7 +55,7 @@ module.exports = class Console extends WebComponentAbstract {
 		self.on('consoleInputValue', e => { this.input.value = e.d; this.focus() })
 		
 		// scroll down on tab focus
-		this.on('focusTab', e => this.consoleScrollDown())
+		this.on('focusTab', e => this.scrollDown())
 	}
 	
 	consoleClear() {
@@ -80,7 +80,7 @@ module.exports = class Console extends WebComponentAbstract {
 		}
 		
 		this.console.textContent += data + '\n'
-		this.consoleScrollDown()
+		this.scrollDown()
 	}
 	
 	readyCallback() {
@@ -107,7 +107,7 @@ module.exports = class Console extends WebComponentAbstract {
 		 this.input.dispatchEvent(new Event('focus'))
 	}
 	
-	consoleScrollDown() {
+	scrollDown() {
 		this.console.scrollTop = this.console.scrollHeight
 	}
 	
@@ -119,6 +119,6 @@ module.exports = class Console extends WebComponentAbstract {
 		var e = AppEvent('serialWrite', { data: this.input.value, prepend: true })
 		this.input.value = ""
 		
-		this.consoleScrollDown()
+		this.scrollDown()
 	}
 }
