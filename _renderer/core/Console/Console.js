@@ -66,8 +66,8 @@ module.exports = class Console extends WebComponentAbstract {
 		if(data == "start\r") return
 		if(data == "ok\r") return
 		
-		if(data.startsWith('Error:')) throw new Error(data)
-		if(data.startsWith('Resend:')) throw new Error(data)
+		if(data.startsWith('Error:')) throw new Error(data.substr(6).trim())
+		if(data.startsWith('Resend:')) throw new Error(data.substr(7).trim())
 		
 		if(data.startsWith('echo:')) {
 			data = data.substr(5).trim()
