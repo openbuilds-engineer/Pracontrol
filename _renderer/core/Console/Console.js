@@ -37,8 +37,8 @@ module.exports = class Console extends WebComponentAbstract {
 		defineKeyShortcut('Up/Down', 'Commands history', 'Console')
 		this.input.on('keydown', e => this.historyCommand(e))
 		
-		// serial data
-		defineAppEvent('serialEcho', 'Device sends echo: message', 'Console', "''")
+		defineAppEvent('serialEcho', 'Device sends echo message', 'Console', "''")
+		defineAppEvent('serialOk', 'Device sends ok message', 'Console', "''")
 		self.on('serialData', e => this.serialData(e.d.data))
 		this.firstPart = ''
 		
@@ -68,6 +68,7 @@ module.exports = class Console extends WebComponentAbstract {
 		
 		if(data.startsWith('Error:')) throw new Error(data)
 		if(data.startsWith('Resend:')) throw new Error(data)
+		
 		if(data.startsWith('echo:')) {
 			data = data.substr(5).trim()
 			
@@ -75,11 +76,20 @@ module.exports = class Console extends WebComponentAbstract {
 		
 			if(this.firstPart) { data = this.firstPart + data; this.firstPart = '' }
 			else if(data.endsWith(':')) { this.firstPart = data + ' '; return }
-		
-			data = '🅘 ' + data
+			
+			this.console.textContent += `🅘 ${data}\n`
+		}
+		else if(data.startsWith('ok')) {
+			data = data.substr(2).trim()
+			
+			AppEvent('serialOk', data)
+			
+			this.console.textContent += `${data}\n`
+		}
+		else {
+			this.console.textContent += `${data}\n`
 		}
 		
-		this.console.textContent += data + '\n'
 		this.scrollDown()
 	}
 	
