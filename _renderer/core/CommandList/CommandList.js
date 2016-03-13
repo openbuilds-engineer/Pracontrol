@@ -59,7 +59,6 @@ module.exports = class CommandList extends TabComponent {
 	
 	readyCallback() {
 		AppEvent('newTab', { instance: this, name: 'Commands', priority: -70 })
-		AppEvent('toggleTab', this)
 	}
 	
 	attachedCallback() {
