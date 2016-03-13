@@ -140,20 +140,20 @@ module.exports = [
 	{ tab: "Other", cat: "Solenoid", gcode: "M380", name: "Enable solenoid", arg: null },
 	{ tab: "Other", cat: "Solenoid", gcode: "M381", name: "Disable solenoids", arg: null },
 	
-	{ tab: "Other", cat: "Microsteps", gcode: "M350", name: "Microstepping mode set", arg: "S<#> sets stepping mode for all drivers, steps per unit unchanged" },
-	{ tab: "Other", cat: "Microsteps", gcode: "M351", name: "Toggle MS1 MS2 directly", arg: "X Y Z E B" },
+	{ tab: "Other", cat: "Camera", gcode: "M240", name: "Trigger camera", arg: null },
 	
-	{ tab: "Other", cat: "Digital trimpot", gcode: "M907", name: "Digital trimpot motor current set", arg: "X, Y, Z, E, B, S" },
+	{ tab: "Other", cat: "Emergency", gcode: "M999", name: "Restart", arg: null },
+	
+	{ tab: "Other", cat: "Microsteps", gcode: "M350", name: "Microstepping mode set", arg: "S<#> sets stepping mode for all drivers, steps per unit unchanged" },
+	{ tab: "Other", cat: "Microsteps", gcode: "M351", name: "Toggle microsteps MS1 MS2", arg: "X Y Z E B" },
+	
+	{ tab: "Other", cat: "Digital trimpot", gcode: "M907", name: "Digital trimpot motor current set", arg: "X Y Z E B S" },
 	{ tab: "Other", cat: "Digital trimpot", gcode: "M908", name: "Control digital trimpot", arg: "P<pin> S<current>" },
 	
 	{ tab: "Other", cat: "Dual X carriage", gcode: "M605", name: "Dual x-carriage movement mode set" },
 	
 	{ tab: "Other", cat: "BlinkM", gcode: "M150", name: "BlinkM status LED Color" },
 	
-	{ tab: "Other", cat: "Camera", gcode: "M240", name: "Trigger camera" },
-	
 	{ tab: "Other", cat: "Home", gcode: "M206", name: "Additional homing offset", arg: "SCARA aliases T=X, P=Y" },
 	{ tab: "Other", cat: "Home", gcode: "M428", name: "Apply saved coordinates to home offset" },
-	
-	{ tab: "Other", cat: "Emergency", gcode: "M999", name: "Restart", arg: null },
 ]
