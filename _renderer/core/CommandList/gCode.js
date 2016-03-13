@@ -13,9 +13,8 @@ module.exports = [
 	{ tab: "Control", cat: "Laser", gcode: "M4", name: "Turn on laser" },
 	{ tab: "Control", cat: "Laser", gcode: "M5", name: "Turn off laser" },
 	
-	{ tab: "Control", cat: "Emergency", gcode: "M112", name: "Emergency stop", arg: null },
-	
-	{ tab: "Control", cat: "Queue", gcode: "M410", name: "Abort all planned moves", arg: null },
+	{ tab: "Control", cat: "Abort", gcode: "M112", name: "Emergency stop", arg: null },
+	{ tab: "Control", cat: "Abort", gcode: "M410", name: "Abort planned moves", arg: null },
 	
 	{ tab: "Control", cat: "Power", gcode: "M80", name: "Turn on power", arg: null },
 	{ tab: "Control", cat: "Power", gcode: "M81", name: "Turn off power", arg: null },
