@@ -11,6 +11,6 @@ module.exports = class Abort extends WebComponentAbstract {
 
 	send(val) {
 		AppEvent('serialDirectWrite', { data: val + '\n' })
-		if(val == 'M410') AppEvent('info', { msg: 'Moves aborted. Motors are out of sync.' })
+		if(val == 'M410') AppEvent('info', { msg: 'Moves aborted. Motors can be out of sync.' })
 	}
 }
