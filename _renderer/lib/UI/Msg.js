@@ -7,7 +7,7 @@ var style = `
 	z-index: 1;
 	
 	background-color: Highlight;
-	bottom: 2rem; left: 1rem; max-width: calc(100% - 2rem);
+	bottom: 2rem; right: 1rem; max-width: calc(100% - 2rem);
 	padding: 0em .2em; border-radius: .25em;
 }
 
