@@ -154,6 +154,6 @@ module.exports = [
 	
 	{ tab: "Other", cat: "BlinkM", gcode: "M150", name: "BlinkM status LED Color" },
 	
-	{ tab: "Other", cat: "Home", gcode: "M206", name: "Additional homing offset", arg: "SCARA aliases T=X, P=Y" },
-	{ tab: "Other", cat: "Home", gcode: "M428", name: "Apply saved coordinates to home offset" },
+	{ tab: "Other", cat: "Homing", gcode: "M206", name: "Additional homing offset" },
+	{ tab: "Other", cat: "Homing", gcode: "M428", name: "Apply saved coordinates to home offset" },
 ]
