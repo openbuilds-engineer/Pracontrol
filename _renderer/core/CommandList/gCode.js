@@ -7,11 +7,11 @@ module.exports = [
 	{ tab: "Control", cat: "Home", gcode: "G28", name: "Home axes", arg: "<X> <Y> <Z> or blank for all" },
 	
 	{ tab: "Control", cat: "Fan", gcode: "M106", name: "Fan speed set", arg: "S<0-255>" },
-	{ tab: "Control", cat: "Fan", gcode: "M107", name: "Fan off", duplicate: true },
+	{ tab: "Control", cat: "Fan", gcode: "M107", name: "Fan off" },
 	
 	{ tab: "Control", cat: "Laser", gcode: "M3", name: "Laser power set", arg: "S<0-255>" },
-	{ tab: "Control", cat: "Laser", gcode: "M4", name: "Turn on laser", duplicate: true },
-	{ tab: "Control", cat: "Laser", gcode: "M5", name: "Turn off laser", duplicate: true },
+	{ tab: "Control", cat: "Laser", gcode: "M4", name: "Turn on laser" },
+	{ tab: "Control", cat: "Laser", gcode: "M5", name: "Turn off laser" },
 	
 	{ tab: "Control", cat: "Emergency", gcode: "M112", name: "Emergency stop", arg: null },
 	
