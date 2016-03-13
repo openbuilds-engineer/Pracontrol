@@ -46,7 +46,7 @@ module.exports = [
 	{ tab: "Coordinates", cat: "Position memory", gcode: "G60", name: "Store actual coordinates in memory", arg: null },
 	{ tab: "Coordinates", cat: "Position memory", gcode: "G61", name: "Move to coordinates in memory", arg: "<X> <Y> <Z>" },
 	
-	{ tab: "Temperature", cat: "Temperature", gcode: "M105", name: "Read temperature" },
+	{ tab: "Temperature", cat: "Temperature", gcode: "M105", name: "Read temperature", arg: null },
 	{ tab: "Temperature", cat: "Temperature", gcode: "M104", name: "Extruder temperature set", arg: "S<temp>" },
 	{ tab: "Temperature", cat: "Temperature", gcode: "M109", name: "Wait for extruder to reach temperature", arg: "S<temp>" },
 	{ tab: "Temperature", cat: "Temperature", gcode: "M140", name: "Bed temperature set", arg: "S<temp>" },
