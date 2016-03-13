@@ -88,10 +88,14 @@ module.exports = class CommandList extends TabComponent {
 		}
 		else {
 			var p = tab.instance.newElement('p')
-			var a = p.newElement('a', true, { title: c.arg || '' })
+			var a = p.newElement('a')
 			
-			a.innerHTML = c.arg === null ? c.name : `<b>${c.gcode}</b> ${c.name}`
-			c.arg === null && a.classList.add('button')
+			if(c.arg === null) {
+				a.textContent = c.name
+				a.classList.add('button')
+			} else {
+				a.innerHTML = `<b>${c.gcode}</b> ${c.name}<br><small>${c.arg}</small>`
+			}
 			
 			a.on('click', e => AppEvent('consoleInputValue', c.gcode + ' '))
 			a.style.cursor = 'pointer'
