@@ -17,6 +17,12 @@ module.exports = [
 	
 	{ tab: "Control", cat: "Queue", gcode: "M410", name: "Abort all planned moves", arg: null },
 	
+	{ tab: "Control", cat: "Power", gcode: "M80", name: "Turn on power", arg: null },
+	{ tab: "Control", cat: "Power", gcode: "M81", name: "Turn off power", arg: null },
+	{ tab: "Control", cat: "Power", gcode: "M17", name: "Turn on stepper motors", arg: '<X> <Y> <Z> <E>' },
+	{ tab: "Control", cat: "Power", gcode: "M18", name: "Turn off stepper motors", arg: '<X> <Y> <Z> <E>' },
+	{ tab: "Control", cat: "Power", gcode: "M84", name: "Turn off stepper motors", duplicate: true },
+	
 	{ tab: "Settings", cat: "Speed", gcode: "M92", name: "Axis steps per unit", arg: "X<#> Y<#> Z<#> E<#>" },
 	{ tab: "Settings", cat: "Speed", gcode: "M201", name: "Max acceleration for print moves", arg: "X<#> Y<#> Z<#> E<#> (s^2)" },
 	{ tab: "Settings", cat: "Speed", gcode: "M203", name: "Maximum feedrate", arg: "X<#> Y<#> Z<#> E<#> (mm/sec)" },
@@ -54,18 +60,12 @@ module.exports = [
 	{ tab: "Queue", cat: "Queue", gcode: "M400", name: "Finish all moves" },
 	{ tab: "Queue", cat: "Queue", gcode: "M226", name: "Wait for pin state", arg: "P<pin> S<state>" },
 	
-	{ tab: "Power & pins", cat: "Power & pins", gcode: "M80", name: "Turn on power" },
-	{ tab: "Power & pins", cat: "Power & pins", gcode: "M81", name: "Turn off power" },
-	{ tab: "Power & pins", cat: "Power & pins", gcode: "M17", name: "Turn on stepper motors" },
-	{ tab: "Power & pins", cat: "Power & pins", gcode: "M18", name: "Turn off stepper motors" },
-	{ tab: "Power & pins", cat: "Power & pins", gcode: "M84", name: "Turn off stepper motors", duplicate: true },
-	{ tab: "Power & pins", cat: "Power & pins", gcode: "M85", name: "Inactivity shutdown timer set", arg: "S<seconds> (0 to disable)" },
-	{ tab: "Power & pins", cat: "Power & pins", gcode: "M42", name: "Set pin value", arg: "P<x> S<y> (no pin then LED is used)" },
-	
 	{ tab: "Misc", cat: "Misc", gcode: "M115", name: "Capabilities", arg: null },
 	{ tab: "Misc", cat: "Misc", gcode: "M31", name: "Time since card print or last temperature set", arg: null },
 	{ tab: "Misc", cat: "Misc", gcode: "M111", name: "Debug mode", arg: 'S<#>' },
 	{ tab: "Misc", cat: "Misc", gcode: "M300", name: "Play beep sound", arg: "S<frequency Hz> P<duration ms>" },
+	{ tab: "Misc", cat: "Misc", gcode: "M85", name: "Inactivity shutdown timer set", arg: "S<seconds> (0 to disable)" },
+	{ tab: "Misc", cat: "Misc", gcode: "M42", name: "Set pin value", arg: "P<x> S<y> (if no P then LED is used)" },
 	
 	{ tab: "PID", cat: "PID", gcode: "M301", name: "PID parameters set" },
 	{ tab: "PID", cat: "PID", gcode: "M304", name: "Bed PID parameters set" },
