@@ -38,8 +38,9 @@ module.exports = class Console extends WebComponentAbstract {
 		this.input.on('keydown', e => this.historyCommand(e))
 		
 		// serial data
-		self.on('serialData', e => { if(e.d.data == "ok\r") return; this.console.value += e.d.data; this.consoleScrollDown(); })
-		//self.on('serialWrite', e => { this.console.value += e.d.data; this.consoleScrollDown(); })
+		defineAppEvent('serialEcho', 'Device sends echo: message', 'Console', "''")
+		self.on('serialData', e => this.serialData(e.d.data))
+		this.firstPart = ''
 		
 		// clean console when connected
 		self.on('connected', e => this.console.textContent = "")
@@ -49,6 +50,27 @@ module.exports = class Console extends WebComponentAbstract {
 			
 		defineAppEvent('consoleInputValue', 'Set console input value and focus it', 'Console', "''")
 		self.on('consoleInputValue', e => { this.input.value = e.d; this.focus() })
+	}
+	
+	serialData(data) {
+		if(data == "start\r") return
+		if(data == "ok\r") return
+		
+		if(data.startsWith('Error:')) throw new Error(data)
+		if(data.startsWith('Resend:')) throw new Error(data)
+		if(data.startsWith('echo:')) {
+			data = data.substr(5).trim()
+			
+			AppEvent('serialEcho', data)
+		
+			if(this.firstPart) { data = this.firstPart + data; this.firstPart = '' }
+			else if(data.endsWith(':')) { this.firstPart = data + ' '; return }
+		
+			data = '🅘 ' + data
+		}
+		
+		this.console.textContent += data + '\n'
+		this.consoleScrollDown()
 	}
 	
 	readyCallback() {
