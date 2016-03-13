@@ -111,7 +111,7 @@ module.exports = [
 	{ tab: "LCD", cat: "LCD", gcode: "M0", name: "Unconditional wait for button press" },
 	{ tab: "LCD", cat: "LCD", gcode: "M1", name: "Conditional wait for button press" },
 	{ tab: "LCD", cat: "LCD", gcode: "M117", name: "Message set" },
-	{ tab: "LCD", cat: "LCD", gcode: "M145", name: "Heatup state for material", arg: "S<0=PLA|1=ABS|2=GUM> H<hotend temp> B<bed temp> F<fan speed> Material " },
+	{ tab: "LCD", cat: "LCD", gcode: "M145", name: "Heatup state for material", arg: "S<0=PLA|1=ABS|2=GUM> H<hotend temp> B<bed temp> F<fan speed> " },
 	{ tab: "LCD", cat: "LCD", gcode: "M250", name: "Contrast read/set" },
 	
 	{ tab: "Scara", cat: "Scara", gcode: "M360", name: "Move to cal-position ThetaA", arg: "0˚ calibration" },
