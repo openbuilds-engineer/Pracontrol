@@ -15,6 +15,8 @@ module.exports = [
 	
 	{ tab: "Control", cat: "Emergency", gcode: "M112", name: "Emergency stop", arg: null },
 	
+	{ tab: "Control", cat: "Queue", gcode: "M410", name: "Abort all planned moves", arg: null },
+	
 	{ tab: "Settings", cat: "Speed", gcode: "M92", name: "Axis steps per unit", arg: "X<#> Y<#> Z<#> E<#>" },
 	{ tab: "Settings", cat: "Speed", gcode: "M201", name: "Max acceleration for print moves", arg: "X<#> Y<#> Z<#> E<#> (s^2)" },
 	{ tab: "Settings", cat: "Speed", gcode: "M203", name: "Maximum feedrate", arg: "X<#> Y<#> Z<#> E<#> (mm/sec)" },
@@ -50,7 +52,6 @@ module.exports = [
 	{ tab: "Queue", cat: "Queue", gcode: "G4", name: "Do nothing", arg: "S<seconds> or P<milliseconds>" },
 	{ tab: "Queue", cat: "Queue", gcode: "M400", name: "Finish all moves" },
 	{ tab: "Queue", cat: "Queue", gcode: "M226", name: "Wait for pin state", arg: "P<pin> S<state>" },
-	{ tab: "Queue", cat: "Queue", gcode: "M410", name: "Abort all planned moves" },
 	
 	{ tab: "Power & pins", cat: "Power & pins", gcode: "M80", name: "Turn on power" },
 	{ tab: "Power & pins", cat: "Power & pins", gcode: "M81", name: "Turn off power" },
