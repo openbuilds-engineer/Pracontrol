@@ -62,12 +62,10 @@ module.exports = [
 	{ tab: "Power & pins", cat: "Power & pins", gcode: "M85", name: "Inactivity shutdown timer set", arg: "S<seconds> (0 to disable)" },
 	{ tab: "Power & pins", cat: "Power & pins", gcode: "M42", name: "Set pin value", arg: "P<x> S<y> (no pin then LED is used)" },
 	
-	{ tab: "Misc", cat: "Misc", gcode: "M111", name: "Debug mode" },
-	{ tab: "Misc", cat: "Misc", gcode: "M115", name: "Capabilities" },
-	{ tab: "Misc", cat: "Misc", gcode: "M280", name: "Servo position get/set", arg: "P<index> S<angle>" },
+	{ tab: "Misc", cat: "Misc", gcode: "M115", name: "Capabilities", arg: null },
+	{ tab: "Misc", cat: "Misc", gcode: "M31", name: "Time since card print or last temperature set", arg: null },
+	{ tab: "Misc", cat: "Misc", gcode: "M111", name: "Debug mode", arg: 'S<#>' },
 	{ tab: "Misc", cat: "Misc", gcode: "M300", name: "Play beep sound", arg: "S<frequency Hz> P<duration ms>" },
-	{ tab: "Misc", cat: "Misc", gcode: "M11", name: "Start printing" },
-	{ tab: "Misc", cat: "Misc", gcode: "M31", name: "Time since card print or last wait temperature" },
 	
 	{ tab: "PID", cat: "PID", gcode: "M301", name: "PID parameters set" },
 	{ tab: "PID", cat: "PID", gcode: "M304", name: "Bed PID parameters set" },
@@ -87,6 +85,7 @@ module.exports = [
 	{ tab: "Bed leveling", cat: "Bed leveling", gcode: "G29", name: "Probe bed at 3 or more points" },
 	{ tab: "Bed leveling", cat: "Bed leveling", gcode: "G30", name: "Probe bed at current XY location" },
 	{ tab: "Bed leveling", cat: "Bed leveling", gcode: "M666", name: "Z probe offset set" },
+	{ tab: "Bed leveling", cat: "Bed leveling", gcode: "M280", name: "Servo position get/set", arg: "P<index> S<angle>" },
 	
 	{ tab: "Bed leveling", cat: "Z-Probe", gcode: "G29", name: "Probes the bed at more points" },
 	{ tab: "Bed leveling", cat: "Z-Probe", gcode: "G30", name: "Delta auto calibration" },
@@ -141,7 +140,8 @@ module.exports = [
 	
 	{ tab: "Other", cat: "Camera", gcode: "M240", name: "Trigger camera", arg: null },
 	
-	{ tab: "Other", cat: "Emergency", gcode: "M999", name: "Restart", arg: null },
+	{ tab: "Other", cat: "Misc", gcode: "M999", name: "Restart", arg: null },
+	{ tab: "Other", cat: "Misc", gcode: "M11", name: "Start printing", arg: null },
 	
 	{ tab: "Other", cat: "Microsteps", gcode: "M350", name: "Microstepping mode set", arg: "S<#> sets stepping mode for all drivers, steps per unit unchanged" },
 	{ tab: "Other", cat: "Microsteps", gcode: "M351", name: "Toggle microsteps MS1 MS2" },
