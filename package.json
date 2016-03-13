@@ -15,7 +15,7 @@
 	"bugs": "https://github.com/pravdomil/pra-control/issues",
 	"featureRequest": "https://github.com/pravdomil/pra-control/issues/new",
 	"pullRequest": "https://github.com/pravdomil/pra-control/pull/new",
-	"donate": "https://salt.bountysource.com/checkout/amount?team=pracontrol",
+	"donate": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BCL2X3AFQBAP2&item_name=PraControl%20beer",
 	
 	"main": "_main/index.js",
 	"scripts": {
