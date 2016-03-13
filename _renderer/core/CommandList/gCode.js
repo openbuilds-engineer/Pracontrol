@@ -153,7 +153,7 @@ module.exports = [
 	{ tab: "Other", cat: "Camera", gcode: "M240", name: "Trigger camera" },
 	
 	{ tab: "Other", cat: "Home", gcode: "M206", name: "Additional homing offset", arg: "SCARA aliases T=X, P=Y" },
-	{ tab: "Other", cat: "Home", gcode: "M428", name: "Apply current_position to home_offset" },
+	{ tab: "Other", cat: "Home", gcode: "M428", name: "Apply saved coordinates to home offset" },
 	
 	{ tab: "Other", cat: "Emergency", gcode: "M999", name: "Restart", arg: null },
 ]
