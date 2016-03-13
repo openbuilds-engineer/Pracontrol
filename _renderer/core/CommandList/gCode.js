@@ -131,11 +131,11 @@ module.exports = [
 	{ tab: "Filament sensor", cat: "Filament sensor", gcode: "M406", name: "Turn off filament sensor" },
 	{ tab: "Filament sensor", cat: "Filament sensor", gcode: "M407", name: "Measured filament diameter get" },
 	
-	{ tab: "Servo leveling", cat: "Servo leveling", gcode: "M401", name: "Engage Z servo endstop" },
-	{ tab: "Servo leveling", cat: "Servo leveling", gcode: "M402", name: "Retract Z servo endstop" },
-	
 	{ tab: "Multiple filaments", cat: "Multiple filaments", gcode: "M600", name: "Pause for filament change", arg: "X[pos] Y[pos] Z[relative lift] E[initial retract] L[later retract distance for removal]" },
 	{ tab: "Multiple filaments", cat: "Multiple filaments", gcode: "M997", name: "Move carter", arg: "C<#>" },
+	
+	{ tab: "Other", cat: "Servo leveling", gcode: "M401", name: "Engage Z servo endstop", arg: null },
+	{ tab: "Other", cat: "Servo leveling", gcode: "M402", name: "Retract Z servo endstop", arg: null },
 	
 	{ tab: "Other", cat: "Solenoid", gcode: "M380", name: "Enable solenoid", arg: null },
 	{ tab: "Other", cat: "Solenoid", gcode: "M381", name: "Disable solenoids", arg: null },
