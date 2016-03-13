@@ -23,7 +23,7 @@ var style = `
 			cursor: pointer;
 			color: #fff;
 			font-size: 0.85em;
-			padding: 0.1rem 0.3rem;
+			padding: 0.2rem 0.3rem;
 		
 			&.active, &:hover { background-color: #666; }
 		}
