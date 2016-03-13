@@ -56,8 +56,8 @@ module.exports = [
 	{ tab: "Extruder", cat: "Extruder", gcode: "M221", name: "Set extrusion percentage", arg: "T<#> S<0-100>" },
 	{ tab: "Extruder", cat: "Extruder", gcode: "M218", name: "Extruder offset", arg: "T<extruder_number> X<offset> Y<offset> (in mm)" },
 	
+	{ tab: "Queue", cat: "Queue", gcode: "M400", name: "Finish all moves", arg: null },
 	{ tab: "Queue", cat: "Queue", gcode: "G4", name: "Do nothing", arg: "S<seconds> or P<milliseconds>" },
-	{ tab: "Queue", cat: "Queue", gcode: "M400", name: "Finish all moves" },
 	{ tab: "Queue", cat: "Queue", gcode: "M226", name: "Wait for pin state", arg: "P<pin> S<state>" },
 	
 	{ tab: "Misc", cat: "Misc", gcode: "M115", name: "Capabilities", arg: null },
