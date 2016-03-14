@@ -15,6 +15,8 @@ module.exports = [
 	{ tab: "Control", cat: "Power", gcode: "M18", name: "Turn off stepper motors", arg: '<X> <Y> <Z> <E>' },
 	{ tab: "Control", cat: "Power", gcode: "M84", name: "Turn off stepper motors", duplicate: true },
 	
+	{ tab: "Control", cat: "Speed factor", gcode: "M220", name: "Speed factor set", arg: "S<0-100>" },
+	
 	{ tab: "Control", cat: "Fan", gcode: "M106", name: "Fan speed set", arg: "S<0-255>" },
 	{ tab: "Control", cat: "Fan", gcode: "M107", name: "Fan off" },
 	
@@ -27,7 +29,6 @@ module.exports = [
 	{ tab: "Settings", cat: "Speed", gcode: "M201", name: "Max acceleration for print moves", arg: "X<#> Y<#> Z<#> E<#> (s^2)" },
 	{ tab: "Settings", cat: "Speed", gcode: "M204", name: "Acceleration set", arg: "P<#> R<#> T<#> (Printing Retract Travel) (mm/sec^2)" },
 	{ tab: "Settings", cat: "Speed", gcode: "M205", name: "Advanced settings set", arg: "S = Min feed rate (mm/s) T = Min travel feed rate (mm/s) B = Min segment time (µs) X = Max XY jerk (mm/s/s) Z = Max Z jerk (mm/s/s) E = Max E jerk (mm/s/s)" },
-	{ tab: "Settings", cat: "Speed", gcode: "M220", name: "Speed factor set", arg: "S<0-100>" },
 	
 	{ tab: "Settings", cat: "Settings", gcode: "M500", name: "Save current settings", arg: null },
 	{ tab: "Settings", cat: "Settings", gcode: "M501", name: "Read current settings", arg: null },
