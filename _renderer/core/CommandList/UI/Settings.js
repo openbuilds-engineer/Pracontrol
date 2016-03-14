@@ -3,7 +3,7 @@
 module.exports = class Settings extends WebComponentAbstract {
 	initCallback() {
 		
-		var p = this.newElement('p', true, { textContent: 'Revert to ' })
+		var p = this.newElement('p', true, { textContent: 'Revert ' })
 		p.newElement('a', true, { textContent: 'Saved settings', className: 'button' }).on('click', e => this.send('M501'))
 		p.newText(' ')
 		p.newElement('a', true, { textContent: 'Factory default', className: 'button' }).on('click', e => this.send('M502'))
