@@ -29,10 +29,10 @@ module.exports = [
 	{ tab: "Settings", cat: "Speed", gcode: "M205", name: "Advanced settings set", arg: "S = Min feed rate (mm/s) T = Min travel feed rate (mm/s) B = Min segment time (µs) X = Max XY jerk (mm/s/s) Z = Max Z jerk (mm/s/s) E = Max E jerk (mm/s/s)" },
 	{ tab: "Settings", cat: "Speed", gcode: "M220", name: "Speed factor set", arg: "S<0-100>" },
 	
-	{ tab: "Settings", cat: "EEPROM", gcode: "M500", name: "Save settings" },
-	{ tab: "Settings", cat: "EEPROM", gcode: "M501", name: "Read settings" },
-	{ tab: "Settings", cat: "EEPROM", gcode: "M503", name: "Read settings from memory" },
-	{ tab: "Settings", cat: "EEPROM", gcode: "M502", name: "Revert to default" },
+	{ tab: "Settings", cat: "Settings", gcode: "M500", name: "Save current settings", arg: null },
+	{ tab: "Settings", cat: "Settings", gcode: "M501", name: "Read current settings", arg: null },
+	{ tab: "Settings", cat: "Settings", gcode: "M503", name: "Read saved settings", arg: null },
+	{ tab: "Settings", cat: "Settings", gcode: "M502", name: "Revert to factory default", arg: null },
 	
 	{ tab: "Coordinates", cat: "Position", gcode: "M114", name: "Get current position", arg: null },
 	{ tab: "Coordinates", cat: "Position", gcode: "G92", name: "Set current position", arg: "X<#> Y<#> Z<#> E<#>" },
