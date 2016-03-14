@@ -11,7 +11,7 @@ module.exports = class Speed extends WebComponentAbstract {
 		
 		var AxisSettings = require('./AxisSettings')
 		
-		this.newElement(AxisSettings, true, { opt: { name: 'Max printing acceleration', gCode: 'M201' } })
+		this.newElement(AxisSettings, true, { opt: { name: 'Max acceleration by axis', gCode: 'M201' } })
 		this.newElement(AxisSettings, true, { opt: { name: 'Max feedrate', gCode: 'M203' } })
 		this.newElement(AxisSettings, true, { opt: { name: 'Axis steps per unit', gCode: 'M92' } })
 	}
