@@ -26,8 +26,8 @@ module.exports = [
 	
 	{ tab: "Settings", cat: "Acceleration", gcode: "M204", name: "Acceleration set", arg: "P<#> R<#> T<#> (printing, retract, travel) (mm/sec^2)" },
 	
-	{ tab: "Settings", cat: "Speed", gcode: "M201", name: "Max acceleration for printing", arg: "X<#> Y<#> Z<#> E<#> (mm/sec^2)" },
-	{ tab: "Settings", cat: "Speed", gcode: "M203", name: "Maximum feedrate", arg: "X<#> Y<#> Z<#> E<#> (mm/sec)" },
+	{ tab: "Settings", cat: "Speed", gcode: "M201", name: "Max printing acceleration", arg: "X<#> Y<#> Z<#> E<#> (mm/sec^2)" },
+	{ tab: "Settings", cat: "Speed", gcode: "M203", name: "Max feedrate", arg: "X<#> Y<#> Z<#> E<#> (mm/sec)" },
 	{ tab: "Settings", cat: "Speed", gcode: "M92", name: "Axis steps per unit", arg: "X<#> Y<#> Z<#> E<#>" },
 	
 	{ tab: "Settings", cat: "Settings", gcode: "M500", name: "Save current settings", arg: null },
