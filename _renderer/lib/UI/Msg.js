@@ -34,6 +34,6 @@ module.exports = class Msg extends WebComponentAbstract {
 	
 	msg(msg) {
 		var el = this.newElement('msg', true, { textContent: msg })
-		setTimeout(() => el.removeElement(), 3000)
+		setTimeout(() => el.removeNode(), 3000)
 	}
 }

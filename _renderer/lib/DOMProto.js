@@ -13,7 +13,7 @@ FileList.prototype.forEach = Array.prototype.forEach
 EventTarget.prototype.on = function() { return this.addEventListener.apply(this, arguments) }
 
 // remove element
-Node.prototype.removeElement = function() { this.parentNode.removeChild(this) }
+Node.prototype.removeNode = function() { this.parentNode.removeChild(this) }
 
 // insertAfter
 Node.prototype.insertAfter = function(n, t) {

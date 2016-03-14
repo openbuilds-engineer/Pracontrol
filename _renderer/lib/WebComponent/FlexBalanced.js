@@ -24,7 +24,7 @@ module.exports = class FlexBalanced extends WebComponentAbstract {
 		
 		requestAnimationFrame(t => {
 			
-			this.querySelectorAll(':scope > flex_balancer').forEach(e => e.removeElement())
+			this.querySelectorAll(':scope > flex_balancer').forEach(e => e.removeNode())
 			
 			for(let i = 0; i < 10; i++) this.newElement("flex_balancer")
 			
