@@ -24,7 +24,8 @@ module.exports = [
 	{ tab: "Control", cat: "Laser", gcode: "M4", name: "Turn on laser" },
 	{ tab: "Control", cat: "Laser", gcode: "M5", name: "Turn off laser" },
 	
-	{ tab: "Settings", cat: "Acceleration", gcode: "M204", name: "Acceleration set", arg: "P<#> R<#> T<#> (printing, retract, travel) (mm/sec^2)" },
+	{ tab: "Settings", cat: "Acceleration", gcode: "M204", name: "Max acceleration set", arg: "P<#> R<#> T<#> (print, retract, travel) (mm/sec^2)" },
+	{ tab: "Settings", cat: "Acceleration", gcode: "M205", name: "Advanced settings set", arg: "S = Min feed rate (mm/s) T = Min travel feed rate (mm/s) B = Min segment time (µs) X = Max XY jerk (mm/s/s) Z = Max Z jerk (mm/s/s) E = Max E jerk (mm/s/s)" },
 	
 	{ tab: "Settings", cat: "Speed", gcode: "M201", name: "Max acceleration by axis", arg: "X<#> Y<#> Z<#> E<#> (mm/sec^2)" },
 	{ tab: "Settings", cat: "Speed", gcode: "M203", name: "Max feedrate", arg: "X<#> Y<#> Z<#> E<#> (mm/sec)" },
@@ -34,8 +35,6 @@ module.exports = [
 	{ tab: "Settings", cat: "Settings", gcode: "M503", name: "Read current settings", arg: null },
 	{ tab: "Settings", cat: "Settings", gcode: "M501", name: "Read saved settings", arg: null },
 	{ tab: "Settings", cat: "Settings", gcode: "M502", name: "Revert to factory default", arg: null },
-	
-	{ tab: "Settings", cat: "Advanced settings", gcode: "M205", name: "Advanced settings set", arg: "S = Min feed rate (mm/s) T = Min travel feed rate (mm/s) B = Min segment time (µs) X = Max XY jerk (mm/s/s) Z = Max Z jerk (mm/s/s) E = Max E jerk (mm/s/s)" },
 	
 	{ tab: "Coordinates", cat: "Position", gcode: "M114", name: "Get current position", arg: null },
 	{ tab: "Coordinates", cat: "Position", gcode: "G92", name: "Set current position", arg: "X<#> Y<#> Z<#> E<#>" },
