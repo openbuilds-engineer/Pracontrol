@@ -42,10 +42,10 @@ module.exports = class AxisSettings extends WebComponentAbstract {
 	
 	value(msg) {
 		var m = msg.match(/([0-9]+\.?[0-9]*)/g)
-		this.X.value = m[1]
-		this.Y.value = m[2]
-		this.Z.value = m[3]
-		this.E.value = m[5]
+		this.X.value = parseFloat(m[1])
+		this.Y.value = parseFloat(m[2])
+		this.Z.value = parseFloat(m[3])
+		this.E.value = parseFloat(m[5])
 	}
 	
 	echo(msg) {
