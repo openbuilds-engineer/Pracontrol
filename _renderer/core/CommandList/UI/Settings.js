@@ -9,9 +9,9 @@ module.exports = class Settings extends WebComponentAbstract {
 		p.newElement('a', true, { textContent: 'Factory default', className: 'button' }).on('click', e => this.send('M502'))
 		
 		var p = this.newElement('p', true, { textContent: "Current settings " })
-		p.newElement('a', true, { textContent: 'Read', className: 'button' }).on('click', e => this.send('M501'))
-		p.newText(' ')
 		p.newElement('a', true, { textContent: 'Save', className: 'button' }).on('click', e => this.send('M500'))
+		p.newText(' ')
+		p.newElement('a', true, { textContent: 'Read', className: 'button' }).on('click', e => this.send('M501'))
 	}
 	
 	send(val) {
