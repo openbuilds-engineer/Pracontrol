@@ -24,16 +24,18 @@ module.exports = [
 	{ tab: "Control", cat: "Laser", gcode: "M4", name: "Turn on laser" },
 	{ tab: "Control", cat: "Laser", gcode: "M5", name: "Turn off laser" },
 	
-	{ tab: "Settings", cat: "Speed", gcode: "M92", name: "Axis steps per unit", arg: "X<#> Y<#> Z<#> E<#>" },
+	{ tab: "Settings", cat: "Acceleration", gcode: "M204", name: "Acceleration set", arg: "P<#> R<#> T<#> (printing, retract, travel) (mm/sec^2)" },
+	
+	{ tab: "Settings", cat: "Speed", gcode: "M201", name: "Max acceleration for printing", arg: "X<#> Y<#> Z<#> E<#> (mm/sec^2)" },
 	{ tab: "Settings", cat: "Speed", gcode: "M203", name: "Maximum feedrate", arg: "X<#> Y<#> Z<#> E<#> (mm/sec)" },
-	{ tab: "Settings", cat: "Speed", gcode: "M201", name: "Max acceleration for print moves", arg: "X<#> Y<#> Z<#> E<#> (s^2)" },
-	{ tab: "Settings", cat: "Speed", gcode: "M204", name: "Acceleration set", arg: "P<#> R<#> T<#> (Printing Retract Travel) (mm/sec^2)" },
-	{ tab: "Settings", cat: "Speed", gcode: "M205", name: "Advanced settings set", arg: "S = Min feed rate (mm/s) T = Min travel feed rate (mm/s) B = Min segment time (µs) X = Max XY jerk (mm/s/s) Z = Max Z jerk (mm/s/s) E = Max E jerk (mm/s/s)" },
+	{ tab: "Settings", cat: "Speed", gcode: "M92", name: "Axis steps per unit", arg: "X<#> Y<#> Z<#> E<#>" },
 	
 	{ tab: "Settings", cat: "Settings", gcode: "M500", name: "Save current settings", arg: null },
 	{ tab: "Settings", cat: "Settings", gcode: "M501", name: "Read current settings", arg: null },
 	{ tab: "Settings", cat: "Settings", gcode: "M503", name: "Read saved settings", arg: null },
 	{ tab: "Settings", cat: "Settings", gcode: "M502", name: "Revert to factory default", arg: null },
+	
+	{ tab: "Settings", cat: "Advanced settings", gcode: "M205", name: "Advanced settings set", arg: "S = Min feed rate (mm/s) T = Min travel feed rate (mm/s) B = Min segment time (µs) X = Max XY jerk (mm/s/s) Z = Max Z jerk (mm/s/s) E = Max E jerk (mm/s/s)" },
 	
 	{ tab: "Coordinates", cat: "Position", gcode: "M114", name: "Get current position", arg: null },
 	{ tab: "Coordinates", cat: "Position", gcode: "G92", name: "Set current position", arg: "X<#> Y<#> Z<#> E<#>" },
