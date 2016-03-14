@@ -21,12 +21,15 @@ module.exports = class AxisSettings extends WebComponentAbstract {
 		this.X = p.newElement('label', true, { textContent: 'X '}).newElement('input', true, opt)
 		this.X.on('input', e => this.set())
 		p.newText(' ')
+		
 		this.Y = p.newElement('label', true, { textContent: 'Y '}).newElement('input', true, opt)
 		this.Y.on('input', e => this.set())
 		p.newElement('br')
+		
 		this.Z = p.newElement('label', true, { textContent: 'Z '}).newElement('input', true, opt)
 		this.Z.on('input', e => this.set())
 		p.newText(' ')
+		
 		this.E = p.newElement('label', true, { textContent: 'E '}).newElement('input', true, opt)
 		this.E.on('input', e => this.set())
 		p.newElement('br')
