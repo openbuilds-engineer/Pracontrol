@@ -31,8 +31,8 @@ module.exports = [
 	{ tab: "Settings", cat: "Speed", gcode: "M92", name: "Axis steps per unit", arg: "X<#> Y<#> Z<#> E<#>" },
 	
 	{ tab: "Settings", cat: "Settings", gcode: "M500", name: "Save current settings", arg: null },
-	{ tab: "Settings", cat: "Settings", gcode: "M501", name: "Read current settings", arg: null },
-	{ tab: "Settings", cat: "Settings", gcode: "M503", name: "Read saved settings", arg: null },
+	{ tab: "Settings", cat: "Settings", gcode: "M503", name: "Read current settings", arg: null },
+	{ tab: "Settings", cat: "Settings", gcode: "M501", name: "Read saved settings", arg: null },
 	{ tab: "Settings", cat: "Settings", gcode: "M502", name: "Revert to factory default", arg: null },
 	
 	{ tab: "Settings", cat: "Advanced settings", gcode: "M205", name: "Advanced settings set", arg: "S = Min feed rate (mm/s) T = Min travel feed rate (mm/s) B = Min segment time (µs) X = Max XY jerk (mm/s/s) Z = Max Z jerk (mm/s/s) E = Max E jerk (mm/s/s)" },
