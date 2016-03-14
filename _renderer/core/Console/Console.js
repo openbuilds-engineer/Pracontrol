@@ -58,6 +58,10 @@ module.exports = class Console extends WebComponentAbstract {
 		this.on('focusTab', e => this.scrollDown())
 	}
 	
+	readyCallback() {
+		AppEvent('newTab', { instance: this, name: 'Console', priority: -80 })
+	}
+	
 	consoleClear() {
 		this.console.textContent = ""
 	}
@@ -91,10 +95,6 @@ module.exports = class Console extends WebComponentAbstract {
 		}
 		
 		this.scrollDown()
-	}
-	
-	readyCallback() {
-		AppEvent('newTab', { instance: this, name: 'Console', priority: -80 })
 	}
 	
 	historyCommand(e) {
