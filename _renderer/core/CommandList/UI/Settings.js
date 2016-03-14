@@ -12,9 +12,15 @@ module.exports = class Settings extends WebComponentAbstract {
 		p.newElement('a', true, { textContent: 'Save', className: 'button' }).on('click', e => this.send('M500'))
 		p.newText(' ')
 		p.newElement('a', true, { textContent: 'Read', className: 'button' }).on('click', e => this.send('M503'))
+		
+		self.on('serialEcho', e => this.echo(e.d))
 	}
 	
 	send(val) {
 		AppEvent('serialWrite', { data: val, prepend: true })
+	}
+	
+	echo(msg) {
+		if(msg.startsWith('Settings Stored')) AppEvent('info', { msg: 'Settings saved' })
 	}
 }
