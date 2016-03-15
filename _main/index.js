@@ -1,6 +1,5 @@
 var app = require('app')
 var path = require('path')
-var shell = require('electron').shell
 var BrowserWindow = require('browser-window')
 
 app.on('window-all-closed', () => app.quit())
@@ -21,7 +20,7 @@ app.on('ready', () => {
 	win.webContents.on('will-navigate', (e, url) => {
 		if(url == win.webContents.getURL()) return
 		e.preventDefault()
-		shell.openExternal(url)
+		require('electron').shell.openExternal(url)
 	})
 	
 	win.webContents.on('did-finish-load', e => {
