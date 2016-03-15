@@ -2,7 +2,7 @@ var app = require('app')
 var path = require('path')
 var BrowserWindow = require('browser-window')
 
-app.on('window-all-closed', () => app.quit())
+app.on('window-all-closed', app.quit)
 
 app.on('ready', () => {
 	require('./menu')
