@@ -30,23 +30,19 @@ Node.prototype.newText = function(t) { return this.appendChild(document.createTe
 Node.prototype.newElement = function(element, attach, prop) {
 	if(attach === undefined) attach = true
 	
-	var el
+	var el, name
 	
 	// new from string
 	if(element.constructor == String) {
-		if(element.includes('-')) {
-			// http://stackoverflow.com/questions/35526110/creates-new-class-with-name-from-variable
-			element = eval(`class ${element.replace('-', '')} extends WebComponentAbstract {}`)
-		}
+		if(element.includes('-')) { name = element; element = class extends WebComponentAbstract {}; }
 		else el = document.createElement(element)
 	}
 	
 	// new from class
 	if(element instanceof Object) {
-		
-		var name = `app-${element.name}`
-		
+		var name = `app-${element.name || name}`
 		el = document.createElement(name)
+		
 		if(el.constructor === HTMLElement) document.registerElement(name, element)
 	}
 	
