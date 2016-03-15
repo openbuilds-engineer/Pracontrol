@@ -44,7 +44,7 @@ Node.prototype.newElement = function(element, attach, prop) {
 	// new from class
 	if(element instanceof Object) {
 		
-		var name = ('App' in self && App.elemPrefix || 'app-') + element.name
+		var name = `app-${element.name}`
 		
 		el = document.createElement(name)
 		if(el.constructor === HTMLElement) document.registerElement(name, element)

@@ -8,9 +8,6 @@ Object.assign(global, require('./lib/Globals'))
 
 class PraControl extends WebComponentAbstract {
 	initCallback() {
-		// prefix for custom elements
-		this.elemPrefix = 'pra-'
-		
 		// is app ready
 		this.ready = false
 		
