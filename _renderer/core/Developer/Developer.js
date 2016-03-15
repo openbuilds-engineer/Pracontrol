@@ -14,12 +14,8 @@ var style = `
 `
 var info = `
 <h1>Globals</h1>
-<p>Var App is pointer to &lt;app-pracontrol&gt; with extra props:</p>
-<ul>
-	<li>.ready</li>
-	<li>.package</li>
-</ul>
-<p>Functions are defined in lib/DOMProto and lib/Globals and classes in lib/WebComponent.</p>
+<p>Var App is pointer to &lt;app-pracontrol&gt; with extra props: .ready .package</p>
+<p>Functions are defined in lib/DOMProto and lib/Globals. Classes are in lib/WebComponent.</p>
 `
 
 module.exports = class Developer extends WebComponentAbstract {
