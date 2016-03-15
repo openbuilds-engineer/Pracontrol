@@ -1,5 +1,4 @@
 var package = require('../package.json')
-var app = require('electron').app
 var Menu = require('menu')
 
 var template = [
@@ -42,6 +41,7 @@ var template = [
 ]
 
 if (process.platform == 'darwin') {
+	var app = require('electron').app
 	var name = app.getName()
 	
 	template.unshift({
