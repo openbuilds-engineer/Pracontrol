@@ -8,8 +8,6 @@ app.on('ready', ready)
 function ready() {
 	require('./menu')
 	
-	var index = 'file:///' + path.join(__dirname, '../_renderer/index.html')
-	
 	var rem = 17
 	var win = new BrowserWindow({
 		title: app.getName(),
@@ -32,5 +30,5 @@ function ready() {
 		win.webContents.executeJavaScript(`AppEvent('developerMode')`)
 	})
 	
-	win.loadURL(index)
+	win.loadURL('file:///' + path.join(__dirname, '../_renderer/index.html'))
 }
