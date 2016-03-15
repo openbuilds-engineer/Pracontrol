@@ -11,7 +11,7 @@ module.exports = class WebComponentAbstract extends HTMLElement {
 		
 		// readyCallback
 		var readyFunc = () => this.readyCallback && this.readyCallback()
-		'App' in self && App.ready ? setImmediate(readyFunc) : self.on('appReady', readyFunc)
+		App.ready ? setImmediate(readyFunc) : self.on('appReady', readyFunc)
 		
 		// deserialize
 		this.deserialize()
