@@ -4,8 +4,6 @@ exports.defineAppEvent = (name, desc, cat, arg) => AppEvent('defineAppEvent', { 
 exports.defineKeyShortcut = (key, desc, cat) => AppEvent('defineKeyShortcut', { key, desc, cat } )
 exports.AppEvent = function(name, detail) {
 	var e = new Event(name)
-	
 	e.detail = e.d = detail
-	
 	App.ready ? self.dispatchEvent(e) : self.on('appReady', () => self.dispatchEvent(e))
 }
