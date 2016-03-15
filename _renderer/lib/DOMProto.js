@@ -28,7 +28,7 @@ Node.prototype.newText = function(t) { return this.appendChild(document.createTe
 
 // creates new element and attach it by default
 Node.prototype.newElement = function(element, attach, prop) {
-	if(attach == null) attach = true
+	if(attach === undefined) attach = true
 	
 	var el
 	
