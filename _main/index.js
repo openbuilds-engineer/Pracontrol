@@ -3,8 +3,9 @@ var path = require('path')
 var BrowserWindow = require('browser-window')
 
 app.on('window-all-closed', app.quit)
+app.on('ready', ready)
 
-app.on('ready', () => {
+function ready() {
 	require('./menu')
 	
 	var index = 'file:///' + path.join(__dirname, '../_renderer/index.html')
@@ -32,4 +33,4 @@ app.on('ready', () => {
 	})
 	
 	win.loadURL(index)
-})
+}
