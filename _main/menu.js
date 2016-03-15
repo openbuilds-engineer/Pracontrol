@@ -26,16 +26,14 @@ var template = [
 		]
 	},
 	{
-		label: 'Window',
-		role: 'window',
+		label: 'Window', role: 'window',
 		submenu: [
 			{ label: 'Minimize', accelerator: 'CmdOrCtrl+M', role: 'minimize' },
 			{ label: 'Close', accelerator: 'CmdOrCtrl+W', role: 'close' },
 		]
 	},
 	{
-		label: 'Help',
-		role: 'help',
+		label: 'Help', role: 'help',
 		submenu: [
 			{ label: 'Website', click: item => require('electron').shell.openExternal(package.homepage) },
 			{ label: 'GitHub', click: item => require('electron').shell.openExternal(package.repository.url) },
