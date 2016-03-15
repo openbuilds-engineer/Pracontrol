@@ -22,13 +22,9 @@ function ready() {
 		require('electron').shell.openExternal(url)
 	})
 	
-	win.webContents.on('did-finish-load', e => {
-		if(win.webContents.isDevToolsOpened()) win.webContents.executeJavaScript(
-			`self.on('appReady', e => AppEvent('developerMode'))`)
-	})
-	win.webContents.on('devtools-opened', e => {
-		win.webContents.executeJavaScript(`AppEvent('developerMode')`)
-	})
+	var developerMode = e => win.webContents.executeJavaScript('AppEvent("developerMode")')
+	win.webContents.on('did-finish-load', e => win.webContents.isDevToolsOpened() && developerMode() )
+	win.webContents.on('devtools-opened', developerMode)
 	
 	win.loadURL('file:///' + path.join(__dirname, '../_renderer/index.html'))
 }
