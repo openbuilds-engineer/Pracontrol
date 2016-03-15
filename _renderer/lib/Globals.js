@@ -19,5 +19,5 @@ exports.AppEvent = function(name, detail) {
 	
 	e.detail = e.d = detail
 	
-	self.dispatchEvent(e)
+	App.ready ? self.dispatchEvent(e) : self.on('appReady', () => self.dispatchEvent(e))
 }
