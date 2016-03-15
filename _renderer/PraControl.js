@@ -1,6 +1,8 @@
 'use strict'
 
 require('./lib/DOMProto')
+
+global.App = { ready: false }
 global.WebComponentAbstract = require('./lib/WebComponent/WebComponentAbstract')
 global.FlexBalanced = require('./lib/WebComponent/FlexBalanced')
 global.TabComponent = require('./lib/WebComponent/TabComponent')
@@ -8,9 +10,6 @@ Object.assign(global, require('./lib/Globals'))
 
 class PraControl extends WebComponentAbstract {
 	initCallback() {
-		// is app ready
-		this.ready = false
-		
 		// package info
 		this.package = require('../package.json')
 		
