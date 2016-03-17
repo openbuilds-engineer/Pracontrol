@@ -125,7 +125,7 @@ module.exports = class Slicer25D_Slicer extends WebComponentAbstract {
 				if(count++ > val) break loop
 				
 				var p = path[c]
-				this.ctx.fillStyle = `rgb(${255 - p.a}, ${255 - p.a}, ${255 - p.a})`
+				this.ctx.fillStyle = `rgb(${255 - p.s}, ${255 - p.s}, ${255 - p.s})`
 				this.ctx.fillRect(p.x, p.y, 1, 1)
 			}	
 		}
