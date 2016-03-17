@@ -59,10 +59,6 @@ module.exports = class Slicer25D extends WebComponentAbstract {
 		this.powerCmd.on('input', e => this.ser.powerCmd = this.powerCmd.value)
 		this.powerCmd.value = this.ser.powerCmd || 'G0 X${p.x} Y${p.y} \\\nZ${p.a * -1 / 1000}'
 		
-		var p = this.left.newElement('p')
-		this.sliceButton = p.newElement('input', true , { type: 'button', value: 'Slice' })
-		this.sliceButton.on('click', e => this.slice())
-		
 		this.left.newElement('pre').textContent = 'var p = {\n  x: <#>,\n  y: <#>,\n  s: <0-255>\n}'
 		
 		self.on("newFile", e => this.newFile(e))
