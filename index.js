@@ -10,7 +10,7 @@ var style = `
 
 ::content {
 	textarea { height: 8rem; }
-	canvas { width: 100%; border: 1px solid #ddd; box-sizing: border-box; }
+	canvas { width: 100%; border: 1px solid #ddd; box-sizing: border-box; image-rendering: pixelated; }
 }
 `
 
