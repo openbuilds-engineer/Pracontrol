@@ -101,9 +101,12 @@ module.exports = class Slicer25D_Slicer extends WebComponentAbstract {
 		this.gCode = gCode
 		
 		this.info.textContent = 'Ready for '
-		var a = this.info.newElement('a', true, { textContent: 'Print' })
-		a.classList.add('button')
+		var a = this.info.newElement('a', true, { textContent: 'Print', className: 'button' })
 		a.on('click', e => this.print())
+		this.info.newText(' or ')
+		
+		var a = this.info.newElement('a', true, { textContent: 'Reslice', className: 'button' })
+		a.on('click', e => this.parent.slice())
 	}
 	
 	print(e) {
