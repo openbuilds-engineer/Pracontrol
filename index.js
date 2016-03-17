@@ -58,7 +58,7 @@ module.exports = class Slicer25D extends WebComponentAbstract {
 		var l = this.left.newElement('p').newElement('label', true, { textContent: 'Controling gCode' })
 		this.powerCmd = l.newElement('textarea')
 		this.powerCmd.on('input', e => this.ser.powerCmd = this.powerCmd.value)
-		this.powerCmd.value = this.ser.powerCmd || 'G0 X${p.x} Y${p.y} \\\nZ${p.a * -1 / 1000}'
+		this.powerCmd.value = this.ser.powerCmd || 'G0 X${p.x} Y${p.y} \\\nZ${p.s * -1 / 1000}'
 		
 		l.newElement('pre').textContent = 'var p = { x, y, s }'
 		

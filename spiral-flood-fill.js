@@ -44,13 +44,13 @@ class SpiralFloodFill {
 		while(first = this.findFirst(path)) {
 			var x = first.x
 			var y = first.y
-			var a = this.printPoint(x, y)
+			var s = this.printPoint(x, y)
 			
-			var p = [{ x, y, a }]
+			var p = [{ x, y, s }]
 			
 			var next
 			while(next = this.getNext(p)) {
-				next.a = this.printPoint(next.x, next.y)
+				next.s = this.printPoint(next.x, next.y)
 				p.push(next)
 			}
 			

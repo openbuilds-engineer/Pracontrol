@@ -23,13 +23,13 @@ var gCode = function(powerGCode, fidelity) {
 			
 			p.x = Math.round(p.x / fidelity * 1000) / 1000
 			p.y = Math.round(p.y / fidelity * 1000) / 1000
-			p.a = Math.round(p.a * 1000) / 1000
+			p.s = Math.round(p.s * 1000) / 1000
 			
-			if(i == 0) this.gCodePush({ x: p.x, y: p.y, a: 0 })
+			if(i == 0) this.gCodePush({ x: p.x, y: p.y, s: 0 })
 			
 			this.gCodePush(p)
 			
-			if(i == path.length - 1) this.gCodePush({ x: p.x, y: p.y, a: 0 })
+			if(i == path.length - 1) this.gCodePush({ x: p.x, y: p.y, s: 0 })
 		})
 	})
 	self.postMessage({ func: 'gCodeDone', arg: [ this.gCode ] })
