@@ -60,7 +60,7 @@ module.exports = class Slicer25D extends WebComponentAbstract {
 		this.powerCmd.value = this.ser.powerCmd || 'G0 X${$.x} Y${$.y} \\\nZ${$.s * -1 / 1000}'
 		l.newElement('pre').textContent = '$ = { x, y, s, p }'
 		
-		var l = this.left.newElement('p').newElement('label', true, { textContent: 'Slicing channel' })
+		var l = this.left.newElement('p').newElement('label', true, { textContent: 'Slicing channel ' })
 		this.channel = l.newElement('select')
 		this.channel.newElement('option').textContent = 'Red'
 		this.channel.newElement('option').textContent = 'Green'
