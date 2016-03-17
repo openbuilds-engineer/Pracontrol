@@ -38,7 +38,7 @@ class SpiralFloodFill {
 		this.getPrintPoints()
 	}
 	
-	generate(newPathFunc) {
+	generate(newPathCallack) {
 		var path = []
 		var first
 		while(first = this.findFirst(path)) {
@@ -55,7 +55,7 @@ class SpiralFloodFill {
 			}
 			
 			path.push(p)
-			newPathFunc && newPathFunc.apply(this, [p])
+			newPathCallack && newPathCallack.apply(this, [p])
 		}
 		return path
 	}
