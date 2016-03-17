@@ -88,6 +88,7 @@ module.exports = class Slicer25D extends WebComponentAbstract {
 	}
 	
 	slice() {
+		if(!this.recent.selectedOptions.length) return
 		this.slicer.slice(this.recent.selectedOptions[0].path)
 	}
 	
