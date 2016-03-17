@@ -88,6 +88,9 @@ module.exports = class Slicer25D_Slicer extends WebComponentAbstract {
 	sliceDone() {
 		if(!this.path.length) {
 			this.info.textContent = 'No paths, try diferrent slicing channel.'
+			
+			var a = this.info.newElement('a', true, { textContent: 'Reslice', className: 'button' })
+			a.on('click', e => this.parent.slice())
 			return
 		}
 		this.info.textContent = 'Generating gCode...'
