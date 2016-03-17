@@ -17,7 +17,7 @@ var gCode = function(powerGCode, fidelity) {
 		var cmd = eval('`' + powerGCode + '`').split("\n")
 		this.gCode.push.apply(this.gCode, cmd)
 	}
-
+	
 	pathArr.forEach(path => {
 		path.forEach((p, i) => {
 			
