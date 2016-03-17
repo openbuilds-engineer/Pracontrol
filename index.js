@@ -34,12 +34,13 @@ module.exports = class Slicer25D extends WebComponentAbstract {
 		this.ser.recent = this.ser.recent.slice(-5)
 		this.ser.recent.forEach(p => this.newRecentOption(p))
 		
-		this.fidelityLabel = this.left.newElement('p')
-		var opt = { type: "range", min: 1, max: 10, step: 1, value: this.ser.fidelity || 5 }
-		this.fidelity = this.left.newElement('p').newElement('input', true, opt)
+		var l = this.left.newElement('p').newElement('label')
+		var labelText = l.newText('')
+		var opt = { type: "range", min: 1, max: 10, step: 0.05, value: this.ser.fidelity || 5 }
+		this.fidelity = l.newElement('input', true, opt)
 		this.fidelity.on('input', e => {
 			this.ser.fidelity = this.fidelity.value
-			this.fidelityLabel.textContent = 'Fidelity ' + this.ser.fidelity
+			labelText.textContent = `Fidelity ${ Math.round((72 / 256) / this.ser.fidelity * 1000) / 100 }` 
 		})
 		this.fidelity.dispatchEvent(new Event('input'))
 		
