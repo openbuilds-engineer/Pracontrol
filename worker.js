@@ -10,28 +10,29 @@ var slice = (imgData, channel) => {
 	self.postMessage({ func: 'sliceDone' })
 }
 
-var gCode = function(powerGCode, fidelity) {
+var gCode = function(powerGCode, fidelity, passes) {
 	this.gCode = []
 	
-	this.gCodePush = (p) => {
-		var cmd = eval('`' + powerGCode + '`').split("\n")
-		this.gCode.push.apply(this.gCode, cmd)
-	}
+	this.gCodePush = $ => this.gCode.push.apply(this.gCode, eval('`' + powerGCode + '`').split("\n"))
 	
-	pathArr.forEach(path => {
-		path.forEach((p, i) => {
-			
-			p.x = Math.round(p.x / fidelity * 1000) / 1000
-			p.y = Math.round(p.y / fidelity * 1000) / 1000
-			p.s = Math.round(p.s * 1000) / 1000
-			
-			if(i == 0) this.gCodePush({ x: p.x, y: p.y, s: 0 })
-			
-			this.gCodePush(p)
-			
-			if(i == path.length - 1) this.gCodePush({ x: p.x, y: p.y, s: 0 })
+	for(var pass = 1; pass <= passes; pass++) {
+		pathArr.forEach(path => {
+			path.forEach((point, i) => {
+				
+				if(pass == 1) {
+					point.x = Math.round(point.x / fidelity * 1000) / 1000
+					point.y = Math.round(point.y / fidelity * 1000) / 1000
+					point.s = Math.round(point.s * 1000) / 1000
+				}
+				
+				if(i == 0) this.gCodePush({ x: point.x, y: point.y, s: 0, p: pass })
+				
+				this.gCodePush({ x: point.x, y: point.y, s: point.s, p: pass })
+				
+				if(i == path.length - 1) this.gCodePush({ x: point.x, y: point.y, s: 0, p: pass })
+			})
 		})
-	})
+	}
 	self.postMessage({ func: 'gCodeDone', arg: [ this.gCode ] })
 }
 

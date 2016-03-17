@@ -91,7 +91,7 @@ module.exports = class Slicer25D_Slicer extends WebComponentAbstract {
 			return
 		}
 		this.info.textContent = 'Generating gCode...'
-		this.w.postMessage({ func: "gCode", arg: [ this.parent.powerCmd.value, this.parent.ser.fidelity ] })
+		this.w.postMessage({ func: "gCode", arg: [ this.parent.powerCmd.value, this.parent.ser.fidelity, this.parent.ser.pass ] })
 		
 		this.slider.value = this.slider.max
 		this.replay()

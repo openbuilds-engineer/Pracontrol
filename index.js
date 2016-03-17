@@ -55,12 +55,22 @@ module.exports = class Slicer25D extends WebComponentAbstract {
 		this.ser.channel = isNaN(this.ser.channel) ? 4 : this.ser.channel
 		this.channel.options[this.ser.channel].selected = true
 		
+		var l = this.left.newElement('p').newElement('label')
+		var labelText = l.newText('')
+		var opt = { type: "range", min: 1, max: 100, step: 1, value: this.ser.pass || 1 }
+		this.pass = l.newElement('input', true, opt)
+		this.pass.on('input', e => {
+			this.ser.pass = this.pass.value
+			labelText.textContent = `Passes ${this.ser.pass}` 
+		})
+		this.pass.dispatchEvent(new Event('input'))
+		
 		var l = this.left.newElement('p').newElement('label', true, { textContent: 'Controling gCode' })
 		this.powerCmd = l.newElement('textarea')
 		this.powerCmd.on('input', e => this.ser.powerCmd = this.powerCmd.value)
-		this.powerCmd.value = this.ser.powerCmd || 'G0 X${p.x} Y${p.y} \\\nZ${p.s * -1 / 1000}'
+		this.powerCmd.value = this.ser.powerCmd || 'G0 X${$.x} Y${$.y} \\\nZ${$.s * -1 / 1000}'
 		
-		l.newElement('pre').textContent = 'var p = { x, y, s }'
+		l.newElement('pre').textContent = '$ = { x, y, s, p }'
 		
 		self.on("newFile", e => this.newFile(e))
 	}
