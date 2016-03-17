@@ -44,17 +44,6 @@ module.exports = class Slicer25D extends WebComponentAbstract {
 		})
 		this.fidelity.dispatchEvent(new Event('input'))
 		
-		var l = this.left.newElement('p').newElement('label', true, { textContent: 'Slicing channel' })
-		this.channel = l.newElement('select')
-		this.channel.newElement('option').textContent = 'Red'
-		this.channel.newElement('option').textContent = 'Green'
-		this.channel.newElement('option').textContent = 'Blue'
-		this.channel.newElement('option').textContent = 'Alpha'
-		this.channel.newElement('option').textContent = 'Grayscale'
-		this.channel.on('input', e => this.ser.channel = this.channel.selectedIndex)
-		this.ser.channel = isNaN(this.ser.channel) ? 4 : this.ser.channel
-		this.channel.options[this.ser.channel].selected = true
-		
 		var l = this.left.newElement('p').newElement('label')
 		var labelText = l.newText('')
 		var opt = { type: "range", min: 1, max: 100, step: 1, value: this.ser.pass || 1 }
@@ -69,8 +58,18 @@ module.exports = class Slicer25D extends WebComponentAbstract {
 		this.powerCmd = l.newElement('textarea')
 		this.powerCmd.on('input', e => this.ser.powerCmd = this.powerCmd.value)
 		this.powerCmd.value = this.ser.powerCmd || 'G0 X${$.x} Y${$.y} \\\nZ${$.s * -1 / 1000}'
-		
 		l.newElement('pre').textContent = '$ = { x, y, s, p }'
+		
+		var l = this.left.newElement('p').newElement('label', true, { textContent: 'Slicing channel' })
+		this.channel = l.newElement('select')
+		this.channel.newElement('option').textContent = 'Red'
+		this.channel.newElement('option').textContent = 'Green'
+		this.channel.newElement('option').textContent = 'Blue'
+		this.channel.newElement('option').textContent = 'Alpha'
+		this.channel.newElement('option').textContent = 'Grayscale'
+		this.channel.on('input', e => this.ser.channel = this.channel.selectedIndex)
+		this.ser.channel = isNaN(this.ser.channel) ? 4 : this.ser.channel
+		this.channel.options[this.ser.channel].selected = true
 		
 		self.on("newFile", e => this.newFile(e))
 	}
