@@ -43,8 +43,8 @@ module.exports = class Slicer25D extends WebComponentAbstract {
 		})
 		this.fidelity.dispatchEvent(new Event('input'))
 		
-		this.left.newElement('p').textContent = 'Slicing channel'
-		this.channel = this.left.newElement('p').newElement('select')
+		var l = this.left.newElement('p').newElement('label', true, { textContent: 'Slicing channel' })
+		this.channel = l.newElement('select')
 		this.channel.newElement('option').textContent = 'Red'
 		this.channel.newElement('option').textContent = 'Green'
 		this.channel.newElement('option').textContent = 'Blue'
