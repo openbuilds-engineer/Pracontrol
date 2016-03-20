@@ -102,8 +102,6 @@ module.exports = class CommandList extends TabComponent {
 			a.on('click', e => AppEvent('consoleInputValue', c.gcode + ' '))
 			a.style.cursor = 'pointer'
 		}
-		
-		tab.instance.balance()
 	}
 }
 

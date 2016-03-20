@@ -41,7 +41,5 @@ module.exports = class KeyShortcutsTable extends WebComponentAbstract {
 		tr.setAttribute('cat', k.cat)
 		tr.newElement('td').newElement('kbd').textContent = k.key
 		tr.newElement('td').textContent = k.desc
-		
-		this.el.balance()
 	}
 }

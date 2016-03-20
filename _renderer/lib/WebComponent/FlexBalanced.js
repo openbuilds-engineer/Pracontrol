@@ -17,6 +17,12 @@ var style = `
 module.exports = class FlexBalanced extends WebComponentAbstract {
 	initCallback() {
 		this.renderLess(style, { filename: __filename })
+		
+		new MutationObserver(e => this.changed(e)).observe(this, { childList: true })
+	}
+	
+	changed(mut) {
+		if(mut[0].addedNodes || mut[0].removedNodes) this.balance()
 	}
 	
 	balance() {
