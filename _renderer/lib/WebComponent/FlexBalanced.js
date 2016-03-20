@@ -26,7 +26,7 @@ module.exports = class FlexBalanced extends WebComponentAbstract {
 	}
 	
 	balance() {
-		if(this.isBalanced) return
+		if(this.willBalance) return
 		
 		requestAnimationFrame(t => {
 			
@@ -34,9 +34,9 @@ module.exports = class FlexBalanced extends WebComponentAbstract {
 			
 			for(let i = 0; i < 10; i++) this.newElement("flex_balancer")
 			
-			this.isBalanced = false
+			this.willBalance = false
 		})
 		
-		this.isBalanced = true
+		this.willBalance = true
 	}
 }
