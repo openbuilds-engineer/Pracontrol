@@ -27,7 +27,10 @@
 		"less": "*",
 		"serialport": "*",
 		"ncp": "*",
-		"request": "*"
+		"request": "*",
+		"electron-app-base": "pravdomil/electron-app-base",
+		"web-component-app": "pravdomil/web-component-app",
+		"rembased": "pravdomil/rembased"
 	},
 	"devDependencies": {
 		"electron-prebuilt": "*",
