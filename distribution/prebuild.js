@@ -14,7 +14,7 @@ var child_process = require('child_process')
 // change dir
 process.chdir(path.join(__dirname, '..'))
 
-if(process.platform == "win32") {
+if(process.platform == 'win32') {
   
   // update packages
   child_process.execSync('npm update -g electron-prebuilt', { stdio: [0, 1, 2] })
@@ -34,7 +34,7 @@ if(process.platform == "win32") {
     fs.renameSync(o, n)
   })
   
-} else if(process.platform == "darwin") {
+} else if(process.platform == 'darwin') {
   
   // rebuild
   process.chdir(path.dirname(require.resolve('serialport')))
