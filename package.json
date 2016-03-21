@@ -1,71 +1,71 @@
 {
-	"name": "pra-control",
-	"version": "1.0.3",
-	"description": "Send awesome gCodes to your machine.",
-	"productName": "PraControl",
-	"keywords": ["gCode", "control", "serial", "awesome", "rembased"],
-	
-	"author": { "name": "Pravdomil Toman", "email": "info@pravdomil.cz", "url": "http://pravdomil.cz" },
-	"contributors": [
-		{ "name": "Pravdomil Toman", "email": "info@pravdomil.cz", "url": "http://pravdomil.cz" }
-	],
-	
-	"homepage": "http://pracontrol.pravdomil.cz",
-	"repository": { "type": "git", "url": "https://github.com/pravdomil/pra-control" },
-	"bugs": "https://github.com/pravdomil/pra-control/issues",
-	"featureRequest": "https://github.com/pravdomil/pra-control/issues/new",
-	"pullRequest": "https://github.com/pravdomil/pra-control/pull/new",
-	"donate": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BCL2X3AFQBAP2&item_name=PraControl%20beer",
-	
-	"main": "_main/index.js",
-	"scripts": {
-		"start": "electron .",
-		"predist": "node distribution/prebuild",
-		"dist": "node distribution/build"
-	},
-	"dependencies": {
-		"less": "*",
-		"serialport": "*",
-		"ncp": "*",
-		"request": "*",
-		"electron-app-base": "pravdomil/electron-app-base",
-		"web-component-app": "pravdomil/web-component-app",
-		"rembased": "pravdomil/rembased"
-	},
-	"devDependencies": {
-		"electron-prebuilt": "*",
-		"electron-packager": "*"
-	},
-	"license": "MIT",
-	
-	"electronPackagerOpts": {
-		"dir": ".",
-		"out": "distribution",
-		"ignore": [
-			"^(?!$|/_main|/_renderer|/node_modules|/package.json$)",
-			"/\\.[^/]*"
-		],
-		"overwrite": true,
-		
-		"arch": "x64",
-		"platform": "win32,darwin",
-		
-		"asar": true,
-		"prune": true,
-		
-		"app-bundle-id": "pravdomil.pra-control",
-		"app-version": "1.0.0",
-		"app-category-type": "public.app-category.utilities",
-		"icon": "resources/icon",
-		"app-copyright": "",
-		
-		"version-string": {
-			"CompanyName": "Pravdomil.cz",
-			"ProductName": "PraControl",
-			"FileDescription": "Send awesome gCodes!",
-			"InternalName": "",
-			"OriginalFilename": "",
-			"LegalCopyright": ""
-		}
-	}
+  "name": "pra-control",
+  "version": "1.0.3",
+  "description": "Send awesome gCodes to your machine.",
+  "productName": "PraControl",
+  "keywords": ["gCode", "control", "serial", "awesome", "rembased"],
+  
+  "author": { "name": "Pravdomil Toman", "email": "info@pravdomil.cz", "url": "http://pravdomil.cz" },
+  "contributors": [
+    { "name": "Pravdomil Toman", "email": "info@pravdomil.cz", "url": "http://pravdomil.cz" }
+  ],
+  
+  "homepage": "http://pracontrol.pravdomil.cz",
+  "repository": { "type": "git", "url": "https://github.com/pravdomil/pra-control" },
+  "bugs": "https://github.com/pravdomil/pra-control/issues",
+  "featureRequest": "https://github.com/pravdomil/pra-control/issues/new",
+  "pullRequest": "https://github.com/pravdomil/pra-control/pull/new",
+  "donate": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BCL2X3AFQBAP2&item_name=PraControl%20beer",
+  
+  "main": "_main/index.js",
+  "scripts": {
+    "start": "electron .",
+    "predist": "node distribution/prebuild",
+    "dist": "node distribution/build"
+  },
+  "dependencies": {
+    "less": "*",
+    "serialport": "*",
+    "ncp": "*",
+    "request": "*",
+    "electron-app-base": "pravdomil/electron-app-base",
+    "web-component-app": "pravdomil/web-component-app",
+    "rembased": "pravdomil/rembased"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "*",
+    "electron-packager": "*"
+  },
+  "license": "MIT",
+  
+  "electronPackagerOpts": {
+    "dir": ".",
+    "out": "distribution",
+    "ignore": [
+      "^(?!$|/_main|/_renderer|/node_modules|/package.json$)",
+      "/\\.[^/]*"
+    ],
+    "overwrite": true,
+    
+    "arch": "x64",
+    "platform": "win32,darwin",
+    
+    "asar": true,
+    "prune": true,
+    
+    "app-bundle-id": "pravdomil.pra-control",
+    "app-version": "1.0.0",
+    "app-category-type": "public.app-category.utilities",
+    "icon": "resources/icon",
+    "app-copyright": "",
+    
+    "version-string": {
+      "CompanyName": "Pravdomil.cz",
+      "ProductName": "PraControl",
+      "FileDescription": "Send awesome gCodes!",
+      "InternalName": "",
+      "OriginalFilename": "",
+      "LegalCopyright": ""
+    }
+  }
 }
