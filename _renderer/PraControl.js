@@ -9,7 +9,7 @@ class PraControl extends require('web-component-app') {
     this.core = ['About', 'CommandList', 'Console', 'Dashboard', 'Developer', 'KeyShortcutsTable', 'Module', 'Panel', 'Serial', 'Printer', 'Tab']
     
     // error reporting here, must load first
-    this.newElement(require('UI/UI'), false)
+    this.newElem(require('UI/UI'), false)
     
     // render css then load content
     this.lessOpt = { paths: [require('rembased'), __dirname + '/res'] }
@@ -17,4 +17,4 @@ class PraControl extends require('web-component-app') {
   }
 }
 
-global.App = document.body.newElement(PraControl)
+global.App = document.body.newElem(PraControl)
