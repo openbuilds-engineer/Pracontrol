@@ -98,6 +98,6 @@ module.exports = class Slicer25D extends WebComponentAbstract {
 	}
 	
 	readyCallback() {
-		AppEvent('newTab', { instance: this, name: "2.5D" })
+		AppEvent('newTab', { elem: this, name: "2.5D" })
 	}
 }
