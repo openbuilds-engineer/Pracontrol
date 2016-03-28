@@ -15,11 +15,11 @@ var gCode = function(powerGCode, fidelity, passes) {
 	
 	this.gCodePush = $ => this.gCode.push.apply(this.gCode, eval('`' + powerGCode + '`').split("\n"))
 	
-	for(var pass = 1; pass <= passes; pass++) {
+	for(var pass = 0; pass < passes; pass++) {
 		pathArr.forEach(path => {
 			path.forEach((point, i) => {
 				
-				if(pass == 1) {
+				if(pass == 0) {
 					point.x = Math.round(point.x / fidelity * 1000) / 1000
 					point.y = Math.round(point.y / fidelity * 1000) / 1000
 					point.s = Math.round(point.s * 1000) / 1000
