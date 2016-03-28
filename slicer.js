@@ -5,18 +5,18 @@ var path = require('path')
 
 module.exports = class Slicer25D_Slicer extends WebComponentAbstract {
 	initCallback() {
-		this.rinfo = this.newElement('div', true)
+		this.rinfo = this.newElem('div', true)
 		this.rinfo.style.float = 'right'
 		
-		this.info = this.newElement('div', true, { textContent: 'Drop image here' })
+		this.info = this.newElem('div', true, { textContent: 'Drop image here' })
 		this.info.style.minHeight = '2rem'
 		
 		var opt = { type: "range", min: 0, max: 0, step: 1, value: 0 }
-		this.slider = this.newElement('input', true, opt)
+		this.slider = this.newElem('input', true, opt)
 		this.slider.style.width = "100%"
 		this.slider.on('input', e => this.replay())
 		
-		this.canvas = this.newElement('canvas')
+		this.canvas = this.newElem('canvas')
 		this.ctx = this.canvas.getContext('2d')
 	}
 	
@@ -89,7 +89,7 @@ module.exports = class Slicer25D_Slicer extends WebComponentAbstract {
 		if(!this.path.length) {
 			this.info.textContent = 'No paths, try diferrent slicing channel.'
 			
-			var a = this.info.newElement('a', true, { textContent: 'Reslice', className: 'button' })
+			var a = this.info.newElem('a', true, { textContent: 'Reslice', className: 'button' })
 			a.on('click', e => this.parent.slice())
 			return
 		}
@@ -104,11 +104,11 @@ module.exports = class Slicer25D_Slicer extends WebComponentAbstract {
 		this.gCode = gCode
 		
 		this.info.textContent = 'Ready for '
-		var a = this.info.newElement('a', true, { textContent: 'Print', className: 'button' })
+		var a = this.info.newElem('a', true, { textContent: 'Print', className: 'button' })
 		a.on('click', e => this.print())
 		this.info.newText(' or ')
 		
-		var a = this.info.newElement('a', true, { textContent: 'Reslice', className: 'button' })
+		var a = this.info.newElem('a', true, { textContent: 'Reslice', className: 'button' })
 		a.on('click', e => this.parent.slice())
 	}
 	
