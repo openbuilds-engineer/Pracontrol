@@ -6,7 +6,11 @@ class PraControl extends require('web-component-app') {
     this.package = require('../package.json')
     
     // core modules
-    this.core = ['About', 'CommandList', 'Console', 'Dashboard', 'Developer', 'KeyShortcutsTable', 'Module', 'Panel', 'Serial', 'Printer', 'Tab']
+    this.core = [
+      'About', 'Control', 'Console',
+      'Developer', 'KeyShortcutsTable', 'Module',
+      'Panel', 'Serial', 'Printer', 'Tab'
+    ]
     
     // error reporting here, must load first
     this.newElem(require('UI/UI'), false)
