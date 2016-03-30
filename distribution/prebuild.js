@@ -30,6 +30,8 @@ if(process.platform == 'win32') {
   })
   
 } else if(process.platform == 'darwin') {
+  // make sure that everything is installed
+  child_process.execSync('npm i', { stdio: [0, 1, 2] })
   
   // rebuild
   process.chdir(path.dirname(require.resolve('serialport')))
