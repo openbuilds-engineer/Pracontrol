@@ -31,6 +31,10 @@
     "web-component-app": "pravdomil/web-component-app",
     "rembased": "pravdomil/rembased"
   },
+  "devDependencies": {
+    "electron-packager": "^6.0.0",
+    "electron-prebuilt": "0.36.12"
+  },
   "license": "MIT",
   
   "electronPackagerOpts": {
