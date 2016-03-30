@@ -7,9 +7,9 @@ class PraControl extends require('web-component-app') {
     
     // core modules
     this.core = [
+      'Panel', 'Tab', 'Serial', 'Printer',
       'About', 'Control', 'Console',
       'Developer', 'KeyShortcutsTable', 'Module',
-      'Panel', 'Serial', 'Printer', 'Tab'
     ]
     
     // error reporting here, must load first
