@@ -24,9 +24,9 @@
     "dist": "node distribution/build"
   },
   "dependencies": {
-    "serialport": "*",
-    "ncp": "*",
-    "request": "*",
+    "serialport": "^2.0.6",
+    "ncp": "^2.0.0",
+    "request": "^2.69.0",
     "electron-app-base": "pravdomil/electron-app-base",
     "web-component-app": "pravdomil/web-component-app",
     "rembased": "pravdomil/rembased"
