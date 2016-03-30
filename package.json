@@ -24,7 +24,6 @@
     "dist": "node distribution/build"
   },
   "dependencies": {
-    "less": "*",
     "serialport": "*",
     "ncp": "*",
     "request": "*",
