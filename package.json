@@ -3,6 +3,7 @@
   "version": "1.0.4",
   "description": "Send awesome gCodes to your machine.",
   "productName": "PraControl",
+  "companyName": "pravdomil.cz",
   "keywords": ["gCode", "control", "serial", "awesome", "rembased"],
   
   "author": { "name": "Pravdomil Toman", "email": "info@pravdomil.cz", "url": "http://pravdomil.cz" },
@@ -35,36 +36,5 @@
     "electron-packager": "^6.0.0",
     "electron-prebuilt": "0.36.12"
   },
-  "license": "MIT",
-  
-  "electronPackagerOpts": {
-    "dir": ".",
-    "out": "distribution",
-    "ignore": [
-      "^(?!$|/_main|/_renderer|/node_modules|/package.json$)",
-      "/\\.[^/]*"
-    ],
-    "overwrite": true,
-    
-    "arch": "x64",
-    "platform": "win32,darwin",
-    
-    "asar": true,
-    "prune": true,
-    
-    "app-bundle-id": "pravdomil.pra-control",
-    "app-version": "1.0.0",
-    "app-category-type": "public.app-category.utilities",
-    "icon": "resources/icon",
-    "app-copyright": "",
-    
-    "version-string": {
-      "CompanyName": "Pravdomil.cz",
-      "ProductName": "PraControl",
-      "FileDescription": "Send awesome gCodes!",
-      "InternalName": "",
-      "OriginalFilename": "",
-      "LegalCopyright": ""
-    }
-  }
+  "license": "MIT"
 }
