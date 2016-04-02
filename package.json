@@ -1,26 +1,11 @@
 {
-  "name": "pra-control-2.5d-slicer",
+  "name": "2.5d-slicer",
   "version": "1.0.0",
-  "description": "2.5D slicer for PraControl",
+  "description": "",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {},
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pravdomil/pra-control-2.5d-slicer.git"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "2.5D",
-    "slicer",
-    "RepRap",
-    "laser",
-    "cutter"
-  ],
-  "author": "Pravdomil <info@pravdomil.cz> (http://pravdomil.cz)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pravdomil/pra-control-2.5d-slicer/issues"
-  },
-  "homepage": "https://github.com/pravdomil/pra-control-2.5d-slicer#readme"
+  "author": "pravdomil.cz",
+  "license": "MIT"
 }
