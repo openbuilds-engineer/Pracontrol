@@ -59,8 +59,8 @@ module.exports = class Slicer25D extends WebComponentAbstract {
     var l = this.left.newElem('p').newElem('label', true, { textContent: 'Controling gCode' })
     this.powerCmd = l.newElem('textarea')
     this.powerCmd.on('input', e => this.ser.powerCmd = this.powerCmd.value)
-    this.powerCmd.value = this.ser.powerCmd || 'G0 X${$.x} Y${$.y} \\\nZ${$.s * -1 / 1000}'
-    l.newElem('pre').textContent = '$ = { x, y, s, p }'
+    this.powerCmd.value = this.ser.powerCmd || 'G0 X${x} Y${y} \\\nZ${s * -1 / 1000}'
+    l.newElem('pre').textContent = 'var x, y, s, p'
     
     var l = this.left.newElem('p').newElem('label', true, { textContent: 'Slicing channel ' })
     this.channel = l.newElem('select')
