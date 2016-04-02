@@ -22,7 +22,7 @@ module.exports = class Slicer25D extends WebComponentAbstract {
 		
 		var div = this.newElem('div', true, { className: 'column-system' })
 		this.left = div.newElem('div')
-		this.slicer = div.newElem(require('./slicer.js'), true, { parent: this })
+		this.slicer = div.newElem(require('./lib/slicer.js'), true, { parent: this })
 		this.slicer.style.flexGrow = 3
 		
 		this.left.newElem('h1').textContent = '2.5D Slicer'
