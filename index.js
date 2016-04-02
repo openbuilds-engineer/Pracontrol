@@ -88,7 +88,10 @@ module.exports = class Slicer25D extends WebComponentAbstract {
   }
   
   newRecentOption(p, selected) {
-    var opt = this.recent.newElem('option', false, { path: p, textContent: path.basename(p), selected })
+    if(this.recent.children.some(el => el.path == p)) return
+    
+    var opt = this.recent.newElem('option', false, {
+      path: p, textContent: path.basename(path.dirname(p)) + '/' + path.basename(p), selected })
     this.recent.insertAfter(opt, this.recent.children[0])
   }
   
