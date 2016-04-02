@@ -78,9 +78,8 @@ module.exports = class Slicer25D extends WebComponentAbstract {
   
   newFile(e) {
     var p = e.d[0].path
-    var ext = p.substr(-3)
     
-    if(['svg', 'bmp', 'png', 'jpg', 'gif'].indexOf(ext) == -1) return
+    if(!['svg', 'bmp', 'png', 'jpg', 'gif'].includes(p.substr(-3))) return
     
     this.ser.recent.push(p)
     this.newRecentOption(p, true)
