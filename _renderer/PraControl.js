@@ -10,6 +10,7 @@ class PraControl extends require('web-component-app') {
       'Panel', 'Tab', 'Serial', 'Printer',
       'About', 'Control', 'Console',
       'Developer', 'KeyShortcutsTable', 'Module',
+      'ControlShortcuts', 'RemoteControl', '25D Slicer',
     ]
     
     // error reporting here, must load first
