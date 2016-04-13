@@ -8,13 +8,15 @@ class PraControl extends require('web-component-app') {
     // error reporting here, must load first
     this.newElem(require('UI/UI'), false)
     
+    // load core modules
+    this.loadModules()
+    
     // render css then load content
     this.lessOpt = { paths: [require('rembased'), __dirname + '/res'] }
     this.renderLess(__dirname + '/res/style.less', { global: true }).then(e => this.appReady())
   }
   
-  readyCallback() {
-    // core modules
+  loadModules() {
     var elem = [
       'Panel', 'Tab', 'Serial', 'Printer',
       'About', 'Control', 'Console',
