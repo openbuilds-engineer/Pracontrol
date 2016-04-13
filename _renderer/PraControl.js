@@ -16,7 +16,10 @@ class PraControl extends require('web-component-app') {
   readyCallback() {
     // core modules
     var elem = [
-      
+      'Panel', 'Tab', 'Serial', 'Printer',
+      'About', 'Control', 'Console',
+      'Developer', 'KeyShortcutsTable', 'Module',
+      'ControlShortcuts', 'RemoteControl', '25D Slicer',
     ]
     elem.forEach(e => setImmediate(() => this.newElem(require(e + '/' + e), false)))
   }
