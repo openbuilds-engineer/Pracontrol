@@ -28,7 +28,7 @@
     "ncp": "^2.0.0",
     "request": "^2.69.0",
     "electron-app-base": "pravdomil/electron-app-base#90fea74eb49cdf35e96b48f196cac5d4c1b81d1a",
-    "web-component-app": "pravdomil/web-component-app#1442c6a25962873ce18f8c44eb2f3bb188b5055b",
+    "web-component-app": "pravdomil/web-component-app#e9f82bbcc56f12fbd8a1e78b7a94a1d217f95f2b",
     "rembased": "pravdomil/rembased#512a3bf680009b7caab36ec45c8f4a0c88edaed1"
   },
   "devDependencies": {
