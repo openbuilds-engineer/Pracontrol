@@ -11,7 +11,7 @@ var opt = {
     '/\\.[^/]*'
   ],
   
-  'arch': 'x64', 'platform': 'win32,darwin',
+  'arch': 'x64', 'platform': process.argv[2] || 'win32,darwin',
   'asar': true, 'prune': true,
   
   'icon': 'resources/icon',
