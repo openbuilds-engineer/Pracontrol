@@ -1,39 +1,29 @@
 'use strict'
 
-// Rebuild native modules
-//
-// 1) run first under Win machine
-//      electron-prebuild and electron-rebuild must install globally
-// 2) then under Mac machine
-//
+// Rebuild serialport for Electron
 
-var fs = require('fs')
 var path = require('path')
 var child_process = require('child_process')
+var serialportRoot = path.dirname(require.resolve('serialport'))
 
-// change dir
+// change work dir
 process.chdir(path.join(__dirname, '..'))
 
+// make sure that everything is installed
+child_process.execSync('npm i', { stdio: 'inherit' })
+
 if(process.platform == 'win32') {
-  // rebuild
-  child_process.execSync('electron-rebuild -w serialport -m . -f', { stdio: [0, 1, 2] })
+  // delete current serialport build
+  child_process.execSync(`rmdir "${path.join(serialportRoot, '/build')}" /s /q`, { stdio: 'inherit' })
   
-  // correct naming
-  var bin = path.join(path.dirname(require.resolve('serialport')), 'build', 'Release')
-  var getDirectories = p => fs.readdirSync(p).filter(f => fs.statSync(path.join(p, f)).isDirectory())
+  // rebuild serialport
+  child_process.execSync('electron-rebuild -w serialport -m . -f', { stdio: 'inherit' })
+}
+else if(process.platform == 'darwin') {
+  // delete current serialport build
+  child_process.execSync(`rm -r "${path.join(serialportRoot, '/build')}"`, { stdio: 'inherit' })
   
-  getDirectories(bin).forEach(p => {
-    if(!p.match(/^electron-/)) return
-    var o = path.join(bin, p)
-    var n = path.join(bin, p.replace(/electron-[^-]+/, `node-v${process.versions.modules}`))
-    fs.renameSync(o, n)
-  })
-  
-} else if(process.platform == 'darwin') {
-  // make sure that everything is installed
-  child_process.execSync('npm i', { stdio: [0, 1, 2] })
-  
-  // rebuild
-  process.chdir(path.dirname(require.resolve('serialport')))
+  // rebuild serialport
+  process.chdir(serialportRoot)
   child_process.execSync('npm run install')
 }
