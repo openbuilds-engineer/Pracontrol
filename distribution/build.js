@@ -27,6 +27,7 @@ var opt = {
     'FileDescription': json.description.replace(/ /g, ' '),
     'InternalName': '',
     'OriginalFilename': '',
+    'LegalCopyright': '',
   },
 }
 
