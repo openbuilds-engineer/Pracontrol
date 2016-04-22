@@ -20,7 +20,7 @@
   "main": "_main/index.js",
   "scripts": {
     "start": "electron .",
-    "predist": "node distribution/prebuild",
+    "rebuild": "node distribution/rebuild",
     "dist": "node distribution/dist"
   },
   "dependencies": {
