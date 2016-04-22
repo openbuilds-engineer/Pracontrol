@@ -21,7 +21,7 @@
   "scripts": {
     "start": "electron .",
     "predist": "node distribution/prebuild",
-    "dist": "node distribution/build"
+    "dist": "node distribution/dist"
   },
   "dependencies": {
     "serialport": "^2.0.6",
