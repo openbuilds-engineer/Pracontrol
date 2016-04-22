@@ -32,7 +32,7 @@
     "rembased": "pravdomil/rembased"
   },
   "devDependencies": {
-    "electron-packager": "^6.0.0",
+    "electron-packager": "^7.0.0",
     "electron-prebuilt": "0.36.12"
   },
   "license": "MIT"
