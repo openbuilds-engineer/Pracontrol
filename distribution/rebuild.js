@@ -1,8 +1,6 @@
-// rebuild serialport for Electron
-
 var path = require('path')
 var child_process = require('child_process')
-var serialportRoot = path.dirname(require.resolve('serialport'))
+var serialportRoot = path.dirname(require.resolve('serialport')) + '/..'
 
 // change work dir
 process.chdir(path.join(__dirname, '..'))
