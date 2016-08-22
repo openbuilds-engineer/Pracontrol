@@ -1,5 +1,3 @@
-'use strict'
-
 process.chdir(__dirname + '/..')
 var json = require(__dirname + '/../package.json')
 

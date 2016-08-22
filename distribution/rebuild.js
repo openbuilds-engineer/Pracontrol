@@ -1,5 +1,3 @@
-'use strict'
-
 // rebuild serialport for Electron
 
 var path = require('path')
