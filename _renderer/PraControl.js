@@ -3,6 +3,9 @@ class PraControl extends require('web-component-app') {
     // app pointer
     global.app = this
     
+    // hide before before full load
+    this.style.display = 'none'
+    
     // package info
     this.package = require('../package.json')
     
