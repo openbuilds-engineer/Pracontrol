@@ -20,6 +20,5 @@ else if(process.platform == 'darwin') {
   child_process.execSync(`rm -r "${path.join(serialportRoot, '/build')}"`, { stdio: 'inherit' })
   
   // rebuild serialport
-  process.chdir(serialportRoot)
-  child_process.execSync('npm run install')
+  child_process.execSync('node_modules/.bin/electron-rebuild -w serialport -m . -f', { stdio: 'inherit' })
 }
