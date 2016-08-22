@@ -16,13 +16,13 @@ class PraControl extends require('web-component-app') {
     this.new(require('UI/UI'), {}, false)
     
     // load modules
-    var elem = [
+    var modules = [
       'Panel', 'Tab', 'Serial', 'Printer',
       'About', 'Control', 'Console',
       'Developer', 'KeyShortcutsTable', 'Module',
       'ControlShortcuts', 'RemoteControl', '25D Slicer',
     ]
-    elem.forEach(e => setImmediate(() => this.new(require(e + '/' + e), {}, false)))
+    modules.forEach(e => setImmediate(() => this.new(require(e + '/' + e), {}, false)))
     
     // render css then load content
     this.lessOpt = { paths: [require('rembased'), __dirname + '/res'] }
