@@ -20,7 +20,7 @@ class PraControl extends require('web-component-app') {
     
     // render css then load content
     this.lessOpt = { paths: [require('rembased'), __dirname + '/res'] }
-    this.renderLess(__dirname + '/res/style.less', { global: true }).then(e => this.appReady())
+    this.renderLess(__dirname + '/resources/style.less', { global: true }).then(e => this.appReady())
   }
   
   loadModules() {
