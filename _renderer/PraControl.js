@@ -1,3 +1,6 @@
+global.defineEvent = (name, desc, cat, arg) => setImmediate(() => self.emit('defineEvent', { name, desc, arg, cat }))
+global.defineShortcut = (key, desc, cat) => setImmediate(() => self.emit('defineShortcut', { key, desc, cat }))
+
 class PraControl extends require('web-component-app') {
   init() {
     // app pointer
