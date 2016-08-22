@@ -1,6 +1,6 @@
 'use strict'
 
-// Rebuild serialport for Electron
+// rebuild serialport for Electron
 
 var path = require('path')
 var child_process = require('child_process')
