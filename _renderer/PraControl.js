@@ -1,5 +1,8 @@
 class PraControl extends require('web-component-app') {
   init() {
+    // app pointer
+    global.App = this
+    
     // package info
     this.package = require('../package.json')
     
@@ -25,4 +28,4 @@ class PraControl extends require('web-component-app') {
   }
 }
 
-global.App = document.body.newElem(PraControl)
+document.body.newElem(PraControl)
