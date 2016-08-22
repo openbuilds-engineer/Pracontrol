@@ -7,7 +7,7 @@ class PraControl extends require('web-component-app') {
     this.package = require('../package.json')
     
     // error reporting here
-    this.newElem(require('UI/UI'), false)
+    this.new(require('UI/UI'), false)
     
     // load core modules
     this.loadModules()
@@ -24,8 +24,8 @@ class PraControl extends require('web-component-app') {
       'Developer', 'KeyShortcutsTable', 'Module',
       'ControlShortcuts', 'RemoteControl', '25D Slicer',
     ]
-    elem.forEach(e => setImmediate(() => this.newElem(require(e + '/' + e), false)))
+    elem.forEach(e => setImmediate(() => this.new(require(e + '/' + e), false)))
   }
 }
 
-document.body.newElem(PraControl)
+document.body.new(PraControl)
