@@ -1,7 +1,7 @@
 'use strict'
 
 class PraControl extends require('web-component-app') {
-  initCallback() {
+  init() {
     // package info
     this.package = require('../package.json')
     
