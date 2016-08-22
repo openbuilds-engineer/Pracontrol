@@ -27,7 +27,7 @@ class PraControl extends require('web-component-app') {
       'Developer', 'KeyShortcutsTable', 'Module',
       'ControlShortcuts', 'RemoteControl', '25D Slicer',
     ]
-    elem.forEach(e => setImmediate(() => this.new(require(e + '/' + e), false)))
+    elem.forEach(e => setImmediate(() => this.new(require(e + '/' + e), {}, false)))
   }
 }
 
