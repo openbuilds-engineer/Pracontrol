@@ -15,15 +15,7 @@ class PraControl extends require('web-component-app') {
     // error reporting here
     this.new(require('UI/UI'), {}, false)
     
-    // load core modules
-    this.loadModules()
-    
-    // render css then load content
-    this.lessOpt = { paths: [require('rembased'), __dirname + '/res'] }
-    this.renderLess(__dirname + '/resources/style.less', { global: true }).then(e => this.appReady())
-  }
-  
-  loadModules() {
+    // load modules
     var elem = [
       'Panel', 'Tab', 'Serial', 'Printer',
       'About', 'Control', 'Console',
@@ -31,6 +23,10 @@ class PraControl extends require('web-component-app') {
       'ControlShortcuts', 'RemoteControl', '25D Slicer',
     ]
     elem.forEach(e => setImmediate(() => this.new(require(e + '/' + e), {}, false)))
+    
+    // render css then load content
+    this.lessOpt = { paths: [require('rembased'), __dirname + '/res'] }
+    this.renderLess(__dirname + '/resources/style.less', { global: true }).then(e => this.appReady())
   }
   
   appReady() {
