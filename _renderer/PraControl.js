@@ -1,7 +1,7 @@
 class PraControl extends require('web-component-app') {
   init() {
     // app pointer
-    global.App = this
+    global.app = this
     
     // package info
     this.package = require('../package.json')
