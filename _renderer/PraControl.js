@@ -29,6 +29,14 @@ class PraControl extends require('web-component-app') {
     ]
     elem.forEach(e => setImmediate(() => this.new(require(e + '/' + e), {}, false)))
   }
+  
+  appReady() {
+    // event: window emits 'appReady' app is loaded
+    setImmediate(() => self.emit('appReady'))
+    
+    // show when loaded
+    this.style.display = ''
+  }
 }
 
 document.body.new(PraControl)
