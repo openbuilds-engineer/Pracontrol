@@ -1,5 +1,3 @@
-'use strict'
-
 class PraControl extends require('web-component-app') {
   init() {
     // package info
