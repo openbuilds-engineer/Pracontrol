@@ -7,7 +7,7 @@ class PraControl extends require('web-component-app') {
     this.package = require('../package.json')
     
     // error reporting here
-    this.new(require('UI/UI'), false)
+    this.new(require('UI/UI'), {}, false)
     
     // load core modules
     this.loadModules()
