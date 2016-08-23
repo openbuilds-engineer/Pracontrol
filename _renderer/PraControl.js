@@ -17,7 +17,7 @@ class PraControl extends require('web-component-app') {
     
     // load modules
     var modules = [
-      'Panel', 'Tab', 'Serial', 'Printer',
+      'Panel', 'Tab', 'Serial', 'SerialUI', 'Printer',
       'About', 'Control', 'Console',
       'Developer', 'KeyShortcutsTable', 'Module',
       'ControlShortcuts', 'RemoteControl', '25D Slicer',
