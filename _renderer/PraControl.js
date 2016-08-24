@@ -1,5 +1,5 @@
-global.defineEvent = (name, desc, cat, arg) => setImmediate(() => self.emit('defineEvent', { name, desc, arg, cat }))
-global.defineShortcut = (key, desc, cat) => setImmediate(() => self.emit('defineShortcut', { key, desc, cat }))
+global.defineEvent = (name, desc, cat, arg) => self.emit('defineEvent', { name, desc, arg, cat })
+global.defineShortcut = (key, desc, cat) => self.emit('defineShortcut', { key, desc, cat })
 
 class PraControl extends require('web-component-app') {
   init() {
@@ -31,7 +31,7 @@ class PraControl extends require('web-component-app') {
   
   appReady() {
     // event: window emits 'appReady' app is loaded
-    setImmediate(() => self.emit('appReady'))
+    self.emit('appReady')
     
     // show when loaded
     this.style.display = ''
