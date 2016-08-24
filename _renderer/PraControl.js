@@ -12,9 +12,6 @@ class PraControl extends require('web-component-app') {
     // package info
     this.package = require('../package.json')
     
-    // error reporting here
-    this.new(require('UI/UI'), {}, false)
-    
     // load modules
     var modules = [
       'Panel', 'Tab', 'Serial', 'SerialUI', 'Printer',
@@ -23,6 +20,9 @@ class PraControl extends require('web-component-app') {
       'ControlShortcuts', 'RemoteControl', '25D Slicer',
     ]
     modules.forEach(e => setImmediate(() => this.new(require(e + '/' + e), {}, false)))
+    
+    // error reporting here
+    this.new(require('UI/UI'), {}, false)
     
     // render css then load content
     this.lessOpt = { paths: [require('rembased'), __dirname + '/res'] }
