@@ -6,9 +6,6 @@ process.chdir(__dirname + '/..')
 // change work dir
 process.chdir(path.join(__dirname, '..'))
 
-// make sure that everything is installed
-child_process.execSync('npm i', { stdio: 'inherit' })
-
 if(process.platform == 'win32') {
   // delete current serialport build
   child_process.execSync(`rmdir "${path.join(serialportRoot, '/build')}" /s /q`, { stdio: 'inherit' })
