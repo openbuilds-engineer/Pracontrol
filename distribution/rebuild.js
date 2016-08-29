@@ -1,6 +1,7 @@
 var path = require('path')
 var child_process = require('child_process')
 var serialportRoot = path.dirname(require.resolve('serialport')) + '/..'
+process.chdir(__dirname + '/..')
 
 // change work dir
 process.chdir(path.join(__dirname, '..'))
