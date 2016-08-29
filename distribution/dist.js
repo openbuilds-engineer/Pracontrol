@@ -1,4 +1,5 @@
 process.chdir(__dirname + '/..')
+
 var json = require(__dirname + '/../package.json')
 
 var opt = {
