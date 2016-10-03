@@ -27,9 +27,9 @@
     "fs-promise": "^0.5.0",
     "ncp": "^2.0.0",
     "request": "^2.69.0",
-    "electron-app-base": "pravdomil/electron-app-base",
-    "web-component-app": "pravdomil/web-component-app",
-    "rembased": "pravdomil/rembased"
+    "electron-app-base": "pravdomil/electron-app-base#e9c68c2a2eb6bf38a1f7d592dfde9f6bca1c1028",
+    "web-component-app": "pravdomil/web-component-app#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+    "rembased": "pravdomil/rembased#a0193a354b2dd69d88a7537e4dd5761b3a8a97c3"
   },
   "devDependencies": {
     "electron-packager": "^7.0.0",
