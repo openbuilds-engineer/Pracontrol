@@ -1,4 +1,4 @@
-PraControl
+Pracontrol
 ==========
 
 More info at [pracontrol.pravdomil.cz](http://pracontrol.pravdomil.cz)
