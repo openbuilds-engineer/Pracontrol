@@ -13,18 +13,6 @@ module.exports = class extends WebComponentAbstract {
   
 }
 
-// extend Classes
-global.Classes = function(...extend) {
-  var base = WebComponentAbstract
-  for (let e of extend) {
-    for (let key of Object.getOwnPropertyNames(e.prototype)) {
-      if (key === "constructor") continue
-      Object.defineProperty(base.prototype, key, Object.getOwnPropertyDescriptor(e.prototype, key))
-    }
-  }
-  return base
-}
-
 // Observe
 function Observe(name, func) {
   if(!('_props' in this)) Object.defineProperty(this, '_props', { value: {} } )
