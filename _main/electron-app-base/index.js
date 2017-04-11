@@ -20,7 +20,7 @@ module.exports = class {
   window() {
     this.win = new electron.BrowserWindow({
       title: app.getName(),
-      width:    42 * 16,    height: 31 * 16,
+      width:    43 * 16,    height: 31 * 16,
       minWidth: 31 * 16, minHeight: 31 * 16,
       useContentSize: true, autoHideMenuBar: true,
       backgroundColor: '#ececec',
