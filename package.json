@@ -6,12 +6,12 @@
   "companyName": "pravdomil.cz",
   "keywords": ["gCode", "control", "serial", "awesome", "rembased"],
   
-  "author": { "name": "Pravdomil Toman", "email": "info@pravdomil.cz", "url": "http://pravdomil.cz" },
+  "author": { "name": "Pravdomil Toman", "email": "info@pravdomil.cz", "url": "https://pravdomil.cz" },
   "contributors": [
     { "name": "Pravdomil Toman", "email": "info@pravdomil.cz", "url": "http://pravdomil.cz" }
   ],
   
-  "homepage": "http://pracontrol.pravdomil.cz",
+  "homepage": "https://pracontrol.pravdomil.cz",
   "repository": { "type": "git", "url": "https://github.com/pravdomil/pracontrol" },
   "bugs": "https://github.com/pravdomil/pracontrol/issues",
   "donate": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BCL2X3AFQBAP2&item_name=PraControl%20beer",
