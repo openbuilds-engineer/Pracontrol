@@ -4,9 +4,9 @@
 require('./prototypes')
 
 // more globals
-global.WebComponentAbstract = require('./src/WebComponent/WebComponentAbstract')
-global.FlexBalanced = require('./src/WebComponent/FlexBalanced')
-global.TabComponent = require('./src/WebComponent/TabComponent')
+global.WebComponentAbstract = require('./WebComponent/WebComponentAbstract')
+global.FlexBalanced = require('./WebComponent/FlexBalanced')
+global.TabComponent = require('./WebComponent/TabComponent')
 
 // export class
 module.exports = class extends WebComponentAbstract {
