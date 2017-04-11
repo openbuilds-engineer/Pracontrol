@@ -14,7 +14,7 @@ Node.prototype.new = function(element, prop = {}, append = true) {
   
   // new from string
   if(element.constructor == String) {
-    if(element[0] == '-') element = 'app' + element
+    if(element[0] == '-') { element = 'app' + element }
     el = document.createElement(element)
   }
   
@@ -32,7 +32,7 @@ Node.prototype.new = function(element, prop = {}, append = true) {
   
   if(append) { this.append(el) }
   
-  el.init && el.init()
+  if(el.init) { el.init() }
   
   return el
 }

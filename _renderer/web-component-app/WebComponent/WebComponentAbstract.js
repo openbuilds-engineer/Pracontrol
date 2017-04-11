@@ -5,7 +5,7 @@ var app = null
 
 module.exports = class WebComponentAbstract extends HTMLElement {
   createdCallback() {
-    if(!app) app = this
+    if(!app) { app = this }
     
     // create shadow dom
     this.createShadowRoot().new('content')
@@ -16,7 +16,7 @@ module.exports = class WebComponentAbstract extends HTMLElement {
   }
   
   serialize() {
-    if(!Object.keys(this.ser).length) return
+    if(!Object.keys(this.ser).length) { return }
     var filter = (key, value) => value instanceof HTMLElement ? null : value
     var json = JSON.stringify(this.ser, filter, ' ')
     self.localStorage.setItem(this.localStorageKey, json)
@@ -43,9 +43,9 @@ module.exports = class WebComponentAbstract extends HTMLElement {
     var cacheName = `renderLessCache-${app.package ? app.package.version : 0}-${md5(style)}`
     var cache = self.localStorage.getItem(cacheName)
     
-    if(cache) return this.renderCss(cache, opt.global)
+    if(cache) { return this.renderCss(cache, opt.global) }
     
-    if(!less) less = require('less')
+    if(!less) { less = require('less') }
     
     opt.compress = true
     Object.assign(opt, app.lessOpt)

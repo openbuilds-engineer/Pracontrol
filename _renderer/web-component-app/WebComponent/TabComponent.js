@@ -18,7 +18,7 @@ module.exports = class TabComponent extends WebComponentAbstract {
       if(tab.priority < el.priority) { el.before(tab); return true; }
     }) || this.tab.container.append(tab)
     
-    if(this.willFocus) clearImmediate(this.willFocus)
+    if(this.willFocus) { clearImmediate(this.willFocus) }
     this.willFocus = setImmediate(() => this.focusTab(opt.focus ? opt.el : this.tab.active))
     
     return tab
@@ -62,12 +62,12 @@ module.exports = class TabComponent extends WebComponentAbstract {
   }
   
   testTab(arg, func) {
-    if(arg === undefined) arg = this.tab.active
+    if(arg === undefined) { arg = this.tab.active }
     
     var testFunc
     
     if(arg.constructor == Number) {
-      if(arg >= this.tab.container.children.length) return
+      if(arg >= this.tab.container.children.length) { return }
       testFunc = (el, i) => arg == i
     }
     else if(arg.constructor == String) {

@@ -21,11 +21,11 @@ module.exports = class FlexBalanced extends WebComponentAbstract {
   }
   
   changedFlexBalanced(mut) {
-    if(!this.willBalance) this.balanceFlexBalanced()
+    if(!this.willBalance) { this.balanceFlexBalanced() }
   }
   
   balanceFlexBalanced() {
-    if(this.willBalance) return
+    if(this.willBalance) { return }
     
     requestAnimationFrame(t => {
       this.querySelectorAll(':scope > flex_balancer').forEach(e => e.remove())
