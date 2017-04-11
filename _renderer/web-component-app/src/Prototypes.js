@@ -1,6 +1,3 @@
-// Node.js
-setImmediate = setImmediate || setTimeout
-
 // please
 NodeList.prototype.forEach = HTMLCollection.prototype.forEach = FileList.prototype.forEach = Array.prototype.forEach
 NodeList.prototype.map = HTMLCollection.prototype.map = FileList.prototype.map = Array.prototype.map
