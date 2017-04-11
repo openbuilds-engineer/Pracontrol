@@ -2,7 +2,7 @@
   "name": "pracontrol",
   "version": "2.0.0",
   "description": "Send awesome gCodes to your machine.",
-  "productName": "PraControl",
+  "productName": "Pracontrol",
   "companyName": "pravdomil.cz",
   "keywords": ["gCode", "control", "serial", "awesome", "rembased"],
   
@@ -14,7 +14,7 @@
   "homepage": "https://pracontrol.pravdomil.cz",
   "repository": { "type": "git", "url": "https://github.com/pravdomil/pracontrol" },
   "bugs": "https://github.com/pravdomil/pracontrol/issues",
-  "donate": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BCL2X3AFQBAP2&item_name=PraControl%20beer",
+  "donate": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BCL2X3AFQBAP2&item_name=Pracontrol%20beer",
   
   "main": "_main/index.js",
   "scripts": {
