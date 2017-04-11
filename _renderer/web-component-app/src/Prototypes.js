@@ -4,12 +4,6 @@ NodeList.prototype.map = HTMLCollection.prototype.map = FileList.prototype.map =
 NodeList.prototype.some = HTMLCollection.prototype.some = FileList.prototype.some = Array.prototype.some
 NodeList.prototype.every = HTMLCollection.prototype.every = FileList.prototype.every = Array.prototype.every
 
-Node.prototype.prepend = function(node) { this.firstChild ? this.insertBefore(node, this.firstChild) : this.appendChild(node) }
-Node.prototype.append = Node.prototype.appendChild
-
-Node.prototype.before = function(node) { return this.parentNode.insertBefore(node, this) }
-Node.prototype.after = function(node) { return this.parentNode.insertBefore(node, this.nextSibling) }
-
 // events
 EventTarget.prototype.on = function() { return this.addEventListener.apply(this, arguments) }
 EventTarget.prototype.emit = function(name, arg) { setImmediate(() => { var e = new Event(name); e.detail = arg; this.dispatchEvent(e); }) }
