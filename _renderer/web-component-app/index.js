@@ -1,7 +1,7 @@
 'use strict'
 
 // more basic prototypes
-require('./src/Prototypes')
+require('./prototypes')
 
 // more globals
 global.WebComponentAbstract = require('./src/WebComponent/WebComponentAbstract')
