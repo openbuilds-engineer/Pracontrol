@@ -15,7 +15,7 @@ module.exports = class extends WebComponentAbstract {
 
 // Observe
 function Observe(name, func) {
-  if(!('_props' in this)) Object.defineProperty(this, '_props', { value: {} } )
+  if(!('_props' in this)) { Object.defineProperty(this, '_props', { value: {} } ) }
   
   var first = !(name in this._props)
   var prop = first ? (this._props[name] = { value: this[name], listeners: [] }) : this._props[name]
