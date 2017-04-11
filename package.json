@@ -26,7 +26,9 @@
     "serialport": "^4.0.0",
     "fs-promise": "^2.0.2",
     "ncp": "^2.0.0",
-    "request": "^2.69.0"
+    "request": "^2.69.0",
+    "crypto-js": "^3.1.9-1",
+    "less": "^2.7.2"
   },
   "devDependencies": {
     "electron": "^1.0.0",
