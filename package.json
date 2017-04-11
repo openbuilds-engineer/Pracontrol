@@ -32,7 +32,7 @@
     "rembased": "pravdomil/rembased#a0193a354b2dd69d88a7537e4dd5761b3a8a97c3"
   },
   "devDependencies": {
-    "electron-packager": "^7.0.0",
+    "electron-packager": "^8.6.0",
     "electron-prebuilt": "^1.0.0",
     "electron-rebuild": "^1.2.0"
   }

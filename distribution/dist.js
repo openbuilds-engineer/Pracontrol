@@ -10,17 +10,18 @@ var opt = {
     '/\\.[^/]*'
   ],
   
-  'arch': 'x64', 'platform': process.argv[2] || 'win32,darwin',
-  'asar': true, 'prune': true,
+  'arch': 'x64',
+  'platform': process.argv[2] || 'win32,darwin',
+  'asar': true,
   
   'icon': 'resources/icon',
   
-  'app-bundle-id': json.companyName.replace(/\..+/, '') + '.' + json.name,
-  'app-version': json.version,
-  'app-category-type': 'public.app-category.utilities',
-  'app-copyright': '',
+  'appBundleId': json.companyName.replace(/\..+/, '') + '.' + json.name,
+  'appVersion': json.version,
+  'appCategoryType': 'public.app-category.utilities',
+  'appCopyright': '',
   
-  'version-string': {
+  'win32metadata': {
     'CompanyName': json.companyName,
     'ProductName': json.productName,
     'FileDescription': json.description.replace(/ /g, ' '),
