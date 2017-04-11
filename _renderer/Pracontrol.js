@@ -1,7 +1,7 @@
 global.defineEvent = (name, desc, cat, arg) => self.emit('defineEvent', { name, desc, arg, cat })
 global.defineShortcut = (key, desc, cat) => self.emit('defineShortcut', { key, desc, cat })
 
-class PraControl extends require('web-component-app') {
+class Pracontrol extends require('web-component-app') {
   init() {
     // app pointer
     global.app = this
@@ -38,4 +38,4 @@ class PraControl extends require('web-component-app') {
   }
 }
 
-document.body.new(PraControl)
+document.body.new(Pracontrol)
