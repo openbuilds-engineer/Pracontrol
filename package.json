@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "serialport": "^4.0.0",
-    "fs-promise": "^0.5.0",
+    "fs-promise": "^2.0.2",
     "ncp": "^2.0.0",
     "request": "^2.69.0",
     "electron-app-base": "pravdomil/electron-app-base#e9c68c2a2eb6bf38a1f7d592dfde9f6bca1c1028",
