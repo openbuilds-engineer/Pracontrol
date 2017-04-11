@@ -10,7 +10,7 @@ fs.removeSync(serialportRoot + '/build')
 
 // rebuild serialport
 var cmd = ''
-if(process.platform == 'darwin') cmd = 'node_modules/.bin/'
+if(process.platform == 'darwin') { cmd = 'node_modules/.bin/' }
 cmd += 'electron-rebuild -w serialport -m . -f -v ' + execSync('npm view electron version')
 
 execSync(cmd, { stdio: 'inherit' })
