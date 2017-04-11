@@ -29,14 +29,14 @@ Node.prototype.new = function(element, prop = {}, append = true) {
     var name = `app-${element.name || name}`
     el = document.createElement(name)
     
-    if(el.constructor === HTMLElement) document.registerElement(name, element)
+    if(el.constructor === HTMLElement) { document.registerElement(name, element) }
   }
   
-  if(!el) return
+  if(!el) { return }
   
   Object.assign(el, prop)
   
-  if(append) this.append(el)
+  if(append) { this.append(el) }
   
   el.init && el.init()
   
@@ -47,6 +47,6 @@ Node.prototype.new = function(element, prop = {}, append = true) {
 Node.prototype.newText = function(text, prop = {}, append = true) {
   var el = document.createTextNode(text)
   Object.assign(el, prop)
-  if(append) this.append(el)
+  if(append) { this.append(el) }
   return el
 }
