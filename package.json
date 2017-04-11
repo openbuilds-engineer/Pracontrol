@@ -1,6 +1,6 @@
 {
   "name": "pracontrol",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Send awesome gCodes to your machine.",
   "productName": "Pracontrol",
   "companyName": "pravdomil.cz",
