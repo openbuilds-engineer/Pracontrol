@@ -1,0 +1,72 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "web-component-app@github:pravdomil/web-component-app#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+        "scope": null,
+        "escapedName": "web-component-app",
+        "name": "web-component-app",
+        "rawSpec": "github:pravdomil/web-component-app#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+        "spec": "github:pravdomil/web-component-app#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:pravdomil/web-component-app.git#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+          "sshUrl": "git+ssh://git@github.com/pravdomil/web-component-app.git#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+          "httpsUrl": "git+https://github.com/pravdomil/web-component-app.git#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+          "gitUrl": "git://github.com/pravdomil/web-component-app.git#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+          "shortcut": "github:pravdomil/web-component-app#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+          "directUrl": "https://raw.githubusercontent.com/pravdomil/web-component-app/3a7e8362ce570dfa457f899736c6378a89ea5c87/package.json"
+        }
+      },
+      "/Users/paul/home/pracontrol/app"
+    ]
+  ],
+  "_from": "pravdomil/web-component-app#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+  "_id": "web-component-app@1.0.0",
+  "_inCache": true,
+  "_location": "/web-component-app",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "web-component-app@github:pravdomil/web-component-app#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+    "scope": null,
+    "escapedName": "web-component-app",
+    "name": "web-component-app",
+    "rawSpec": "github:pravdomil/web-component-app#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+    "spec": "github:pravdomil/web-component-app#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:pravdomil/web-component-app.git#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+      "sshUrl": "git+ssh://git@github.com/pravdomil/web-component-app.git#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+      "httpsUrl": "git+https://github.com/pravdomil/web-component-app.git#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+      "gitUrl": "git://github.com/pravdomil/web-component-app.git#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+      "shortcut": "github:pravdomil/web-component-app#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+      "directUrl": "https://raw.githubusercontent.com/pravdomil/web-component-app/3a7e8362ce570dfa457f899736c6378a89ea5c87/package.json"
+    }
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git://github.com/pravdomil/web-component-app.git#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+  "_shasum": "cd5d18882c0709555030fc305e7b9cdaa1afd880",
+  "_shrinkwrap": null,
+  "_spec": "web-component-app@github:pravdomil/web-component-app#3a7e8362ce570dfa457f899736c6378a89ea5c87",
+  "_where": "/Users/paul/home/pracontrol/app",
+  "author": {
+    "name": "Pravdomil Toman",
+    "email": "pravdomil.toman@gmail.com",
+    "url": "http://pravdomil.cz"
+  },
+  "dependencies": {
+    "crypto-js": "^3.1.6",
+    "less": "^2.6.1"
+  },
+  "devDependencies": {},
+  "gitHead": "3a7e8362ce570dfa457f899736c6378a89ea5c87",
+  "main": "index.js",
+  "name": "web-component-app",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "version": "1.0.0"
+}
