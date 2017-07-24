@@ -1,6 +1,6 @@
 Pracontrol
 ==========
 
-More info at [pracontrol.pravdomil.cz](https://pracontrol.pravdomil.cz)
+More info at [pracontrol.pravdomil.com](https://pracontrol.pravdomil.com)
 
-[![Pracontrol](resources/screenshot.png)](https://pracontrol.pravdomil.cz)
+[![Pracontrol](resources/screenshot.png)](https://pracontrol.pravdomil.com)
