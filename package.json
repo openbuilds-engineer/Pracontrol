@@ -3,15 +3,15 @@
   "version": "2.0.1",
   "description": "Send awesome gCodes to your machine.",
   "productName": "Pracontrol",
-  "companyName": "pravdomil.cz",
+  "companyName": "pravdomil.com",
   "keywords": ["gCode", "control", "serial", "awesome", "rembased"],
   
-  "author": { "name": "Pravdomil Toman", "email": "info@pravdomil.cz", "url": "https://pravdomil.cz" },
+  "author": { "name": "Pravdomil Toman", "email": "info@pravdomil.com", "url": "https://pravdomil.com" },
   "contributors": [
-    { "name": "Pravdomil Toman", "email": "info@pravdomil.cz", "url": "http://pravdomil.cz" }
+    { "name": "Pravdomil Toman", "email": "info@pravdomil.com", "url": "https://pravdomil.com" }
   ],
   
-  "homepage": "https://pracontrol.pravdomil.cz",
+  "homepage": "https://pracontrol.pravdomil.com",
   "repository": { "type": "git", "url": "https://github.com/pravdomil/pracontrol" },
   "bugs": "https://github.com/pravdomil/pracontrol/issues",
   "donate": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BCL2X3AFQBAP2&item_name=Pracontrol%20beer",
