@@ -5,6 +5,7 @@
   "description": "Send awesome gCodes to your machine.",
   "homepage": "https://pracontrol.pravdomil.com",
   "keywords": [
+    "applications",
     "gCode",
     "control",
     "serial",
