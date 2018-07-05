@@ -2,7 +2,7 @@
   "name": "pracontrol",
   "version": "2.0.1",
   "productName": "Pracontrol",
-  "description": "Send awesome gCodes to your machine.",
+  "description": "Send awesome gCodes to your machine",
   "homepage": "https://pracontrol.pravdomil.com",
   "keywords": [
     "applications",
