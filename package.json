@@ -27,7 +27,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/pravdomil/pracontrol"
+    "url": "https://github.com/pravdomil/pracontrol.git"
   },
   "bugs": "https://github.com/pravdomil/pracontrol/issues",
   "donate": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BCL2X3AFQBAP2&item_name=Pracontrol%20beer",
